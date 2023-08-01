@@ -5,7 +5,8 @@
   "semi": false,
   "singleQuote": true,
   "arrowParens": "avoid",
-  "printWidth": 120,
+  "printWidth": 100,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "pluginSearchDirs": ["."]
+  "pluginSearchDirs": ["."],
+  "bracketSpacing": true
 }

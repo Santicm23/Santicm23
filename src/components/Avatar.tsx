@@ -3,8 +3,8 @@ import { type JSX } from 'react/jsx-runtime'
 function Avatar(): JSX.Element {
   return (
     <img
-      className="ml-4 h-36 w-36 rounded-full object-cover object-center"
-      src="./public/my-photo.jpg"
+      className="m-4 h-36 w-36 rounded-full object-cover object-center"
+      src="../my-photo.jpg"
       alt="My avatar"
     />
   )
