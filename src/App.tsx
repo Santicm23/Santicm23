@@ -20,7 +20,6 @@ function App(): JSX.Element {
           </ul>
         </nav>
       </header>
-      <h1 className="ml-10 mt-10 text-5xl font-bold">Hello, I am 👋</h1>
       <Name name="Santiago Castro Muñoz" />
       <Avatar />
       <ThemeToggle />
