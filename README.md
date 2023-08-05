@@ -1,6 +1,6 @@
 ### Hi there I'm ***Santiago*** 👋 👨‍💻
 
-![](public/my-photo.jpg)
+![](src/assets/my-photo.jpg)
 
 ```python
 from dataclasses import dataclass
