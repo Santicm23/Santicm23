@@ -18,13 +18,13 @@ function ThemeToggle(): JSX.Element {
 
   return (
     <button
-      className="absolute left-[50%] top-[50%] h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-950 transition-all duration-1000"
+      className="absolute left-1/2 top-1/2 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-950 p-[5%] transition-all duration-1000"
       onClick={toggleTheme}
     >
-      <div className="relative h-[90%] w-8 rounded-full bg-yellow-300 shadow-[0_0_100px_rgba(249,240,104,1)] transition-all duration-1000 dark:ml-24 dark:bg-gray-100 dark:shadow-[0_0_100px_rgba(255,255,255,1)]">
-        <div className="absolute left-5 top-12 h-3 w-3 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
-        <div className="absolute left-10 top-14 h-3 w-3 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
-        <div className="absolute left-10 top-6 h-5 w-5 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
+      <div className="relative h-7 w-7 rounded-full bg-yellow-300 transition-all duration-1000 dark:ml-[57%] dark:bg-gray-100">
+        <div className="absolute left-1/4 top-1/2 h-1/5 w-1/5 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
+        <div className="absolute left-1/2 top-2/3 h-1/5 w-1/5 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
+        <div className="absolute left-1/2 top-1/4 h-1/3 w-1/3 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
       </div>
     </button>
   )
