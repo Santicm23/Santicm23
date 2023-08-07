@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 import { type JSX } from 'react/jsx-runtime'
 
-function ThemeToggle(): JSX.Element {
+interface ThemeToggleProps {
+  h?: string
+  w?: string
+}
+
+function ThemeToggle({ h, w }: ThemeToggleProps = { h: '90%' }): JSX.Element {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -18,13 +23,17 @@ function ThemeToggle(): JSX.Element {
 
   return (
     <button
-      className="absolute left-1/2 top-1/2 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-950 p-[5%] transition-all duration-1000"
+      className={
+        'aspect-[2/1] rounded-full bg-slate-900 p-[5%] [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500' +
+        (h != null ? ` h-[${h}]` : ' h-10') +
+        (w != null ? ` w-[${w}]` : '')
+      }
       onClick={toggleTheme}
     >
-      <div className="relative h-7 w-7 rounded-full bg-yellow-300 transition-all duration-1000 dark:ml-[57%] dark:bg-gray-100">
-        <div className="absolute left-1/4 top-1/2 h-1/5 w-1/5 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
-        <div className="absolute left-1/2 top-2/3 h-1/5 w-1/5 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
-        <div className="absolute left-1/2 top-1/4 h-1/3 w-1/3 rounded-full bg-gray-300/50 opacity-0 transition-all duration-1000 dark:opacity-100"></div>
+      <div className="relative aspect-square h-full bg-yellow-300 dark:ml-[57%] dark:bg-gray-100">
+        <div className="absolute left-1/4 top-1/2 h-1/5 w-1/5 dark:bg-gray-300"></div>
+        <div className="absolute left-1/2 top-2/3 h-1/5 w-1/5 dark:bg-gray-300"></div>
+        <div className="absolute left-1/2 top-1/4 h-1/3 w-1/3 dark:bg-gray-300"></div>
       </div>
     </button>
   )
