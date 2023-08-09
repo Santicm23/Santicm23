@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import { type JSX } from 'react/jsx-runtime'
 
-interface ThemeToggleProps {
-  h?: string
-  w?: string
-}
-
-function ThemeToggle({ h, w }: ThemeToggleProps = { h: '90%' }): JSX.Element {
+function ThemeToggle(): JSX.Element {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -23,11 +18,7 @@ function ThemeToggle({ h, w }: ThemeToggleProps = { h: '90%' }): JSX.Element {
 
   return (
     <button
-      className={
-        'aspect-[2/1] rounded-full bg-slate-900 p-[5%] [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500' +
-        (h != null ? ` h-[${h}]` : ' h-10') +
-        (w != null ? ` w-[${w}]` : '')
-      }
+      className="aspect-[2/1] h-[90%] rounded-full bg-slate-900 p-[5%] [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500"
       onClick={toggleTheme}
     >
       <div className="relative aspect-square h-full bg-yellow-300 dark:ml-[57%] dark:bg-gray-100">
