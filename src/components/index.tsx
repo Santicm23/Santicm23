@@ -1,6 +1,6 @@
 import Avatar from './Avatar'
 import Name from './Name'
 import ThemeToggle from './ThemeToggle'
-import HeaderBar from './HeaderBar'
+import Menu from './Menu'
 
-export { Avatar, Name, ThemeToggle, HeaderBar }
+export { Avatar, Name, ThemeToggle, Menu }
