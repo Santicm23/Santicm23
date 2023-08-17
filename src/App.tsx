@@ -4,14 +4,11 @@ import { Name, Avatar, HeaderBar } from './components'
 
 function App(): JSX.Element {
   return (
-    <div className="absolute top-0 h-max min-h-screen w-full bg-white/30 dark:bg-transparent">
-      <video autoPlay muted loop className="absolute -z-20 h-screen w-full object-cover">
-        <source src="./waves.mp4" type="video/mp4" />
-      </video>
+    <section className="absolute top-0 h-max min-h-screen w-full bg-gradient-to-br from-green-300 to-amber-600 dark:from-green-800 dark:to-amber-900">
       <HeaderBar />
       <Name name="Santiago Castro Muñoz" />
       <Avatar />
-    </div>
+    </section>
   )
 }
 
