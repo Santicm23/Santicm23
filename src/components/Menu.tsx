@@ -1,25 +1,29 @@
 import { type JSX } from 'react/jsx-runtime'
 import { ThemeToggle } from '.'
 
+const menu = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' },
+]
+
 function Menu(): JSX.Element {
   return (
-    <header className="fixed z-50 w-full">
-      <nav className="bg-white/40 backdrop-blur-sm dark:bg-white/10">
-        <ul className="flex justify-center [&>*>*]:font-semibold [&>*>*]:text-cyan-800 dark:[&>*>*]:text-cyan-200">
-          <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
-            <a href="#home" className="transition-[scroll]">
-              Home
-            </a>
-          </li>
-          <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
-            <a href="#about">About</a>
-          </li>
-          <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
-            <a href="#projects">Projects</a>
-          </li>
-          <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
-            <a href="#contact">Contact</a>
-          </li>
+    <header className="fixed z-20 w-full">
+      <nav className="flex justify-around bg-white/40 backdrop-blur-sm dark:bg-slate-500/40">
+        <a href="#home" className="flex items-center">
+          <img src="./favicon.ico" alt="logo" className="h-10" />
+          <p className="text-3xl font-bold text-[#5FCEBD]">&nbsp;Santicm</p>
+        </a>
+        <ul className="flex list-none items-center gap-10 pr-10">
+          {menu.map(({ name, href }) => (
+            <li key={name} className="">
+              <a href={href} className="font-semibold text-cyan-800 dark:text-cyan-200">
+                {name}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
       <ThemeToggle />
