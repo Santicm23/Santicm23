@@ -7,6 +7,11 @@ function Menu(): JSX.Element {
       <nav className="bg-white/40 backdrop-blur-sm dark:bg-white/10">
         <ul className="flex justify-center [&>*>*]:font-semibold [&>*>*]:text-cyan-800 dark:[&>*>*]:text-cyan-200">
           <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
+            <a href="#home" className="transition-[scroll]">
+              Home
+            </a>
+          </li>
+          <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
             <a href="#about">About</a>
           </li>
           <li className="ml-4 mr-4 rounded-full px-[5%] py-2">
