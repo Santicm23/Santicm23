@@ -1,13 +1,12 @@
-### Hi there I'm ***Santiago*** 👋 👨‍💻
+### Hi there I'm **_Santiago_** 👋 👨‍💻
 
-![](src/assets/my-photo.jpg)
+![](./public/my-photo.jpg)
 
 ```python
 from dataclasses import dataclass
 
 @dataclass
 class Me:
-
     username: str = 'Santicm23'
     name: str = 'Santiago Castro Muñoz'
     age: int = 19
@@ -36,17 +35,17 @@ class Me:
 - 👨‍💻 I'm a systems engineering student at Pontificia Universidad Javeriana.
 - 🌱 I’m currently learning React and PyTorch.
 - 🌎 Languages:
-    - Español
-    - Français
-    - English
-    - Português
+  - Español
+  - Français
+  - English
+  - Português
 - ⚡ Fun facts: I love...
-    - 🎾 Tenis
-    - 🎹 Piano
-    - ♟️ Chess
-    - 🏃‍♂️ Athletics
-    - 🎵 Music
-    - 🧩 Puzzles
+  - 🎾 Tenis
+  - 🎹 Piano
+  - ♟️ Chess
+  - 🏃‍♂️ Athletics
+  - 🎵 Music
+  - 🧩 Puzzles
 
 <br>
 

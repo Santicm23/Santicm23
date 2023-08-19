@@ -12,7 +12,7 @@ const svgPaths = {
 
 function Card(): JSX.Element {
   return (
-    <div className="m-auto grid aspect-[4/5] h-3/4 items-center justify-center rounded-xl bg-slate-500/5">
+    <div className="m-auto grid aspect-[4/5] h-3/4 items-center justify-center rounded-xl bg-white/40 pb-4 dark:bg-slate-500/40">
       <Avatar />
       <div className="flex w-full justify-center gap-6">
         {Object.entries(svgPaths).map(([name, path]) => (
