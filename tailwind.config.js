@@ -24,7 +24,7 @@ export default {
         },
       },
       animation: {
-        'hand-wave': 'hand-wave 2.5s infinite',
+        'hand-wave': 'hand-wave 2.5s',
       },
     },
   },

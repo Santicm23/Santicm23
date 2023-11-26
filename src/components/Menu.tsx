@@ -18,10 +18,14 @@ function Menu(): JSX.Element {
         </a>
         <ul className="flex list-none items-center gap-10 pr-10">
           {menu.map(({ name, href }) => (
-            <li key={name} className="">
-              <a href={href} className="font-semibold text-cyan-800 dark:text-cyan-200">
+            <li key={name} className="group relative flex flex-col items-center">
+              <a
+                href={href}
+                className="inline-block font-semibold text-cyan-800 transition duration-300 group-hover:-translate-y-1 dark:text-cyan-200"
+              >
                 {name}
               </a>
+              <div className="absolute -bottom-1 h-1 w-0 rounded-full bg-cyan-800 opacity-70 transition-all duration-300 group-hover:w-full dark:bg-cyan-200"></div>
             </li>
           ))}
         </ul>
