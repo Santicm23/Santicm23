@@ -9,23 +9,18 @@ from dataclasses import dataclass
 class Me:
     username: str = 'Santicm23'
     name: str = 'Santiago Castro Muñoz'
-    age: int = 19
+    age: int = 20
     pronouns: tuple[str, str] = ('He', 'Him')
-    code: list[str] = ['Python', 'C++', 'C', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java', 'php' 'SQL']
+    code: list[str] = [
+      'Python', 'JavaScript', 'TypeScript', 'Dart', 'C++', 'C', 'Java', 'Kotlin', 'php', 'SQL']
     tools: dict[str, list[str]] = {
-        'back-end': ['NodeJs', 'Express', 'Socket.IO', 'Flask', 'Spring Boot'],
-        'front-end': ['React', 'Angular', 'Bootstrap', 'Tailwind CSS'],
-        'databases': ['MySQL', 'PostgreSQL', 'OracleDB', 'SQLite', 'MongoDB'],
+        'back-end': ['Node.js', 'Express', 'Socket.IO', 'FastAPI', 'Spring Boot', 'Firebase'],
+        'web': ['React', 'Angular', 'Astro', 'Bootstrap', 'Tailwind CSS'],
+        'mobile': ['Flutter', 'Android'],
         'devops': ['Docker', 'GitHub Actions', 'Railway', 'cPanel'],
-        'AI': ['PyTorch'],
-        'testing': ['Selenium', 'Jest', 'Pytest', 'Junit'],
-        'package managers': ['Git', 'GitHub', 'Poetry', 'pnpm', 'yarn']
-    }
-    find_me: dict[str, str] = {
-        'website': 'https://santicm.com',
-        'email': 'Santicastrom@outlook.com',
-        'linkedin': 'https://www.linkedin.com/in/santiago-castro-2b2a77276/',
-        'instagram': 'https://www.instagram.com/santicm23/',
+        'AI': ['PyTorch', 'TensorFlow', 'Scikit-Learn'],
+        'testing': ['Selenium', 'Jest', 'Pytest', 'Junit', 'Apache JMeter'],
+        'other': ['Poetry', 'ZeroMQ', 'Tkinter']
     }
 ```
 

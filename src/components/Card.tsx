@@ -19,9 +19,9 @@ const links = {
 
 function Card(): JSX.Element {
   return (
-    <div className="m-auto grid aspect-[4/5] h-3/4 items-center justify-center rounded-xl bg-white/40 pb-4 dark:bg-slate-500/40">
+    <div className="relative m-auto grid aspect-[4/5] h-3/4 items-center justify-center rounded-xl bg-white/40 pb-4 dark:bg-slate-500/40">
       <Avatar />
-      <div className="flex w-full justify-center gap-6">
+      <div className="flex w-full justify-center gap-x-6 2xl:gap-x-12">
         {Object.entries(links).map(([name, attrs]) => {
           const { path, link } = attrs
           return (

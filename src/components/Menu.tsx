@@ -11,12 +11,12 @@ const menu = [
 function Menu(): JSX.Element {
   return (
     <header className="fixed z-20 w-full">
-      <nav className="flex justify-around bg-white/40 backdrop-blur-sm dark:bg-slate-500/40">
-        <a href="#home" className="flex items-center">
+      <nav className="flex items-center justify-between bg-white/40 px-1 backdrop-blur-sm dark:bg-slate-500/40">
+        <a href="#home" className="flex w-1/12 items-center">
           <img src="./favicon.ico" alt="logo" className="h-10" />
-          <p className="text-3xl font-bold text-[#5FCEBD]">&nbsp;Santicm</p>
+          <p className="hidden text-3xl font-bold text-[#5FCEBD] md:block">&nbsp;Santicm</p>
         </a>
-        <ul className="flex list-none items-center gap-10 pr-10">
+        <ul className="flex w-1/2 items-center justify-around gap-10">
           {menu.map(({ name, href }) => (
             <li key={name} className="group relative flex flex-col items-center">
               <a
@@ -29,8 +29,8 @@ function Menu(): JSX.Element {
             </li>
           ))}
         </ul>
+        <ThemeToggle className="flex w-1/12 justify-end" />
       </nav>
-      <ThemeToggle />
     </header>
   )
 }
