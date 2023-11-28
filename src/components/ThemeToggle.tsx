@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { type JSX } from 'react/jsx-runtime'
 
 interface ThemeToggleProps {
   className?: string
