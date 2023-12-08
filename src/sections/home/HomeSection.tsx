@@ -1,13 +1,11 @@
-import { Card, Name } from '../../components'
-
 function HomeSecion(): JSX.Element {
   return (
     <section
       id="home"
-      className="grid min-h-screen w-full grid-cols-1 bg-gradient-to-br from-slate-100 to-teal-300 dark:from-slate-500 dark:to-teal-950 md:grid-cols-2"
+      className="min-h-screen w-full bg-gradient-to-b from-white to-blue-100 dark:from-gray-800 dark:to-slate-900"
     >
-      <Name name="Santiago Castro Muñoz" />
-      <Card />
+      <div className="h-16"></div>
+      <hr className="border-slate-200 dark:border-slate-600" />
     </section>
   )
 }

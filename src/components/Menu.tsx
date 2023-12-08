@@ -25,11 +25,13 @@ function Menu(): JSX.Element {
   }
 
   return (
-    <header className="fixed z-20 w-full bg-white/40 backdrop-blur-sm dark:bg-slate-500/40">
-      <nav className="m-auto flex w-2/3 items-center px-1">
-        <a href="#home" className="flex w-full items-center self-start">
-          <img src="./favicon.ico" alt="logo" className="h-10" />
-          <p className="hidden text-3xl font-bold text-[#5FCEBD] md:block">&nbsp;Santicm</p>
+    <header className="fixed z-20 h-16 w-full bg-white/70 backdrop-blur-sm dark:bg-gray-800/40">
+      <nav className="m-auto flex h-full w-2/3 items-center px-1">
+        <a href="#home" className="flex w-full items-center">
+          <img src="./logo.svg" alt="logo" className="h-10" />
+          <p className="hidden bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-3xl font-bold text-transparent md:block">
+            &nbsp;Santicm
+          </p>
         </a>
         <ul className="flex w-1/2 items-center gap-4">
           {menu.map(({ name, href, selected }) => (

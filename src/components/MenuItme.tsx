@@ -11,7 +11,7 @@ function MenuItem({ name, href, selected, onSelect }: MenuItemProps): JSX.Elemen
       <a
         href={href}
         className={
-          'inline-block text-sm font-semibold text-black transition duration-300 dark:text-white' +
+          'inline-block text-sm font-semibold text-slate-500 transition duration-300 dark:text-white' +
           (selected ? ' -translate-y-1' : ' group-hover:-translate-y-1')
         }
         onClick={() => {
