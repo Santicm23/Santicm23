@@ -22,7 +22,7 @@ function ThemeToggle({ className = '' }: ThemeToggleProps): JSX.Element {
   return (
     <div className={className}>
       <button
-        className="relative aspect-[2/1] h-8 rounded-full bg-slate-900 [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500"
+        className="relative aspect-[2/1] h-8 rounded-full bg-slate-900 shadow-inner shadow-violet-300/70 dark:shadow-violet-950 [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500"
         onClick={toggleTheme}
       >
         <div className="absolute left-[5%] top-[10%] aspect-square h-[80%] bg-yellow-300 dark:ml-[50%] dark:bg-gray-100">

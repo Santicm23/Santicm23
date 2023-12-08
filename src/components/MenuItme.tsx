@@ -22,7 +22,7 @@ function MenuItem({ name, href, selected, onSelect }: MenuItemProps): JSX.Elemen
       </a>
       <div
         className={
-          'absolute bottom-0 h-[2px] w-0 rounded-full bg-teal-500 opacity-70 transition-all duration-300 dark:bg-teal-400' +
+          'absolute bottom-0 h-[2px] w-0 rounded-full bg-violet-500 opacity-70 transition-all duration-300 dark:bg-violet-400' +
           (selected ? ' w-full' : ' group-hover:w-full')
         }
       ></div>
