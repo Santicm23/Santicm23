@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { ThemeToggle } from '.'
-import MenuItem from './MenuItme'
+
+import { ThemeToggle, Title, MenuItem } from '.'
 
 const menu = [
   { name: 'Home', href: '#home', selected: true },
@@ -25,24 +25,23 @@ function Menu(): JSX.Element {
   }
 
   return (
-    <header className="fixed z-20 h-16 w-full bg-slate-50/60 backdrop-blur-xl dark:bg-gray-950/60">
-      <nav className="m-auto flex h-full w-2/3 items-center px-1">
-        <a href="#home" className="flex w-full items-center">
-          <img src="./logo.svg" alt="logo" className="h-10 rounded-full drop-shadow-md" />
-          <p className="hidden bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md md:block">
-            &nbsp;Santicm
-          </p>
-        </a>
-        <ul className="flex w-1/2 items-center gap-4">
-          {menu.map(({ name, href, selected }) => (
-            <li key={name} className="group relative flex flex-col items-center">
-              <MenuItem name={name} href={href} selected={selected} onSelect={onSelect} />
-            </li>
-          ))}
-        </ul>
-        <ThemeToggle className="flex justify-end" />
-      </nav>
-    </header>
+    <>
+      <header className="fixed z-20 h-16 w-full bg-slate-50/60 backdrop-blur-xl dark:bg-gray-950/60">
+        <nav className="m-auto flex h-full w-2/3 items-center justify-between px-1 md:gap-0">
+          <Title />
+          <ul className="hidden w-1/2 items-center gap-4 self-center px-4 sm:flex">
+            {menu.map(data => (
+              <li key={data.name} className="group relative flex flex-col items-center">
+                <MenuItem {...data} onSelect={onSelect} />
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle className="flex justify-end" />
+        </nav>
+      </header>
+      <div className="h-16 bg-slate-50 dark:bg-gray-950"></div>
+      <hr className="border-slate-200 dark:border-slate-800" />
+    </>
   )
 }
 

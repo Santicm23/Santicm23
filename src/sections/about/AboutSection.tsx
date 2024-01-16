@@ -1,6 +1,6 @@
 function AboutSection(): JSX.Element {
   return (
-    <section id="about">
+    <section id="about" className="relative z-10">
       <h1 className="text-9xl font-extrabold">About</h1>
 
       <ol className="relative border-s border-gray-200 dark:border-gray-700">

@@ -1,11 +1,12 @@
 function HomeSecion(): JSX.Element {
   return (
-    <section
-      id="home"
-      className="min-h-screen w-full bg-gradient-to-b from-slate-50 to-violet-300 dark:from-gray-950 dark:to-violet-950"
-    >
-      <div className="h-16"></div>
-      <hr className="border-slate-200 dark:border-slate-800" />
+    <section id="home" className="relative z-10 h-screen w-full">
+      <h2 className="relative left-1/2 top-1/4 w-1/2 -translate-x-1/2 text-center text-3xl font-medium text-gray-900 [text-wrap:balance] dark:text-gray-50 sm:text-6xl">
+        Collection of modern,{' '}
+        <span className="animate-text-gradient inline-flex bg-gradient-to-r from-neutral-900 via-slate-500 to-neutral-500 bg-[200%_auto] bg-clip-text leading-tight text-transparent dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400">
+          background snippets
+        </span>
+      </h2>
     </section>
   )
 }
