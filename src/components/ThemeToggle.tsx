@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 interface ThemeToggleProps {
   className?: string
 }
 
-function ThemeToggle({ className = '' }: ThemeToggleProps): JSX.Element {
-  const [theme, setTheme] = useState('light')
-
-  useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark')
-    } else {
-      document.documentElement.classList.add('dark')
-    }
-  }, [theme])
-
-  const toggleTheme = (): void => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
+function toggleTheme(): void {
+  if (document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
   }
+}
+
+function setSystemTheme(): void {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('dark')
+  }
+}
+
+function ThemeToggle({ className = '' }: ThemeToggleProps): JSX.Element {
+  setSystemTheme()
 
   return (
     <div className={className}>
