@@ -26,7 +26,10 @@ function Menu(): JSX.Element {
 
   return (
     <>
-      <header className="fixed z-20 h-16 w-full bg-slate-50/60 backdrop-blur-xl dark:bg-gray-950/60">
+      <header
+        id="menu"
+        className="fixed z-20 h-16 w-full animate-slide-in-top bg-slate-50/60 backdrop-blur-xl dark:bg-gray-950/60"
+      >
         <nav className="m-auto flex h-full w-2/3 items-center justify-between px-1 md:gap-0">
           <Title />
           <ul className="hidden w-1/2 items-center gap-4 self-center px-4 sm:flex">

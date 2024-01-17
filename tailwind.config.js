@@ -5,26 +5,30 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        'hand-wave': {
-          '0%, 60%': {
-            transform: 'rotate(0.0deg)',
-          },
-          '10%, 30%': {
-            transform: 'rotate(14.0deg)',
-          },
-          '20%': {
-            transform: 'rotate(-8.0deg)',
+        'tracking-in-expand': {
+          '0%': {
+            'letter-spacing': '-0.5em',
+            opacity: '0',
           },
           '40%': {
-            transform: 'rotate(-4.0deg)',
+            opacity: '0.6',
           },
-          '50%': {
-            transform: 'rotate(10.0deg)',
+          '100%': {
+            opacity: '1',
+          },
+        },
+        'slide-in-top': {
+          '0%, 50%': {
+            transform: 'translateY(-100%)',
+          },
+          '100%': {
+            transform: 'none',
           },
         },
       },
       animation: {
-        'hand-wave': 'hand-wave 2.5s',
+        'tracking-in-expand': 'tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both',
+        'slide-in-top': 'slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
       },
     },
   },
