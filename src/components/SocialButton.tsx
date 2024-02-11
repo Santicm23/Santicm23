@@ -1,26 +1,19 @@
 interface Props {
-  path: string
-  bgColor: string
+  Icon: (props: { className?: string }) => JSX.Element
   href: string
+  name: string
 }
 
-export default function SocialButton({ path, bgColor, href }: Props): JSX.Element {
+export default function SocialButton({ Icon, href, name }: Props): JSX.Element {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex aspect-square w-[45px] cursor-pointer items-center justify-center rounded-lg border-none bg-transparent transition-all duration-300"
-    >
-      <span className="flex h-full w-full items-center justify-center rounded-lg border border-neutral-400 bg-transparent backdrop-blur-0 transition-all duration-300 group-hover:bg-neutral-400 group-hover:bg-opacity-40 group-hover:backdrop-blur-sm dark:border-neutral-600 dark:group-hover:bg-neutral-600 dark:group-hover:bg-opacity-20">
-        <svg fill="white" viewBox="0 0 496 512" height="1.6em">
-          <path d={path}></path>
-        </svg>
+    <div className="group relative m-20 w-min">
+      <a href={href} target="_blank" rel="noreferrer">
+        <Icon className="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400" />
+      </a>
+      <span className="absolute -top-14 left-[50%] z-20 origin-left -translate-x-[50%] scale-0 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-bold text-black shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
+        {name}
+        <span></span>
       </span>
-      <span
-        className="absolute -z-[1] h-full w-full rounded-lg transition-all duration-300 group-hover:origin-bottom group-hover:rotate-[35deg]"
-        style={{ backgroundColor: bgColor }}
-      ></span>
-    </a>
+    </div>
   )
 }
