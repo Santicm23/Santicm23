@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ThemeToggle, Title, MenuItem } from '.'
+import { ThemeToggle, Title, MenuItem } from '..'
 
 const menu = [
   { name: 'Home', href: '#home', selected: true },
