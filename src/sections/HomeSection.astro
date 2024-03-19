@@ -6,7 +6,7 @@ import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
 
 <section id="home" class="relative z-10 h-screen w-full">
 	<h2
-		class="relative left-1/2 top-1/4 w-2/3 -translate-x-1/2 animate-tracking-in-expand text-center text-3xl font-medium text-gray-900 [text-wrap:balance] dark:text-gray-50 sm:text-6xl"
+		class="relative left-1/2 top-1/2 w-2/3 -translate-x-1/2 -translate-y-1/2 animate-tracking-in-expand text-center text-3xl font-medium text-gray-900 [text-wrap:balance] dark:text-gray-50 sm:text-6xl"
 	>
 		Hi! my name is{" "}
 		<span
@@ -15,15 +15,16 @@ import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
 			Santiago
 		</span>
 	</h2>
-
-	<SocialButton href="https://github.com/Santicm23" name="GitHub">
-		<GitHubIcon
-			class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
-		/>
-	</SocialButton>
-	<SocialButton href="https://www.linkedin.com/in/santiago-castro-muñoz/" name="LinkedIn">
-		<LinkedInIcon
-			class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
-		/>
-	</SocialButton>
+	<div class="absolute left-20 top-0 flex h-full flex-col justify-center gap-10">
+		<SocialButton href="https://github.com/Santicm23" name="GitHub">
+			<GitHubIcon
+				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
+			/>
+		</SocialButton>
+		<SocialButton href="https://www.linkedin.com/in/santiago-castro-muñoz/" name="LinkedIn">
+			<LinkedInIcon
+				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
+			/>
+		</SocialButton>
+	</div>
 </section>
