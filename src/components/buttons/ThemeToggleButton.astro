@@ -1,13 +1,19 @@
 ---
+import { setSystemTheme } from '../../config/theme/system';
+
+
 interface Props {
-  className?: string;
+  class?: string;
 }
 
-const { className } = Astro.props;
+const { class: className } = Astro.props;
+
+setSystemTheme()
 ---
 
 <div class={className}>
   <button
+    id="theme-toggle"
     class="relative aspect-[2/1] h-8 rounded-full bg-gray-800 shadow-inner [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500"
   >
     <div class="absolute left-[5%] top-[10%] aspect-square h-4/5 content-center bg-yellow-300 dark:ml-[50%] dark:bg-gray-100">
@@ -17,3 +23,16 @@ const { className } = Astro.props;
     </div>
   </button>
 </div>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle')
+  themeToggle!.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    }
+  })
+</script>
