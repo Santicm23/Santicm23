@@ -2,20 +2,11 @@
 import SocialButton from "../components/buttons/SocialButton.astro"
 import GitHubIcon from "../components/icons/GitHubIcon.astro"
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
+import Title from "../components/text/Title.astro"
 ---
 
-<section id="home" class="relative z-10 h-screen w-full">
-	<h2
-		class="relative left-1/2 top-1/2 w-2/3 -translate-x-1/2 -translate-y-1/2 animate-tracking-in-expand text-center text-3xl font-medium text-gray-900 [text-wrap:balance] dark:text-gray-50 sm:text-6xl"
-	>
-		Hi! my name is{" "}
-		<span
-			class="inline-flex bg-gradient-to-r from-neutral-900 via-slate-500 to-neutral-500 bg-[200%_auto] bg-clip-text leading-loose text-transparent dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400"
-		>
-			Santiago
-		</span>
-	</h2>
-	<div class="absolute left-20 top-0 flex h-full flex-col justify-center gap-20">
+<section id="home" class="relative z-10 mx-auto flex h-screen w-2/3 items-center justify-around">
+	<div class="flex h-1/4 w-10 flex-col items-center justify-center gap-y-20">
 		<SocialButton href="https://github.com/Santicm23" name="GitHub">
 			<GitHubIcon
 				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
@@ -27,4 +18,8 @@ import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
 			/>
 		</SocialButton>
 	</div>
+	<div class="h-1/4 border-r-2"></div>
+	<Title />
+	<div></div>
+	<div class="w-10"></div>
 </section>
