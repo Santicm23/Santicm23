@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import MenuItem from "./MenuItem"
+import MenuItem from "@/components/menu/MenuItem"
 
 const menu = [
 	{ name: "Home", href: "#home", selected: true },

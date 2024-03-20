@@ -1,8 +1,11 @@
 ---
-import SocialButton from "../components/buttons/SocialButton.astro"
-import GitHubIcon from "../components/icons/GitHubIcon.astro"
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
-import Title from "../components/text/Title.astro"
+import { Image } from "astro:assets"
+
+import SocialButton from "@/components/buttons/SocialButton.astro"
+import GitHubIcon from "@/components/icons/GitHubIcon.astro"
+import LinkedInIcon from "@/components/icons/LinkedInIcon.astro"
+import Title from "@/components/text/Title.astro"
+import littleManCodingImage from "/public/little_man_coding.webp"
 ---
 
 <section id="home" class="relative z-10 mx-auto flex h-screen w-2/3 items-center justify-around">
@@ -20,6 +23,17 @@ import Title from "../components/text/Title.astro"
 	</div>
 	<div class="h-1/4 w-[2px] bg-slate-800 dark:bg-slate-300"></div>
 	<Title />
-	<div class="w-[2px]"></div>
-	<div class="w-10"></div>
+	<Image
+		class="mask-image aspect-square w-56 rounded-full object-cover"
+		src={littleManCodingImage}
+		alt="little man coding"
+		loading="eager"
+	/>
 </section>
+
+<style>
+	.mask-image {
+		mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 50%);
+	}
+</style>
+<div class="w-[2px]"></div>

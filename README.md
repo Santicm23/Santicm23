@@ -1,54 +1,54 @@
-# Astro Starter Kit: Basics
+### Hi there I'm **_Santiago_** 👋 👨‍💻
 
-```sh
-npm create astro@latest -- --template basics
+![](./public/my-photo.jpg)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Me:
+    username: str = 'Santicm23'
+    name: str = 'Santiago Castro Muñoz'
+    age: int = 20
+    pronouns: tuple[str, str] = ('He', 'Him')
+    code: list[str] = [
+      'Python', 'JavaScript', 'TypeScript', 'Dart', 'C++', 'C', 'Java', 'Kotlin', 'php', 'SQL']
+    tools: dict[str, list[str]] = {
+        'back-end': ['Node.js', 'Express', 'Socket.IO', 'FastAPI', 'Spring Boot', 'Firebase'],
+        'web': ['React', 'Angular', 'Astro', 'Bootstrap', 'Tailwind CSS'],
+        'mobile': ['Flutter', 'Android'],
+        'devops': ['Docker', 'GitHub Actions', 'Railway', 'cPanel'],
+        'AI': ['PyTorch', 'TensorFlow', 'Scikit-Learn'],
+        'testing': ['Selenium', 'Jest', 'Pytest', 'Junit', 'Apache JMeter'],
+        'other': ['Poetry', 'ZeroMQ', 'Tkinter']
+    }
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### More about me...
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- 🇨🇴 I'm from Bogota, Colombia.
+- 👨‍💻 I'm a systems engineering student at Pontificia Universidad Javeriana.
+- 🌱 I’m currently learning React and PyTorch.
+- 🌎 Languages:
+  - Español
+  - Français
+  - English
+  - Português
+- ⚡ Fun facts: I love...
+  - 🎾 Tenis
+  - 🎹 Piano
+  - ♟️ Chess
+  - 🏃‍♂️ Athletics
+  - 🎵 Music
+  - 🧩 Puzzles
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+<br>
 
-## 🚀 Project Structure
+### Find me around the web 🌎:
 
-Inside of your Astro project, you'll see the following folders and files:
+<br>
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[![Website Badge](https://img.shields.io/badge/Website-3b5998?logo=Google-Chrome&logoColor=white&link=https://santicm.com)](https://santicm.com)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-222222?logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/01naveenv/)](https://www.linkedin.com/in/santiago-castro-2b2a77276/)
+[![Instagram Badge](https://img.shields.io/badge/-Instagram-222222?logo=Instagram&logoColor=white&link=https://www.instagram.com/santicm23/)](https://www.instagram.com/santicm23/)
+[![Mail Badge](https://img.shields.io/badge/-Mail-222222?logo=Gmail&logoColor=white&link=https://)](mailto:Santicastrom@outlook.com)

@@ -1,11 +1,11 @@
-interface MenuItemProps {
+interface Props {
 	name: string
 	href: string
 	selected: boolean
 	onSelect: (name: string) => void
 }
 
-function MenuItem({ name, href, selected, onSelect }: MenuItemProps): JSX.Element {
+function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
 	return (
 		<>
 			<a
