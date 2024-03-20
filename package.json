@@ -10,11 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.5"
+    "astro": "^4.5.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.9",
+    "@astrojs/react": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.12",
