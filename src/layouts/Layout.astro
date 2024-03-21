@@ -8,7 +8,17 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<!doctype html>
+<script is:inline>
+	const theme = localStorage.getItem("theme")
+
+	if (theme) {
+		theme === "dark" && document.documentElement.classList.add("dark")
+	} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		document.documentElement.classList.add("dark")
+		localStorage.setItem("theme", "dark")
+	}
+</script>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />

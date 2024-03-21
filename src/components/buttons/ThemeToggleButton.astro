@@ -22,14 +22,6 @@ const { class: className } = Astro.props
 </div>
 
 <script>
-	if (localStorage.getItem("theme") === "dark") {
-		document.documentElement.classList.add("dark")
-	} else if (localStorage.getItem("theme") === "light") {
-		document.documentElement.classList.remove("dark")
-	} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-		document.documentElement.classList.add("dark")
-	}
-
 	const themeToggle = document.getElementById("theme-toggle")
 	themeToggle!.addEventListener("click", () => {
 		if (document.documentElement.classList.contains("dark")) {
