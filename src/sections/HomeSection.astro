@@ -8,8 +8,11 @@ import Title from "@/components/text/Title.astro"
 import littleManCodingImage from "/public/little_man_coding.webp"
 ---
 
-<section id="home" class="relative z-10 mx-auto flex h-screen w-2/3 items-center justify-around">
-	<div class="flex h-1/4 w-10 flex-col items-center justify-center gap-y-20">
+<section
+	id="home"
+	class="relative z-10 mx-auto flex h-screen w-2/3 flex-col-reverse items-center justify-center gap-4 md:flex-row md:justify-around"
+>
+	<div class="flex w-10 flex-row items-center justify-center gap-y-20 md:flex-col">
 		<SocialButton href="https://github.com/Santicm23" name="GitHub">
 			<GitHubIcon
 				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
@@ -21,10 +24,10 @@ import littleManCodingImage from "/public/little_man_coding.webp"
 			/>
 		</SocialButton>
 	</div>
-	<div class="h-1/4 w-[2px] bg-slate-800 dark:bg-slate-300"></div>
+	<div class="h-[2px] w-2/3 bg-slate-800 dark:bg-slate-300 md:h-1/4 md:w-[2px]"></div>
 	<Title />
 	<Image
-		class="mask-image aspect-square w-56 rounded-full object-cover"
+		class="mask-image aspect-square w-32 rounded-full object-cover md:w-56"
 		src={littleManCodingImage}
 		alt="little man coding"
 		loading="eager"

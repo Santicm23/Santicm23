@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import MenuItem from "@/components/menu/MenuItem"
 
@@ -11,6 +11,29 @@ const menu = [
 
 function Menu(): JSX.Element {
 	const [, setMenu] = useState(menu)
+	let previousIndex = 0
+
+	useEffect(() => {
+		const onScroll = () => {
+			const sectionIndex = Math.floor(window.scrollY / window.innerHeight)
+
+			if (previousIndex === sectionIndex) return
+
+			menu.forEach((item, index) => {
+				if (index === sectionIndex) {
+					item.selected = true
+					previousIndex = sectionIndex
+				} else {
+					item.selected = false
+				}
+			})
+			setMenu({ ...menu })
+		}
+
+		window.removeEventListener("scroll", onScroll)
+		window.addEventListener("scroll", onScroll, { passive: true })
+		return () => window.removeEventListener("scroll", onScroll)
+	}, [])
 
 	const onSelect = (name: string): void => {
 		menu.forEach((item) => {
