@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 
 import SocialButton from "@/components/buttons/SocialButton.astro"
+import CVIcon from "@/components/icons/CVIcon.astro"
 import GitHubIcon from "@/components/icons/GitHubIcon.astro"
 import LinkedInIcon from "@/components/icons/LinkedInIcon.astro"
 import Title from "@/components/text/Title.astro"
@@ -20,6 +21,11 @@ import littleManCodingImage from "/public/little_man_coding.webp"
 		</SocialButton>
 		<SocialButton href="https://www.linkedin.com/in/santiago-castro-muñoz/" name="LinkedIn">
 			<LinkedInIcon
+				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
+			/>
+		</SocialButton>
+		<SocialButton href="/cv-santiago-castro-munoz.pdf" name="CV">
+			<CVIcon
 				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-indigo-400"
 			/>
 		</SocialButton>
