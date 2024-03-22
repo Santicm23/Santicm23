@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import GoBackIcon from "@/components/icons/GoBackIcon.astro"
+---
+
+<Layout title="404">
+	<div class="flex min-h-screen flex-col items-center justify-center gap-10 bg-transparent">
+		<h1
+			class="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-8xl font-bold text-transparent drop-shadow-md"
+		>
+			404
+		</h1>
+		<h1 class="text-6xl text-gray-900 dark:text-gray-50">Page Not Found :(</h1>
+		<a
+			href="/"
+			class="group relative flex h-11 w-11 items-center justify-start overflow-hidden rounded-3xl bg-violet-400 duration-300 hover:w-36 active:translate-x-1 active:translate-y-1"
+		>
+			<div class="flex w-full items-center justify-center duration-300 group-hover:w-1/3">
+				<GoBackIcon class="w-8 stroke-white duration-300" />
+			</div>
+			<span
+				class="text absolute right-0 w-24 text-xl font-semibold opacity-0 duration-300 group-hover:opacity-100"
+				>Go Back
+			</span>
+		</a>
+	</div>
+</Layout>
