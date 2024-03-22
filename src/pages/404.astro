@@ -13,14 +13,15 @@ import GoBackIcon from "@/components/icons/GoBackIcon.astro"
 		<h1 class="text-6xl text-gray-900 dark:text-gray-50">Page Not Found :(</h1>
 		<a
 			href="/"
-			class="group relative flex h-11 w-11 items-center justify-start overflow-hidden rounded-3xl bg-violet-400 duration-300 hover:w-36 active:translate-x-1 active:translate-y-1"
+			class="group relative flex h-11 w-11 items-center justify-start overflow-hidden rounded-3xl bg-violet-400 drop-shadow-md duration-300 hover:w-36 active:translate-x-1 active:translate-y-1"
 		>
 			<div class="flex w-full items-center justify-center duration-300 group-hover:w-1/3">
-				<GoBackIcon class="w-8 stroke-white duration-300" />
+				<GoBackIcon class="w-8 stroke-gray-900 duration-300 dark:stroke-gray-50" />
 			</div>
 			<span
-				class="text absolute right-0 w-24 text-xl font-semibold opacity-0 duration-300 group-hover:opacity-100"
-				>Go Back
+				class="absolute right-0 w-24 text-xl font-semibold text-gray-900 opacity-0 duration-300 group-hover:opacity-100 dark:text-gray-50"
+			>
+				Go Back
 			</span>
 		</a>
 	</div>
