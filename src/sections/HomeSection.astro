@@ -7,6 +7,7 @@ import GitHubIcon from "@/components/icons/GitHubIcon.astro"
 import LinkedInIcon from "@/components/icons/LinkedInIcon.astro"
 import Title from "@/components/text/Title.astro"
 import littleManCodingImage from "/public/little_man_coding.webp"
+import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 ---
 
 <section
@@ -38,6 +39,7 @@ import littleManCodingImage from "/public/little_man_coding.webp"
 		alt="little man coding"
 		loading="eager"
 	/>
+	<ScrollDownLoader class="absolute bottom-12 left-1/2 -translate-x-1/2" />
 </section>
 
 <style>
