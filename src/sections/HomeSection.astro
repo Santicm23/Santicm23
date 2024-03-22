@@ -33,7 +33,7 @@ import littleManCodingImage from "/public/little_man_coding.webp"
 	<div class="h-[2px] w-2/3 bg-slate-800 dark:bg-slate-300 md:h-1/4 md:w-[2px]"></div>
 	<Title />
 	<Image
-		class="mask-image aspect-square w-32 rounded-full object-cover md:w-56"
+		class="mask-image filter-image dark-filter-image aspect-square w-32 rounded-full object-cover md:w-56"
 		src={littleManCodingImage}
 		alt="little man coding"
 		loading="eager"
@@ -43,6 +43,14 @@ import littleManCodingImage from "/public/little_man_coding.webp"
 <style>
 	.mask-image {
 		mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 50%);
+	}
+
+	.filter-image {
+		filter: sepia() saturate(300%) hue-rotate(205deg);
+	}
+
+	html.dark .dark-filter-image {
+		filter: sepia() brightness(80%) saturate(300%) hue-rotate(210deg);
 	}
 </style>
 <div class="w-[2px]"></div>
