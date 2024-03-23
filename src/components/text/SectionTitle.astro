@@ -1,0 +1,17 @@
+<h1 class="relative w-80 text-7xl"><slot /></h1>
+<div class="scroll-animation h-1 w-12 rounded-full bg-indigo-400"></div>
+<style>
+	.scroll-animation {
+		animation: scroll-animation 1s ease-out;
+		animation-timeline: view();
+	}
+
+	@keyframes scroll-animation {
+		0% {
+			transform: translateX(100px);
+		}
+		80% {
+			transform: translateX(0);
+		}
+	}
+</style>
