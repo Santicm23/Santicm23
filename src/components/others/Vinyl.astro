@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="relative w-min hover:translate-x-2 group-hover/bento:translate-x-2 transition-transform">
+	<div
+		class="absolute bottom-0 left-0 right-0 top-0 z-20 m-auto h-8 w-8 rounded-full border border-white/20 bg-transparent outline outline-1 outline-offset-4 outline-white/20 dark:border-white/10 dark:outline-white/10"
+	>
+	</div><div
+		class="absolute bottom-0 left-0 right-0 top-0 z-20 m-auto h-1 w-1 rounded-full bg-white dark:bg-neutral-900"
+	>
+	</div><Image
+		alt="LOOM"
+		loading="eager"
+		width="64"
+		height="64"
+		decoding="async"
+		data-nimg="1"
+		class="absolute bottom-0 left-0 right-0 top-0 z-10 m-auto aspect-square h-8 w-8 animate-[spin_3s_linear_infinite] rounded-full object-cover"
+		src="https://i.scdn.co/image/ab67616d00001e027eeb115b73e2e6abc3c66d59"
+		style="color: transparent;"
+	/><div
+		class="h-14 w-14 rounded-full border border-white bg-black shadow-md outline outline-1 outline-offset-0 outline-zinc-200 ring-1 ring-white/10 dark:border-white/10 dark:outline-[#1a1a1a]"
+	>
+	</div>
+</div>
