@@ -17,6 +17,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-icon-cloud:
+        specifier: ^4.1.4
+        version: 4.1.4(react@18.2.0)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.5.9
@@ -230,6 +233,10 @@ packages:
   '@babel/types@7.24.0':
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
+
+  '@csstools/convert-colors@2.0.0':
+    resolution: {integrity: sha512-P7BVvddsP2Wl5v3drJ3ArzpdfXMqoZ/oHOV/yFiGFb3JQr9Z9UXZ9tnHAKJsO89lfprR1F9ExW3Yij21EjEBIA==}
+    engines: {node: '>=6.0.0'}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -1710,6 +1717,12 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  react-icon-cloud@4.1.4:
+    resolution: {integrity: sha512-hc8yGNU98V6ObPdeNIt75M016xGMxbTWqB4l6exo1uwE5bvFU095unMbX2K3YBKYhGKEV3c7fSmq3jD3cRWX+A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+
   react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
@@ -2541,6 +2554,8 @@ snapshots:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  '@csstools/convert-colors@2.0.0': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
@@ -4183,6 +4198,11 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  react-icon-cloud@4.1.4(react@18.2.0):
+    dependencies:
+      '@csstools/convert-colors': 2.0.0
+      react: 18.2.0
 
   react-refresh@0.14.0: {}
 

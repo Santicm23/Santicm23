@@ -27,9 +27,11 @@ const { class: className } = Astro.props
 		if (document.documentElement.classList.contains("dark")) {
 			document.documentElement.classList.remove("dark")
 			localStorage.setItem("theme", "light")
+			window.dispatchEvent(new Event('theme-change'));
 		} else {
 			document.documentElement.classList.add("dark")
 			localStorage.setItem("theme", "dark")
+			window.dispatchEvent(new Event('theme-change'));
 		}
 	})
 </script>

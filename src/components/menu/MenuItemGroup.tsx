@@ -9,7 +9,7 @@ const menu = [
 	{ name: "Contact", href: "#contact", selected: false },
 ]
 
-function Menu(): JSX.Element {
+function Menu() {
 	const [, setMenu] = useState(menu)
 	let previousIndex = 0
 

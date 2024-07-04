@@ -4,6 +4,39 @@ import BouncyLoader from "@/components/loaders/BouncyLoader.astro"
 import BentoGrid from "@/components/containers/BentoGrid.astro"
 import BentoGridItem from "@/components/containers/BentoGridItem.astro"
 import Vinyl from "@/components/others/Vinyl.astro"
+import Chip from "@/components/text/Chip.astro"
+import IconCloud from "@/components/others/IconCloud.tsx"
+
+const slugs = [
+  "typescript",
+  "java",
+  "python",
+	"cplusplus",
+  "rust",
+  "dart",
+	"kotlin",
+  "react",
+	"angular",
+	"astro",
+  "android",
+  "flutter",
+  "nextdotjs",
+  "tailwindcss",
+  "express",
+	"nestjs",
+	"fastapi",
+	"springboot",
+	"rabbitmq",
+  "nginx",
+  "prisma",
+	"poetry",
+	"selenium",
+  "git",
+  "docker",
+  "github",
+	"tensorflow",
+	"scikitlearn",
+];
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen w-2/3 p-20">
@@ -12,25 +45,28 @@ import Vinyl from "@/components/others/Vinyl.astro"
 		<BouncyLoader class="absolute left-full -translate-x-5 -translate-y-3" />
 	</SectionTitle>
 	<BentoGrid>
-		<BentoGridItem className="col-span-3 row-span-3">
-			<div slot="header">About me</div>
+		<BentoGridItem class="col-span-3 row-span-3">
+			<Chip slot="header">Me</Chip>
 		</BentoGridItem>
-		<BentoGridItem className="col-span-3 row-span-3">
-			<div slot="header">Experience</div>
+		<BentoGridItem class="col-span-3 row-span-3">
+			<Chip slot="header">Experience</Chip>
 		</BentoGridItem>
-		<BentoGridItem className="col-span-2 row-span-3">
-			<div slot="header">Education</div>
+		<BentoGridItem class="col-span-2 row-span-3">
+			<Chip slot="header">Education</Chip>
 		</BentoGridItem>
-		<BentoGridItem className="col-span-2">
+		<BentoGridItem class="col-span-2">
 			<div slot="title" class="flex h-full items-center">
 				<Vinyl />
 			</div>
 		</BentoGridItem>
-		<BentoGridItem className="col-span-2 row-span-3">
-			<div slot="header">Stack</div>
+		<BentoGridItem class="col-span-2 row-span-3">
+			<Chip slot="header">Stack</Chip>
+			<div slot="title">
+				<IconCloud iconSlugs={slugs} client:only />
+			</div>
 		</BentoGridItem>
-		<BentoGridItem className="col-span-2 row-span-2">
-			<div slot="header">Hobbies</div>
+		<BentoGridItem class="col-span-2 row-span-2">
+			<Chip slot="header">Hobbies</Chip>
 		</BentoGridItem>
 	</BentoGrid>
 </section>
