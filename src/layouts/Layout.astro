@@ -1,4 +1,5 @@
 ---
+
 interface Props {
 	title: string
 }
@@ -63,19 +64,11 @@ const { title } = Astro.props
 		}
 
 		.circular-gradient-light-purple {
-			background-image: radial-gradient(
-				circle farthest-side,
-				rgb(165, 180, 252),
-				transparent
-			);
+			background-image: radial-gradient(circle farthest-side, rgb(165, 180, 252), transparent);
 		}
 
 		html.dark .circular-gradient-dark-purple {
-			background-image: radial-gradient(
-				circle farthest-side,
-				rgb(46, 16, 101),
-				transparent
-			);
+			background-image: radial-gradient(circle farthest-side, rgb(46, 16, 101), transparent);
 		}
 	</style>
 </html>

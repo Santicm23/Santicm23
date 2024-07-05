@@ -39,6 +39,8 @@ const slugs = [
 	"github",
 	"tensorflow",
 	"scikitlearn",
+	"solidity",
+	"docsdotrs",
 ]
 
 const cloudProps: Omit<ICloud, "children"> = {

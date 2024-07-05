@@ -6,6 +6,11 @@ import BentoGridItem from "@/components/containers/BentoGridItem.astro"
 import Vinyl from "@/components/others/Vinyl.astro"
 import Chip from "@/components/text/Chip.astro"
 import IconCloud from "@/components/others/IconCloud.tsx"
+import HandMetalIcon from "@/components/icons/HandMetalIcon.astro"
+import StudyIcon from "@/components/icons/StudyIcon.astro"
+import StackIcon from "@/components/icons/StackIcon.astro"
+import PianoIcon from "@/components/icons/PianoIcon.astro"
+import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
@@ -15,13 +20,13 @@ import IconCloud from "@/components/others/IconCloud.tsx"
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header">Me</Chip>
+			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" /> Me</Chip>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header">Experience</Chip>
+			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" /> Work Experience</Chip>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
-			<Chip slot="header">Education</Chip>
+			<Chip slot="header"><StudyIcon class="w-6 pr-2" /> Education</Chip>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
 			<div slot="title" class="flex h-full items-center">
@@ -33,13 +38,13 @@ import IconCloud from "@/components/others/IconCloud.tsx"
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="aspect-square min-h-40 md:col-span-2 md:row-span-3 md:aspect-auto">
-			<Chip slot="header">Stack</Chip>
+			<Chip slot="header"><StackIcon class="w-6 pr-2" /> Stack</Chip>
 			<div slot="title" class="relative h-full w-full">
 				<IconCloud client:only />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="md:col-span-2 md:row-span-2">
-			<Chip slot="header">Hobbies</Chip>
+			<Chip slot="header"><PianoIcon class="w-6 pr-2" /> Hobbies</Chip>
 		</BentoGridItem>
 	</BentoGrid>
 </section>
