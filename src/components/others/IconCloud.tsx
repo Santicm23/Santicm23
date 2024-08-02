@@ -40,7 +40,9 @@ const slugs = [
 	"tensorflow",
 	"scikitlearn",
 	"solidity",
+	"solana",
 	"docsdotrs",
+	"amazonwebservices",
 ]
 
 const cloudProps: Omit<ICloud, "children"> = {

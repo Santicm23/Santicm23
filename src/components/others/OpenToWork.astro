@@ -1,0 +1,45 @@
+<div
+	class="outline-solid flex h-fit w-fit items-center gap-2 rounded-md border border-white px-3 py-1 outline-1 outline-gray-300 dark:border-gray-700 dark:outline-gray-700/20"
+>
+	<div class="circle h-2 w-2"></div>
+	<h3 class="text-xs">Open to work</h3>
+</div>
+
+<style>
+	.circle {
+		border-radius: 50%;
+		position: relative;
+		background-color: #90be6d;
+	}
+
+	.outline-solid {
+		outline-style: solid;
+	}
+
+	.circle::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-radius: 50%;
+		opacity: 0.5;
+		animation: animateLoader38 2s ease-out infinite;
+		background-color: #90be6d;
+	}
+
+	@keyframes animateLoader38 {
+		0% {
+			transform: scale(1);
+		}
+
+		50%,
+		75% {
+			transform: scale(2.5);
+		}
+
+		80%,
+		100% {
+			opacity: 0;
+		}
+	}
+</style>

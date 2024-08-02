@@ -11,6 +11,7 @@ import StudyIcon from "@/components/icons/StudyIcon.astro"
 import StackIcon from "@/components/icons/StackIcon.astro"
 import PianoIcon from "@/components/icons/PianoIcon.astro"
 import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
+import AboutText from "@/components/text/AboutText.astro"
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
@@ -21,9 +22,15 @@ import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
 			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" /> Me</Chip>
+			<div slot="title" class="h-full w-full px-2">
+				<AboutText />
+			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
 			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" /> Work Experience</Chip>
+			<div slot="title">
+				
+			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
 			<Chip slot="header"><StudyIcon class="w-6 pr-2" /> Education</Chip>
