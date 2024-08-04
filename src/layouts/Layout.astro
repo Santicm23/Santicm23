@@ -1,5 +1,4 @@
 ---
-
 interface Props {
 	title: string
 }
@@ -23,7 +22,7 @@ const { title } = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -41,10 +40,27 @@ const { title } = Astro.props
 		</main>
 	</body>
 	<style is:global>
+		@font-face {
+			font-family: "silkaregular_italic";
+			src: url("/fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.eot");
+			src:
+				url("/fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.eot?#iefix")
+					format("embedded-opentype"),
+				url("/fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.woff2")
+					format("woff2"),
+				url("/fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.woff")
+					format("woff"),
+				url("/fonts/Silka-Regular-&-Italic/Silka_Regular &_Italic_Webfont/Silka-Regular-&-Italic-Webfont/silka-regular-webfont.ttf")
+					format("truetype");
+			font-weight: normal;
+			font-style: normal;
+		}
+
 		html {
 			scroll-behavior: smooth;
 			scrollbar-color: #818cf8 transparent;
 			font-family:
+				"silkaregular_italic",
 				Jakarta,
 				sans-serif,
 				-apple-system,

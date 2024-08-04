@@ -1,6 +1,6 @@
 ### Hi there I'm **_Santiago_** 👋 👨‍💻
 
-![](./public/my-photo.jpg)
+![](./public/images/my-photo.jpg)
 
 ```python
 from dataclasses import dataclass
