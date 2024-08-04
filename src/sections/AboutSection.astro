@@ -12,6 +12,7 @@ import StackIcon from "@/components/icons/StackIcon.astro"
 import PianoIcon from "@/components/icons/PianoIcon.astro"
 import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
 import AboutText from "@/components/text/AboutText.astro"
+import WorkingExperience from "@/components/text/WorkingExperience.astro"
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
@@ -22,19 +23,19 @@ import AboutText from "@/components/text/AboutText.astro"
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
 			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" />Me</Chip>
-			<div slot="title" class="h-full w-full px-2">
+			<div class="h-full w-full px-2">
 				<AboutText />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
 			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" /> Work Experience</Chip>
-			<div slot="title"></div>
+			<WorkingExperience />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
 			<Chip slot="header"><StudyIcon class="w-6 pr-2" />Education</Chip>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
-			<div slot="title" class="flex h-full items-center">
+			<div class="flex h-full items-center">
 				<Vinyl />
 				<div class="mx-4 flex flex-col">
 					<span class="line-clamp-1">Wake up</span>
@@ -43,13 +44,13 @@ import AboutText from "@/components/text/AboutText.astro"
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="aspect-square min-h-40 md:col-span-2 md:row-span-3 md:aspect-auto">
-			<Chip slot="header"><StackIcon class="w-6 pr-2" /> Stack</Chip>
-			<div slot="title" class="relative h-full w-full">
+			<Chip slot="header"><StackIcon class="w-6 pr-2" />Stack</Chip>
+			<div class="relative h-full w-full">
 				<IconCloud client:only />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="md:col-span-2 md:row-span-2">
-			<Chip slot="header"><PianoIcon class="w-6 pr-2" /> Hobbies</Chip>
+			<Chip slot="header"><PianoIcon class="w-6 pr-2" />Hobbies</Chip>
 		</BentoGridItem>
 	</BentoGrid>
 </section>
