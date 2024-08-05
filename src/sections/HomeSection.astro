@@ -6,7 +6,6 @@ import CVIcon from "@/components/icons/CVIcon.astro"
 import GitHubIcon from "@/components/icons/GitHubIcon.astro"
 import LinkedInIcon from "@/components/icons/LinkedInIcon.astro"
 import Title from "@/components/text/Title.astro"
-import littleManCodingImage from "../../public/images/little_man_coding.webp"
 import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 ---
 
@@ -35,7 +34,9 @@ import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 	<Title />
 	<Image
 		class="mask-image filter-image dark-filter-image aspect-square w-32 rounded-full object-cover md:w-56"
-		src={littleManCodingImage}
+		src="/images/little_man_coding.webp"
+		height={128}
+		width={128}
 		alt="little man coding"
 		loading="eager"
 	/>

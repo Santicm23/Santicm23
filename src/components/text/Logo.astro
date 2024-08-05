@@ -1,11 +1,9 @@
 ---
 import { Image } from "astro:assets"
-
-import logo from "../../../public/images/logo.svg"
 ---
 
 <a href="#home" class="flex items-center gap-4 md:w-full">
-	<Image src={logo} alt="logo" class="h-10 w-10 rounded-full drop-shadow-md" loading="eager" />
+	<Image src="/images/logo.svg" alt="logo" height={40} width={40} class="rounded-full drop-shadow-md" loading="eager" />
 	<p
 		class="hidden bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-3xl font-bold text-transparent drop-shadow-md md:block"
 	>
