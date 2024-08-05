@@ -18,7 +18,7 @@ import WorkingExperience from "@/components/text/WorkingExperience.astro"
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>
 		About me
-		<BouncyLoader class="absolute left-full -translate-y-3" />
+		<BouncyLoader class="absolute left-full -translate-y-2 md:-translate-y-3" />
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
@@ -43,13 +43,13 @@ import WorkingExperience from "@/components/text/WorkingExperience.astro"
 				</div>
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="aspect-square min-h-40 md:col-span-2 md:row-span-3 md:aspect-auto">
+		<BentoGridItem class="aspect-square min-h-40 col-span-2 md:row-span-3 md:aspect-auto">
 			<Chip slot="header"><StackIcon class="w-6 pr-2" />Stack</Chip>
 			<div class="relative h-full w-full">
 				<IconCloud client:only />
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="md:col-span-2 md:row-span-2">
+		<BentoGridItem class="col-span-2 md:row-span-2">
 			<Chip slot="header"><PianoIcon class="w-6 pr-2" />Hobbies</Chip>
 		</BentoGridItem>
 	</BentoGrid>
