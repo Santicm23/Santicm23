@@ -2,8 +2,8 @@
 import TimelineItem from "./TimelineItem.astro"
 ---
 
-<div class="list-gradient flex h-full w-full overflow-scroll px-4 pb-0">
-	<ol class="relative h-max border-s border-gray-300 pt-1 dark:border-gray-700">
+<div class="list-gradient flex h-full w-full overflow-y-scroll px-4 pb-0">
+	<ol class="relative h-max border-s border-gray-300 pt-1 dark:border-gray-700 pb-4">
 		<TimelineItem
 			current
 			date="July 2024 → Now"
@@ -23,9 +23,8 @@ import TimelineItem from "./TimelineItem.astro"
 	</ol>
 </div>
 <style>
-	@media (min-width: 768px) {
-		.list-gradient {
-			mask: linear-gradient(transparent, black 5%, black 85%, transparent);
-		}
+	.list-gradient {
+		mask: linear-gradient(transparent, black 5%, black 85%, transparent);
+		scrollbar-width: none;
 	}
 </style>

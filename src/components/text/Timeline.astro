@@ -1,0 +1,32 @@
+---
+interface DateRange {
+	date: string
+	title: string
+	description: string
+	current?: boolean
+}
+
+interface Props {
+	dateRanges: DateRange[]
+}
+
+import TimelineItem from "./TimelineItem.astro"
+
+const { dateRanges } = Astro.props
+---
+
+<div class="list-gradient flex h-full w-full overflow-y-scroll px-4 pb-0">
+	<ol class="relative h-max border-s border-gray-300 pt-1 dark:border-gray-700 pb-4">
+		{dateRanges.map((dateRange) => (
+			<TimelineItem
+				{...dateRange}
+			/>
+		))}
+	</ol>
+</div>
+<style>
+	.list-gradient {
+		mask: linear-gradient(transparent, black 5%, black 85%, transparent);
+		scrollbar-width: none;
+	}
+</style>
