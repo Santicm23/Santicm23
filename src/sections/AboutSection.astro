@@ -21,12 +21,13 @@ import HobbiesIcon from "@/components/icons/HobbiesIcon.astro"
 import MusicIcon from "@/components/icons/MusicIcon.astro"
 import CodeIcon from "@/components/icons/CodeIcon.astro"
 import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
+import VideoGames from "@/components/icons/VideoGames.astro"
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>
 		About me
-		<BouncyLoader class="absolute left-full -translate-y-2 md:-translate-y-3 ml-2" />
+		<BouncyLoader class="absolute left-full ml-2 -translate-y-2 md:-translate-y-3" />
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
@@ -64,15 +65,20 @@ import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 				<div class="grid grid-cols-5 grid-rows-3 gap-4">
 					<span class="col-span-2 text-right">Sports:</span>
 					<div class="col-span-3 flex gap-2">
-						<TennisIcon class="stroke-gray-500 dark:stroke-gray-400"/><RunningIcon class="stroke-gray-500 dark:stroke-gray-400" /><ChessIcon class="stroke-gray-500 dark:stroke-gray-400" />
+						<TennisIcon class="stroke-indigo-400 dark:stroke-violet-400" />
+						<RunningIcon class="stroke-indigo-400 dark:stroke-violet-400" />
+						<ChessIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
 					<span class="col-span-2 text-right">Music:</span>
 					<div class="col-span-3 flex gap-2">
-						<PianoIcon class="stroke-gray-500 dark:stroke-gray-400" /><MusicIcon class="stroke-gray-500 dark:stroke-gray-400" />
+						<PianoIcon class="stroke-indigo-400 dark:stroke-violet-400" />
+						<MusicIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
 					<span class="col-span-2 text-right">Others:</span>
 					<div class="col-span-3 flex gap-2">
-						<CodeIcon class="stroke-gray-500 dark:stroke-gray-400" /><PuzzleIcon class="stroke-gray-500 dark:stroke-gray-400" />
+						<CodeIcon class="stroke-indigo-400 dark:stroke-violet-400" />
+						<PuzzleIcon class="stroke-indigo-400 dark:stroke-violet-400" />
+						<VideoGames class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
 				</div>
 			</div>
