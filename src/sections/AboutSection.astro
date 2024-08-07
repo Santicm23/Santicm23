@@ -13,12 +13,20 @@ import PianoIcon from "@/components/icons/PianoIcon.astro"
 import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
 import AboutText from "@/components/text/AboutText.astro"
 import WorkingExperience from "@/components/text/WorkingExperience.astro"
+import Education from "@/components/text/Education.astro"
+import RunningIcon from "@/components/icons/RunningIcon.astro"
+import TennisIcon from "@/components/icons/TennisIcon.astro"
+import ChessIcon from "@/components/icons/ChessIcon.astro"
+import HobbiesIcon from "@/components/icons/HobbiesIcon.astro"
+import MusicIcon from "@/components/icons/MusicIcon.astro"
+import CodeIcon from "@/components/icons/CodeIcon.astro"
+import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>
 		About me
-		<BouncyLoader class="absolute left-full -translate-y-2 md:-translate-y-3" />
+		<BouncyLoader class="absolute left-full -translate-y-2 md:-translate-y-3 ml-2" />
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
@@ -33,6 +41,7 @@ import WorkingExperience from "@/components/text/WorkingExperience.astro"
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
 			<Chip slot="header"><StudyIcon class="w-6 pr-2" />Education</Chip>
+			<Education />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
 			<div class="flex h-full items-center">
@@ -43,14 +52,30 @@ import WorkingExperience from "@/components/text/WorkingExperience.astro"
 				</div>
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="aspect-square min-h-40 col-span-2 md:row-span-3 md:aspect-auto">
+		<BentoGridItem class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto">
 			<Chip slot="header"><StackIcon class="w-6 pr-2" />Stack</Chip>
 			<div class="relative h-full w-full">
 				<IconCloud client:only="react" />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-2">
-			<Chip slot="header"><PianoIcon class="w-6 pr-2" />Hobbies</Chip>
+			<Chip slot="header"><HobbiesIcon class="w-6 pr-2" />Hobbies</Chip>
+			<div class="h-full w-full p-2">
+				<div class="grid grid-cols-5 grid-rows-3 gap-4">
+					<span class="col-span-2 text-right">Sports:</span>
+					<div class="col-span-3 flex gap-2">
+						<TennisIcon class="stroke-gray-500 dark:stroke-gray-400"/><RunningIcon class="stroke-gray-500 dark:stroke-gray-400" /><ChessIcon class="stroke-gray-500 dark:stroke-gray-400" />
+					</div>
+					<span class="col-span-2 text-right">Music:</span>
+					<div class="col-span-3 flex gap-2">
+						<PianoIcon class="stroke-gray-500 dark:stroke-gray-400" /><MusicIcon class="stroke-gray-500 dark:stroke-gray-400" />
+					</div>
+					<span class="col-span-2 text-right">Others:</span>
+					<div class="col-span-3 flex gap-2">
+						<CodeIcon class="stroke-gray-500 dark:stroke-gray-400" /><PuzzleIcon class="stroke-gray-500 dark:stroke-gray-400" />
+					</div>
+				</div>
+			</div>
 		</BentoGridItem>
 	</BentoGrid>
 </section>

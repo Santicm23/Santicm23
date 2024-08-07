@@ -1,0 +1,19 @@
+---
+import Timeline from "./Timeline.astro"
+
+const dataRanges = [
+	{
+		date: "July 2021 → Now",
+		title: "Systems engineer",
+		description: "Pontifica Universidad Javeriana",
+		current: true,
+	},
+	{
+		date: "September 2007 → July 2021",
+		title: "Baccalauréat and Colombian Bachelor",
+		description: "Liceo Francés Louis Pasteur",
+	},
+]
+---
+
+<Timeline dateRanges={dataRanges} />
