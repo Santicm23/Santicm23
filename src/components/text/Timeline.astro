@@ -15,8 +15,8 @@ import TimelineItem from "./TimelineItem.astro"
 const { dateRanges } = Astro.props
 ---
 
-<div class="list-gradient flex h-full w-full overflow-y-scroll px-4 pb-0">
-	<ol class="relative h-full border-s border-gray-300 pb-4 pt-1 dark:border-gray-700 [&>li]:mb-2">
+<div class="list-gradient flex h-full w-full overflow-y-scroll px-4">
+	<ol class="relative h-max border-s border-gray-300 pt-1 dark:border-gray-700 [&>li]:mb-2 mb-4">
 		{dateRanges.map((dateRange) => <TimelineItem {...dateRange} />)}
 	</ol>
 </div>

@@ -1,10 +1,22 @@
-<h1 class="relative gap-10 w-min text-nowrap text-5xl md:text-6xl text-gray-900 dark:text-gray-100"><slot /></h1>
-<div class="scroll-animation h-1 w-10 rounded-full bg-indigo-400 dark:bg-violet-400"></div>
+<div class="title-scroll-anim">
+	<h1
+		class="relative w-min gap-10 text-nowrap text-5xl text-gray-900 dark:text-gray-100 md:text-6xl"
+	>
+		<slot />
+	</h1>
+	<div class="scroll-animation h-1 w-10 rounded-full bg-indigo-400 dark:bg-violet-400"></div>
+</div>
 
 <style>
 	.scroll-animation {
 		animation: scroll-animation 1s ease-out;
 		animation-timeline: view();
+	}
+
+	.title-scroll-anim {
+		animation: fade-in 1s ease-out forwards;
+		animation-timeline: view();
+		animation-range: entry 10% cover 50%;
 	}
 
 	@keyframes scroll-animation {
@@ -16,3 +28,13 @@
 		}
 	}
 </style>
+<script>
+	window.addEventListener("scroll", () => {
+		const elements = document.querySelectorAll(".title-scroll-anim")
+		elements.forEach((element) => {
+			if (element.getBoundingClientRect().bottom < window.innerHeight / 2) {
+				element.classList.remove("title-scroll-anim")
+			}
+		})
+	})
+</script>

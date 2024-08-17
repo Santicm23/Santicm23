@@ -8,12 +8,12 @@ const { class: className } = Astro.props
 
 <div
 	class:list={[
-		"bento-item group/bento row-span-1 flex flex-col justify-between rounded-xl border border-white bg-white/20 p-4 outline-1 outline-gray-300 transition duration-200 shadow-xl dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20",
+		"bento-item bento-scroll-anim group/bento row-span-1 flex flex-col justify-between rounded-xl border border-white bg-white/20 p-4 shadow-xl outline-1 outline-gray-300 transition duration-200 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20",
 		className,
 	]}
 >
 	<slot name="header" />
-	<div class="h-[85%] my-auto">
+	<div class="my-auto h-[85%]">
 		<slot />
 	</div>
 </div>
@@ -21,4 +21,19 @@ const { class: className } = Astro.props
 	.bento-item {
 		outline-style: solid;
 	}
+	.bento-scroll-anim {
+		animation: fade-in 1s ease-out forwards;
+		animation-range: entry 0 cover 30%;
+		animation-timeline: view();
+	}
 </style>
+<script>
+	window.addEventListener("scroll", () => {
+		const elements = document.querySelectorAll(".bento-scroll-anim")
+		elements.forEach((element) => {
+			if (element.getBoundingClientRect().bottom < window.innerHeight * 0.7) {
+				element.classList.remove("bento-scroll-anim")
+			}
+		})
+	})
+</script>
