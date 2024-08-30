@@ -1,9 +1,13 @@
 ---
+import { initLanguage, languageStore } from "../stores/languageStore"
+
 interface Props {
 	title: string
 }
 
 const { title } = Astro.props
+
+initLanguage()
 ---
 
 <script is:inline>
@@ -17,7 +21,7 @@ const { title } = Astro.props
 	}
 </script>
 
-<html lang="en">
+<html lang={languageStore.get()}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -44,14 +48,10 @@ const { title } = Astro.props
 			font-family: "silkaregular_italic";
 			src: url("/fonts/Silka/silka-regular-webfont.eot");
 			src:
-				url("/fonts/Silka/silka-regular-webfont.eot?#iefix")
-					format("embedded-opentype"),
-				url("/fonts/Silka/silka-regular-webfont.woff2")
-					format("woff2"),
-				url("/fonts/Silka/silka-regular-webfont.woff")
-					format("woff"),
-				url("/fonts/Silka/silka-regular-webfont.ttf")
-					format("truetype");
+				url("/fonts/Silka/silka-regular-webfont.eot?#iefix") format("embedded-opentype"),
+				url("/fonts/Silka/silka-regular-webfont.woff2") format("woff2"),
+				url("/fonts/Silka/silka-regular-webfont.woff") format("woff"),
+				url("/fonts/Silka/silka-regular-webfont.ttf") format("truetype");
 			font-weight: normal;
 			font-style: normal;
 		}
