@@ -1,13 +1,9 @@
 ---
-import { initLanguage, languageStore } from "../stores/languageStore"
-
 interface Props {
 	title: string
 }
 
 const { title } = Astro.props
-
-initLanguage()
 ---
 
 <script is:inline>
@@ -19,9 +15,18 @@ initLanguage()
 		document.documentElement.classList.add("dark")
 		localStorage.setItem("theme", "dark")
 	}
+
+	const lang = localStorage.getItem("lang") || "en"
+
+	if (lang === "en" || lang === "es" || lang === "fr" || lang === "pt") {
+		document.documentElement.lang = lang
+		localStorage.setItem("lang", lang)
+	} else {
+		localStorage.setItem("lang", "en")
+	}
 </script>
 
-<html lang={languageStore.get()}>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
