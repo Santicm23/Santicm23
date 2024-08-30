@@ -2,6 +2,7 @@
 import ThemeToggle from "@/components/buttons/ThemeToggleButton.astro"
 import MenuItemGroup from "@/components/menu/MenuItemGroup"
 import Logo from "@/components/text/Logo.astro"
+import LanguageButton from "../buttons/LanguageButton.astro"
 ---
 
 <>
@@ -9,9 +10,10 @@ import Logo from "@/components/text/Logo.astro"
 		id="menu"
 		class="fixed z-20 h-16 w-full animate-slide-in-top bg-slate-200/20 backdrop-blur-md dark:bg-gray-950/60"
 	>
-		<nav class="m-auto flex h-full w-2/3 items-center justify-between px-1 md:gap-0">
+		<nav class="m-auto flex h-full w-2/3 items-center px-1 md:gap-4">
 			<Logo />
 			<MenuItemGroup client:load />
+			<LanguageButton />
 			<ThemeToggle class="flex justify-end" />
 		</nav>
 	</header>

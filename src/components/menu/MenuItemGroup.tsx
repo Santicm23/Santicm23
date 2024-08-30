@@ -48,7 +48,7 @@ function Menu() {
 
 	return (
 		<>
-			<ul className="hidden w-1/2 items-center gap-4 self-center px-4 sm:flex">
+			<ul className="hidden w-1/2 items-center gap-4 self-center sm:flex">
 				{menu.map((data) => (
 					<li key={data.name} className="group relative flex flex-col items-center">
 						<MenuItem {...data} onSelect={onSelect} />
