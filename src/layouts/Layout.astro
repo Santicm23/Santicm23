@@ -16,13 +16,19 @@ const { title } = Astro.props
 		localStorage.setItem("theme", "dark")
 	}
 
+	const url = window.location.pathname
 	const lang = localStorage.getItem("lang") || "en"
 
-	if (lang === "en" || lang === "es" || lang === "fr" || lang === "pt") {
-		document.documentElement.lang = lang
-		localStorage.setItem("lang", lang)
-	} else {
-		localStorage.setItem("lang", "en")
+	if (url === "/") {
+		if (lang === "es" || lang === "fr" || lang === "pt") {
+			window.location.pathname = `/${lang}`
+		}
+	} else if (url === "/es") {
+		document.documentElement.lang = "es"
+	} else if (url === "/fr") {
+		document.documentElement.lang = "fr"
+	} else if (url === "/pt") {
+		document.documentElement.lang = "pt"
 	}
 </script>
 

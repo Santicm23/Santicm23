@@ -22,26 +22,79 @@ import MusicIcon from "@/components/icons/MusicIcon.astro"
 import CodeIcon from "@/components/icons/CodeIcon.astro"
 import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 import VideoGames from "@/components/icons/VideoGames.astro"
+import { translate } from "@/utils/translate"
+
+const { pathname } = Astro.url
+
+const [title, me, workExperience, education, hobbies, stack, sports, music, others] = translate(
+	{
+		en: [
+			"About me",
+			"Me",
+			"Work Experience",
+			"Education",
+			"Hobbies",
+			"Tech Stack",
+			"Sports",
+			"Music",
+			"Others",
+		],
+		es: [
+			"Acerca de mí",
+			"Yo",
+			"Experiencia Laboral",
+			"Educación",
+			"Pasatiempos",
+			"Tecnologías",
+			"Deportes",
+			"Música",
+			"Otros",
+		],
+		fr: [
+			"Sur moi",
+			"Moi",
+			"Expérience professionnelle",
+			"Éducation",
+			"Loisirs",
+			"Technologies",
+			"Sports",
+			"Musique",
+			"Autres",
+		],
+		pt: [
+			"Sobre mim",
+			"Eu",
+			"Experiência de trabalho",
+			"Educação",
+			"Passatempos",
+			"Tecnologias",
+			"Esportes",
+			"Música",
+			"Outros",
+		],
+	},
+	pathname
+)
 ---
 
 <section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>
-		About me
+		{title}
 		<BouncyLoader class="absolute left-full ml-2 -translate-y-2 md:-translate-y-3" />
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" />Me</Chip>
+			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" />{me}</Chip>
 			<div class="h-full w-full px-2">
 				<AboutText />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" />Work Experience</Chip>
+			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" />{workExperience}</Chip>
 			<WorkingExperience />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
-			<Chip slot="header"><StudyIcon class="w-6 pr-2" />Education</Chip>
+			<Chip slot="header"><StudyIcon class="w-6 pr-2" />{education}</Chip>
 			<Education />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
@@ -54,27 +107,27 @@ import VideoGames from "@/components/icons/VideoGames.astro"
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto">
-			<Chip slot="header"><StackIcon class="w-6 pr-2" />Stack</Chip>
+			<Chip slot="header"><StackIcon class="w-6 pr-2" />{stack}</Chip>
 			<div class="relative h-full w-full">
 				<IconCloud client:only="react" />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-2">
-			<Chip slot="header"><HobbiesIcon class="w-6 pr-2" />Hobbies</Chip>
+			<Chip slot="header"><HobbiesIcon class="w-6 pr-2" />{hobbies}</Chip>
 			<div class="h-full w-full p-2">
 				<div class="grid grid-cols-5 grid-rows-3 gap-4">
-					<span class="col-span-2 text-right">Sports:</span>
+					<span class="col-span-2 text-right">{sports}:</span>
 					<div class="col-span-3 flex gap-2">
 						<TennisIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<RunningIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<ChessIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
-					<span class="col-span-2 text-right">Music:</span>
+					<span class="col-span-2 text-right">{music}:</span>
 					<div class="col-span-3 flex gap-2">
 						<PianoIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<MusicIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
-					<span class="col-span-2 text-right">Others:</span>
+					<span class="col-span-2 text-right">{others}:</span>
 					<div class="col-span-3 flex gap-2">
 						<CodeIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<PuzzleIcon class="stroke-indigo-400 dark:stroke-violet-400" />
