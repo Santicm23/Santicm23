@@ -23,7 +23,7 @@ const { class: className } = Astro.props
 
 <script>
 	const themeToggle = document.getElementById("theme-toggle")
-	themeToggle!.addEventListener("click", () => {
+	themeToggle?.addEventListener("click", () => {
 		if (document.documentElement.classList.contains("dark")) {
 			document.documentElement.classList.remove("dark")
 			localStorage.setItem("theme", "light")
