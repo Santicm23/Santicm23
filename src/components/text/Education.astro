@@ -4,24 +4,62 @@ import Timeline from "@/components/text/Timeline.astro"
 
 const { pathname } = Astro.url
 
-const [july, now, september, systemsEngineering, frenchAndColombianBachelor] = translate({
-	"en": ["July", "Now", "September", "Systems engineering", "French and Colombian Bachelor"],
-	"es": ["Julio", "Actualmente", "Septiembre", "Ingeniería de sistemas", "Bachiller Francés y Colombiano"],
-	"fr": ["Juillet", "Actuellement", "Septembre", "Ingénierie des systèmes", "Baccalauréat Français et Colombien"],
-	"pt": ["Julho", "Atualmente", "Setembro", "Engenharia de sistemas", "Bacharelado Francês e Colombiano"],
-}, pathname)
+const [july, now, september, systemsEngineering, frenchAndColombianBachelor, puj, school] =
+	translate(
+		{
+			en: [
+				"July",
+				"Now",
+				"September",
+				"Systems engineering",
+				"French and Colombian Bachelor",
+				"Pontifical Xavierian University",
+				"French Lyceum Louis Pasteur",
+			],
+			es: [
+				"Julio",
+				"Actualmente",
+				"Septiembre",
+				"Ingeniería de sistemas",
+				"Bachiller Francés y Colombiano",
+				"Universidad Pontificia Javeriana",
+				"Liceo Francés Louis Pasteur",
+			],
+			fr: [
+				"Juillet",
+				"Actuellement",
+				"Septembre",
+				"Ingénierie des systèmes",
+				"Baccalauréat Français et Colombien",
+				"Université Pontificale Xavérienne",
+				"Lycée Français Louis Pasteur",
+			],
+			pt: [
+				"Julho",
+				"Atualmente",
+				"Setembro",
+				"Engenharia de sistemas",
+				"Bacharelado Francês e Colombiano",
+				"Pontifícia Universidade Xaveriana",
+				"Liceu Francês Louis Pasteur",
+			],
+		},
+		pathname
+	)
 
 const dataRanges = [
 	{
 		date: `${july} 2021 → ${now}`,
 		title: `${systemsEngineering}`,
-		description: "Pontifica Universidad Javeriana",
+		institution: puj!,
+		institutionUrl: "https://www.javeriana.edu.co/",
 		current: true,
 	},
 	{
 		date: `${september} 2007 → ${july} 2021`,
 		title: `${frenchAndColombianBachelor}`,
-		description: "Liceo Francés Louis Pasteur",
+		institution: school!,
+		institutionUrl: "https://www.lfbogota.com/",
 	},
 ]
 ---
