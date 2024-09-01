@@ -1,11 +1,14 @@
-interface Translate {
-	en: string[]
-	es: string[]
-	fr: string[]
-	pt: string[]
+interface Translate<T = string | string[]> {
+	en: T
+	es: T
+	fr: T
+	pt: T
 }
 
-export function translate({ en, es, fr, pt }: Translate, pathname: string) {
+export function translate<T = string | string[]>(
+	{ en, es, fr, pt }: Translate<T>,
+	pathname: string
+): T {
 	switch (pathname) {
 		case "/" || "/en":
 			return en

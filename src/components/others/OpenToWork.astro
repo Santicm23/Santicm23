@@ -1,8 +1,24 @@
+---
+import { translate } from "@/utils/translate"
+
+const { pathname } = Astro.url
+
+const openToWork = translate(
+	{
+		en: "Open to work",
+		es: "Abierto al trabajo",
+		fr: "Ouvert au travail",
+		pt: "Aberto ao trabalho",
+	},
+	pathname
+)
+---
+
 <div
 	class="outline-solid flex h-fit w-fit items-center gap-2 rounded-md border border-white px-3 py-1 outline-1 outline-gray-300 dark:border-gray-700 dark:outline-gray-700/20"
 >
 	<div class="circle h-2 w-2"></div>
-	<h3 class="text-xs">Open to work</h3>
+	<h3 class="text-center text-xs">{openToWork}</h3>
 </div>
 
 <style>

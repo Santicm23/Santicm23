@@ -1,12 +1,19 @@
 ---
 import OpenToWork from "@/components/others/OpenToWork.astro"
+import { translate } from "@/utils/translate"
+
+const { pathname } = Astro.url
+
+const [myNameIs] = translate(
+	{ en: ["My name is "], es: ["Mi nombre es "], fr: ["Je m'appelle "], pt: ["Meu nome é "] },
+	pathname
+)
 ---
 
 <div>
 	<div class="flex items-center justify-between pb-1">
 		<h2 class="text-gray-500 dark:text-gray-400">
-			My name is <br /><span
-				class="bg-indigo-400 bg-clip-text text-lg text-transparent dark:bg-violet-400"
+			{myNameIs}<span class="bg-indigo-400 bg-clip-text text-lg text-transparent dark:bg-violet-400"
 				>Santiago Castro</span
 			>
 		</h2>
@@ -14,7 +21,7 @@ import OpenToWork from "@/components/others/OpenToWork.astro"
 	</div>
 	<hr class="h-[2px] border-gray-300 bg-white dark:border-gray-950/80 dark:bg-white/10" />
 	<p
-		class="text-balance text-sm lg:text-base pt-2 text-gray-400 [&>span]:text-black [&>span]:dark:text-white"
+		class="text-balance pt-2 text-sm text-gray-400 lg:text-base [&>span]:text-black [&>span]:dark:text-white"
 	>
 		I am a <span>software engineer</span> with a passion for <span>web development</span>, <span
 			>cloud</span
