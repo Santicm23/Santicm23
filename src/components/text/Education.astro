@@ -1,16 +1,26 @@
 ---
-import Timeline from "./Timeline.astro"
+import { translate } from "@/utils/translate"
+import Timeline from "@/components/text/Timeline.astro"
+
+const { pathname } = Astro.url
+
+const [july, now, september, systemsEngineering, frenchAndColombianBachelor] = translate({
+	"en": ["July", "Now", "September", "Systems engineering", "French and Colombian Bachelor"],
+	"es": ["Julio", "Actualmente", "Septiembre", "Ingeniería de sistemas", "Bachiller Francés y Colombiano"],
+	"fr": ["Juillet", "Actuellement", "Septembre", "Ingénierie des systèmes", "Baccalauréat Français et Colombien"],
+	"pt": ["Julho", "Atualmente", "Setembro", "Engenharia de sistemas", "Bacharelado Francês e Colombiano"],
+}, pathname)
 
 const dataRanges = [
 	{
-		date: "July 2021 → Now",
-		title: "Systems engineer",
+		date: `${july} 2021 → ${now}`,
+		title: `${systemsEngineering}`,
 		description: "Pontifica Universidad Javeriana",
 		current: true,
 	},
 	{
-		date: "September 2007 → July 2021",
-		title: "Baccalauréat and Colombian Bachelor",
+		date: `${september} 2007 → ${july} 2021`,
+		title: `${frenchAndColombianBachelor}`,
 		description: "Liceo Francés Louis Pasteur",
 	},
 ]

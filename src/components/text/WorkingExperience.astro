@@ -1,21 +1,31 @@
 ---
+import { translate } from "@/utils/translate"
 import Timeline from "./Timeline.astro"
+
+const { pathname } = Astro.url
+
+const [july, november, now, headOfDevelopment, studentTutor, dataStructures, introProgramming] = translate({
+	"en": ["July", "November", "Now", "Head of development", "Student tutor", "Data structures", "Introduction to programming"],
+	"es": ["Julio", "Noviembre", "Actualmente", "Jefe de desarrollo", "Monitor", "Estructuras de datos", "Introducción a la programación"],
+	"fr": ["Juillet", "Novembre", "Actuellement", "Chef de développement", "Moniteur", "Structures de données", "Introduction à la programmation"],
+	"pt": ["Julho", "Novembro", "Atualmente", "Chefe de desenvolvimento", "Monitor", "Estruturas de dados", "Introdução à programação"],
+}, pathname)
 
 const dataRanges = [
 	{
-		date: "July 2024 → Now",
-		title: "Head of development",
+		date: `${july} 2024 → ${now}`,
+		title: headOfDevelopment!,
 		description: "Bucks",
 		current: true,
 	},
 	{
-		date: "July 2023 → November 2023",
-		title: "Student tutor - Data structures",
+		date: `${july} 2023 → ${november} 2023`,
+		title: `${studentTutor} - ${dataStructures}`,
 		description: "Pontificia Universidad Javeriana",
 	},
 	{
-		date: "July 2022 → November 2022",
-		title: "Student tutor - Introduction to programming",
+		date: `${july} 2022 → ${november} 2022`,
+		title: `${studentTutor} - ${introProgramming}`,
 		description: "Pontificia Universidad Javeriana",
 	},
 ]
