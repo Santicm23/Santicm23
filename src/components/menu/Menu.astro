@@ -3,16 +3,28 @@ import ThemeToggle from "@/components/buttons/ThemeToggleButton.astro"
 import MenuItemGroup from "@/components/menu/MenuItemGroup"
 import Logo from "@/components/text/Logo.astro"
 import LanguageButton from "@/components/buttons/LanguageButton.astro"
+import { translate } from "@/utils/translate"
+
+const { pathname } = Astro.url
+const menuNames = translate(
+	{
+		en: ["Home", "About", "Projects", "Contact"],
+		es: ["Inicio", "Sobre mí", "Proyectos", "Contacto"],
+		fr: ["Accueil", "À propos", "Projets", "Contact"],
+		pt: ["Início", "Sobre mim", "Projetos", "Contato"],
+	},
+	pathname
+)
 ---
 
 <>
 	<header
 		id="menu"
-		class="fixed z-20 h-16 w-full animate-slide-in-top before:absolute before:h-full before:w-full before:bg-slate-200/20 before:backdrop-blur-md before:dark:bg-gray-950/60 before:-z-10"
+		class="fixed z-20 h-16 w-full animate-slide-in-top before:absolute before:-z-10 before:h-full before:w-full before:bg-slate-200/20 before:backdrop-blur-md before:dark:bg-gray-950/60"
 	>
-		<nav class="m-auto flex h-full w-2/3 items-center px-1 md:gap-12 justify-between">
+		<nav class="m-auto flex h-full w-2/3 items-center justify-between px-1 md:gap-12">
 			<Logo />
-			<MenuItemGroup client:load />
+			<MenuItemGroup client:load names={menuNames} />
 			<LanguageButton />
 			<ThemeToggle class="flex justify-end" />
 		</nav>

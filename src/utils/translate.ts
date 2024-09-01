@@ -1,8 +1,8 @@
 interface Translate {
-	en: string | string[]
-	es: string | string[]
-	fr: string | string[]
-	pt: string | string[]
+	en: string[]
+	es: string[]
+	fr: string[]
+	pt: string[]
 }
 
 export function translate({ en, es, fr, pt }: Translate, pathname: string) {

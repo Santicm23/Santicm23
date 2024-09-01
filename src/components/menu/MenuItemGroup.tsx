@@ -9,7 +9,16 @@ const menu = [
 	{ name: "Contact", href: "#contact", selected: false },
 ]
 
-function Menu() {
+interface MenuProps {
+	names: string[]
+}
+
+function Menu({ names }: MenuProps) {
+	menu[0]!.name = names[0]!
+	menu[1]!.name = names[1]!
+	menu[2]!.name = names[2]!
+	menu[3]!.name = names[3]!
+
 	const [, setMenu] = useState(menu)
 	let previousIndex = 0
 
