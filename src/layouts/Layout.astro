@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
 interface Props {
 	title: string
@@ -22,13 +23,25 @@ const lang = getLangFromUrl(Astro.url)
 	const url = window.location.pathname
 </script>
 
-<html lang={lang}>
+<html lang={lang} transition:name="root" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain.">
+		<meta name="keywords" content="Santiago Castro Muñoz, Portfolio, Head of Development, Web Development, Cloud, Machine Learning, Blockchain">
+		<meta name="author" content="Santiago Castro Muñoz">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:image" content="/images/my-photo.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain." />
+		<meta name="twitter:image" content="/images/my-photo.jpg" />
+		<ViewTransitions />
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-200 dark:bg-gray-950">
