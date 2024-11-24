@@ -11,7 +11,6 @@ import StudyIcon from "@/components/icons/StudyIcon.astro"
 import StackIcon from "@/components/icons/StackIcon.astro"
 import PianoIcon from "@/components/icons/PianoIcon.astro"
 import HandshakeIcon from "@/components/icons/HandshakeIcon.astro"
-import AboutText from "@/components/text/AboutText.astro"
 import WorkingExperience from "@/components/text/WorkingExperience.astro"
 import Education from "@/components/text/Education.astro"
 import RunningIcon from "@/components/icons/RunningIcon.astro"
@@ -22,79 +21,45 @@ import MusicIcon from "@/components/icons/MusicIcon.astro"
 import CodeIcon from "@/components/icons/CodeIcon.astro"
 import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 import VideoGames from "@/components/icons/VideoGames.astro"
-import { translate } from "@/utils/translate"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+import AboutMe from "@/components/containers/AboutMe.astro"
 
-const { pathname } = Astro.url
+const lang = getLangFromUrl(Astro.url)
 
-const [title, me, workExperience, education, hobbies, stack, sports, music, others] = translate(
-	{
-		en: [
-			"About me",
-			"Me",
-			"Work Experience",
-			"Education",
-			"Hobbies",
-			"Tech Stack",
-			"Sports",
-			"Music",
-			"Others",
-		],
-		es: [
-			"Sobre mí",
-			"Yo",
-			"Experiencia Laboral",
-			"Educación",
-			"Pasatiempos",
-			"Tecnologías",
-			"Deportes",
-			"Música",
-			"Otros",
-		],
-		fr: [
-			"Á propos de moi",
-			"Moi",
-			"Expérience professionnelle",
-			"Éducation",
-			"Loisirs",
-			"Technologies",
-			"Sports",
-			"Musique",
-			"Autres",
-		],
-		pt: [
-			"Sobre mim",
-			"Eu",
-			"Experiência de trabalho",
-			"Educação",
-			"Passatempos",
-			"Tecnologias",
-			"Esportes",
-			"Música",
-			"Outros",
-		],
-	},
-	pathname
-)
+const t = useTranslations(lang)
 ---
 
-<section id="about" class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
+<section
+	id="about"
+	class="relative z-10 mx-auto min-h-screen max-w-[70rem] p-4 md:p-20"
+>
 	<SectionTitle>
-		{title}
-		<BouncyLoader class="absolute left-full ml-2 -translate-y-2 md:-translate-y-3" />
+		{t("about.title")}
+		<BouncyLoader
+			class="absolute left-full ml-2 -translate-y-2 md:-translate-y-3"
+		/>
 	</SectionTitle>
 	<BentoGrid>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header"><HandMetalIcon class="w-6 pr-2" />{me}</Chip>
+			<Chip slot="header"
+				><HandMetalIcon class="w-6 pr-2" />{t("about.label.me")}</Chip
+			>
 			<div class="h-full w-full px-2">
-				<AboutText />
+				<AboutMe />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
-			<Chip slot="header"><HandshakeIcon class="w-6 pr-2" />{workExperience}</Chip>
+			<Chip slot="header"
+				><HandshakeIcon class="w-6 pr-2" />{
+					t("about.label.work-experience")
+				}</Chip
+			>
 			<WorkingExperience />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-3">
-			<Chip slot="header"><StudyIcon class="w-6 pr-2" />{education}</Chip>
+			<Chip slot="header"
+				><StudyIcon class="w-6 pr-2" />{t("about.label.education")}</Chip
+			>
 			<Education />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
@@ -102,32 +67,41 @@ const [title, me, workExperience, education, hobbies, stack, sports, music, othe
 				<Vinyl />
 				<div class="mx-4 flex flex-col">
 					<span class="line-clamp-1">Wake up</span>
-					<span class="line-clamp-1 text-gray-500 dark:text-gray-400">Imagine Dragons</span>
+					<span class="line-clamp-1 text-gray-500 dark:text-gray-400"
+						>Imagine Dragons</span
+					>
 				</div>
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto">
-			<Chip slot="header"><StackIcon class="w-6 pr-2" />{stack}</Chip>
-			<div class="relative h-full w-full">
+		<BentoGridItem
+			class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto"
+		>
+			<Chip slot="header"
+				><StackIcon class="w-6 pr-2" />{t("about.label.tech-stack")}</Chip
+			>
+			<div class="relative h-full w-full aspect-square lg:aspect-auto">
 				<IconCloud client:only="react" />
 			</div>
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2 md:row-span-2">
-			<Chip slot="header"><HobbiesIcon class="w-6 pr-2" />{hobbies}</Chip>
+			<Chip slot="header"
+				><HobbiesIcon class="w-6 pr-2" />{t("about.label.hobbies")}</Chip
+			>
 			<div class="h-full w-full p-2">
 				<div class="grid grid-cols-5 grid-rows-3 gap-4">
-					<span class="col-span-2 text-right">{sports}:</span>
+					<span class="col-span-2 text-right">{t("about.hobbies.sports")}:</span
+					>
 					<div class="col-span-3 flex gap-2">
 						<TennisIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<RunningIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<ChessIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
-					<span class="col-span-2 text-right">{music}:</span>
+					<span class="col-span-2 text-right">{t("about.hobbies.music")}:</span>
 					<div class="col-span-3 flex gap-2">
 						<PianoIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<MusicIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 					</div>
-					<span class="col-span-2 text-right">{others}:</span>
+					<span class="col-span-2 text-right">{t("others")}:</span>
 					<div class="col-span-3 flex gap-2">
 						<CodeIcon class="stroke-indigo-400 dark:stroke-violet-400" />
 						<PuzzleIcon class="stroke-indigo-400 dark:stroke-violet-400" />

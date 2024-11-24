@@ -1,24 +1,15 @@
 ---
-import { translate } from "@/utils/translate.ts"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 
-const { pathname } = Astro.url
-
-const [greeting, a, systemsEngineer, colombia] = translate(
-	{
-		en: ["Hi! I'm ", "A", "Systems Engineer", "from Colombia"],
-		es: ["¡Hola! soy ", "Un", "Ingeniero de Sistemas", "de Colombia"],
-		fr: ["Salut! Je suis ", "Un", "Ingénieur Système", "de Colombie"],
-		pt: ["Oi! Eu sou ", "Um", "Engenheiro de Sistemas", "da Colômbia"],
-	},
-	pathname
-)
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <div class="flex flex-col">
 	<h1
 		class="font text-center text-3xl font-semibold text-gray-900 [text-wrap:balance] dark:text-gray-100 sm:text-[2.75rem] md:text-start xl:animate-tracking-in-expand 2xl:text-6xl"
 	>
-		{greeting}
+		{t("home.title.greeting")}
 		<span
 			class="inline-flex bg-gradient-to-r from-gray-900 via-indigo-400 bg-[200%_auto] bg-clip-text leading-loose text-transparent dark:from-gray-100 dark:via-violet-400"
 		>
@@ -28,8 +19,8 @@ const [greeting, a, systemsEngineer, colombia] = translate(
 	<h3
 		class="relative text-center text-gray-900 dark:text-gray-100 md:-top-4 xl:animate-tracking-in-expand xl:text-start"
 	>
-		{a}
-		<span class="text-indigo-400 dark:text-violet-400">{systemsEngineer}</span>
-		{colombia} 🇨🇴
+		{t("home.title.a")}
+		<span class="text-indigo-400 dark:text-violet-400">{t("home.title.systems-engineer")}</span>
+		{t("home.title.from-colombia")} 🇨🇴
 	</h3>
 </div>

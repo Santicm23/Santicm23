@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import MenuItem from "@/components/menu/MenuItem"
+import { useTranslations } from "@/utils/i18n"
 
 const menu = [
 	{ name: "Home", href: "#home", selected: true },
@@ -10,14 +11,16 @@ const menu = [
 ]
 
 interface MenuProps {
-	names: string[]
+	lang: "en" | "es" | "fr" | "pt"
 }
 
-function Menu({ names }: MenuProps) {
-	menu[0]!.name = names[0]!
-	menu[1]!.name = names[1]!
-	menu[2]!.name = names[2]!
-	menu[3]!.name = names[3]!
+function Menu({lang}: MenuProps): JSX.Element {
+	const t = useTranslations(lang)
+
+	menu[0]!.name = t("nav.home")
+	menu[1]!.name = t("nav.about")
+	menu[2]!.name = t("nav.projects")
+	menu[3]!.name = t("nav.contact")
 
 	const [, setMenu] = useState(menu)
 	let previousIndex = 0
@@ -57,7 +60,7 @@ function Menu({ names }: MenuProps) {
 
 	return (
 		<>
-			<ul className="hidden items-center gap-4 self-center md:flex">
+			<ul className="hidden items-center gap-4 self-center lg:flex">
 				{menu.map((data) => (
 					<li key={data.name} className="group relative flex flex-col items-center">
 						<MenuItem {...data} onSelect={onSelect} />

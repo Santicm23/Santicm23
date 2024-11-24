@@ -1,64 +1,23 @@
 ---
-import { translate } from "@/utils/translate"
 import Timeline from "@/components/text/Timeline.astro"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 
-const { pathname } = Astro.url
+const lang = getLangFromUrl(Astro.url)
 
-const [july, now, september, systemsEngineering, frenchAndColombianBachelor, puj, school] =
-	translate(
-		{
-			en: [
-				"July",
-				"Now",
-				"September",
-				"Systems engineering",
-				"French and Colombian Bachelor",
-				"Pontifical Xavierian University",
-				"French Lyceum Louis Pasteur",
-			],
-			es: [
-				"Julio",
-				"Actualmente",
-				"Septiembre",
-				"Ingeniería de sistemas",
-				"Bachiller Francés y Colombiano",
-				"Universidad Pontificia Javeriana",
-				"Liceo Francés Louis Pasteur",
-			],
-			fr: [
-				"Juillet",
-				"Actuellement",
-				"Septembre",
-				"Ingénierie des systèmes",
-				"Baccalauréat Français et Colombien",
-				"Université Pontificale Xavérienne",
-				"Lycée Français Louis Pasteur",
-			],
-			pt: [
-				"Julho",
-				"Atualmente",
-				"Setembro",
-				"Engenharia de sistemas",
-				"Bacharelado Francês e Colombiano",
-				"Pontifícia Universidade Xaveriana",
-				"Liceu Francês Louis Pasteur",
-			],
-		},
-		pathname
-	)
+const t = useTranslations(lang)
 
 const dataRanges = [
 	{
-		date: `${july} 2021 → ${now}`,
-		title: `${systemsEngineering}`,
-		institution: puj!,
+		date: `${t("calendar.july")} 2021 → ${t("calendar.now")}`,
+		title: t("education.puj.career"),
+		institution: "Pontificia Universidad Javeriana",
 		institutionUrl: "https://www.javeriana.edu.co/",
 		current: true,
 	},
 	{
-		date: `${september} 2007 → ${july} 2021`,
-		title: `${frenchAndColombianBachelor}`,
-		institution: school!,
+		date: `${t("calendar.september")} 2007 → ${t("calendar.july")} 2021`,
+		title: t("education.lfb.title"),
+		institution: "Lycée Français Louis Pasteur",
 		institutionUrl: "https://www.lfbogota.com/",
 	},
 ]

@@ -1,9 +1,12 @@
 ---
+import { getLangFromUrl } from "../utils/i18n"
 interface Props {
 	title: string
 }
 
 const { title } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <script is:inline>
@@ -17,22 +20,9 @@ const { title } = Astro.props
 	}
 
 	const url = window.location.pathname
-	const lang = localStorage.getItem("lang") || "en"
-
-	if (url === "/") {
-		if (lang === "es" || lang === "fr" || lang === "pt") {
-			window.location.pathname = `/${lang}`
-		}
-	} else if (url === "/es") {
-		document.documentElement.lang = "es"
-	} else if (url === "/fr") {
-		document.documentElement.lang = "fr"
-	} else if (url === "/pt") {
-		document.documentElement.lang = "pt"
-	}
 </script>
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

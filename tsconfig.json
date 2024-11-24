@@ -1,7 +1,11 @@
 {
-  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "baseUrl": ".",
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"],
       "@/components": ["src/components/*"],
@@ -10,7 +14,7 @@
       "@/pages": ["src/pages/*"],
       "@/sections": ["src/sections/*"]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    "types": ["astro/client", "react"]
+  },
+  "extends": "astro/tsconfigs/strictest"
 }

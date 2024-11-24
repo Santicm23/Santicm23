@@ -1,82 +1,43 @@
 ---
-import { translate } from "@/utils/translate"
 import Timeline from "./Timeline.astro"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 
-const { pathname } = Astro.url
+const lang = getLangFromUrl(Astro.url)
 
-const [
-	july,
-	november,
-	now,
-	headOfDevelopment,
-	studentTutor,
-	dataStructures,
-	introProgramming,
-	puj,
-] = translate(
-	{
-		en: [
-			"July",
-			"November",
-			"Now",
-			"Head of development",
-			"Student tutor",
-			"Data structures",
-			"Introduction to programming",
-			"Pontifical Xavierian University",
-		],
-		es: [
-			"Julio",
-			"Noviembre",
-			"Actualmente",
-			"Líder de desarrollo",
-			"Monitor",
-			"Estructuras de datos",
-			"Introducción a la programación",
-			"Pontificia Universidad Javeriana",
-		],
-		fr: [
-			"Juillet",
-			"Novembre",
-			"Actuellement",
-			"Chef de développement",
-			"Moniteur",
-			"Structures de données",
-			"Introduction à la programmation",
-			"Université Pontificale Xavérienne",
-		],
-		pt: [
-			"Julho",
-			"Novembro",
-			"Atualmente",
-			"Chefe de desenvolvimento",
-			"Monitor",
-			"Estruturas de dados",
-			"Introdução à programação",
-			"Pontifícia Universidade Xaveriana",
-		],
-	},
-	pathname
-)
+const t = useTranslations(lang)
 
 const dataRanges = [
 	{
-		date: `${july} 2024 → ${now}`,
-		title: headOfDevelopment!,
+		date: `${t("calendar.july")} 2024 → ${t("calendar.now")}`,
+		title: t("work.bucks.position"),
 		institution: "Bucks",
 		institutionUrl: "https://www.bucks-finance.com/",
 		current: true,
 	},
 	{
-		date: `${july} 2023 → ${november} 2023`,
-		title: `${studentTutor} - ${dataStructures}`,
-		institution: puj!,
+		date: `${t("calendar.october")} 2023 → ${t("calendar.now")}`,
+		title: t("work.innovatech.position"),
+		institution: "Innovatech Consulting & Services",
+		institutionUrl: "https://www.innovatechcys.com/",
+		current: true,
+	},
+	{
+		date: `${t("calendar.july")} 2024 → ${t("calendar.november")} 2024`,
+		title: t("work.talleres-esperanza.position"),
+		institution: t("work.talleres-esperanza.name"),
+		institutionUrl: "https://www.talleresesperanza.org/",
+		internship: true,
+	},
+	{
+		date: `${t("calendar.july")} 2023 → ${t("calendar.november")} 2023`,
+		title: t("work.puj.position1"),
+		institution: "Pontificia Universidad Javeriana",
 		institutionUrl: "https://www.javeriana.edu.co/",
 	},
 	{
-		date: `${july} 2022 → ${november} 2022`,
-		title: `${studentTutor} - ${introProgramming}`,
-		institution: puj!,
+		date: `${t("calendar.july")} 2022 → ${t("calendar.november")} 2022`,
+		title: t("work.puj.position2"),
+		institution: "Pontificia Universidad Javeriana",
 		institutionUrl: "https://www.javeriana.edu.co/",
 	},
 ]
