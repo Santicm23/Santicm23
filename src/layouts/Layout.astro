@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
 interface Props {
 	title: string
@@ -22,7 +23,7 @@ const lang = getLangFromUrl(Astro.url)
 	const url = window.location.pathname
 </script>
 
-<html lang={lang}>
+<html lang={lang} transition:name="root" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain.">
@@ -40,6 +41,7 @@ const lang = getLangFromUrl(Astro.url)
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain." />
 		<meta name="twitter:image" content="/images/my-photo.jpg" />
+		<ViewTransitions />
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-200 dark:bg-gray-950">

@@ -8,7 +8,7 @@ const { class: className } = Astro.props
 
 <div class={className}>
 	<button
-		id="theme-toggle"
+		onclick="toggleTheme()"
 		class="relative aspect-[2/1] h-8 rounded-full bg-gray-800 shadow-inner [&_*]:rounded-full [&_*]:transition-all [&_*]:duration-500"
 	>
 		<div
@@ -21,9 +21,8 @@ const { class: className } = Astro.props
 	</button>
 </div>
 
-<script>
-	const themeToggle = document.getElementById("theme-toggle")
-	themeToggle?.addEventListener("click", () => {
+<script is:inline>
+	function toggleTheme() {
 		if (document.documentElement.classList.contains("dark")) {
 			document.documentElement.classList.remove("dark")
 			localStorage.setItem("theme", "light")
@@ -33,5 +32,5 @@ const { class: className } = Astro.props
 			localStorage.setItem("theme", "dark")
 			window.dispatchEvent(new Event('theme-change'));
 		}
-	})
+	}
 </script>
