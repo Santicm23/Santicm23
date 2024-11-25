@@ -14,7 +14,7 @@ export default function Vinyl({ alt, src }: Props) {
 					height="64"
 					decoding="async"
 					data-nimg="1"
-					className="absolute bottom-0 left-0 right-0 top-0 z-10 m-auto h-[38px] w-auto animate-[spin_5s_linear_infinite] rounded-full object-cover text-transparent"
+					className="absolute bottom-0 left-0 right-0 top-0 z-10 m-auto h-10 w-auto animate-[spin_5s_linear_infinite] rounded-full object-cover text-transparent"
 					src={src}
 				/>
 			</div>
