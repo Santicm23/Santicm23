@@ -23,10 +23,13 @@ import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 import VideoGames from "@/components/icons/VideoGames.astro"
 import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 import AboutMe from "@/components/containers/AboutMe.astro"
+import { getRandomSong } from "@/services/musicService"
 
 const lang = getLangFromUrl(Astro.url)
 
 const t = useTranslations(lang)
+
+const { title = "", author = "", thumbnail = "https://example.com/image.jpg" } = await getRandomSong()
 ---
 
 <section
@@ -64,11 +67,14 @@ const t = useTranslations(lang)
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
 			<div class="flex h-full items-center">
-				<Vinyl />
+				<Vinyl
+					src={thumbnail}
+					alt={title}
+				/>
 				<div class="mx-4 flex flex-col">
-					<span class="line-clamp-1">Wake up</span>
+					<span class="line-clamp-1">{title}</span>
 					<span class="line-clamp-1 text-gray-500 dark:text-gray-400"
-						>Imagine Dragons</span
+						>{author}</span
 					>
 				</div>
 			</div>
@@ -79,7 +85,7 @@ const t = useTranslations(lang)
 			<Chip slot="header"
 				><StackIcon class="w-6 pr-2" />{t("about.label.tech-stack")}</Chip
 			>
-			<div class="relative h-full w-full aspect-square lg:aspect-auto">
+			<div class="relative aspect-square h-full w-full lg:aspect-auto">
 				<IconCloud client:only="react" />
 			</div>
 		</BentoGridItem>
