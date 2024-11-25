@@ -68,6 +68,17 @@ export default {
 						transform: "translateY(-50%)",
 					},
 				},
+				"skeleton": {
+					"0%": {
+						opacity: "0.2",
+					},
+					"50%": {
+						opacity: "0.4",
+					},
+					"100%": {
+						opacity: "0.2",
+					},
+				},
 			},
 			animation: {
 				"tracking-in-expand": "tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both",
@@ -78,6 +89,7 @@ export default {
 				"third": "moveInCircle 40s linear infinite",
 				"fourth": "moveHorizontal 40s ease infinite",
 				"fifth": "moveInCircle 20s ease infinite",
+				"skeleton": "skeleton 4s ease infinite",
 			},
 		},
 	},
