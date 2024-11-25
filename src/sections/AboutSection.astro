@@ -3,7 +3,7 @@ import SectionTitle from "@/components/text/SectionTitle.astro"
 import BouncyLoader from "@/components/loaders/BouncyLoader.astro"
 import BentoGrid from "@/components/containers/BentoGrid.astro"
 import BentoGridItem from "@/components/containers/BentoGridItem.astro"
-import Vinyl from "@/components/others/Vinyl.astro"
+import Music from "@/components/containers/Music"
 import Chip from "@/components/text/Chip.astro"
 import IconCloud from "@/components/others/IconCloud.tsx"
 import HandMetalIcon from "@/components/icons/HandMetalIcon.astro"
@@ -23,13 +23,10 @@ import PuzzleIcon from "@/components/icons/PuzzleIcon.astro"
 import VideoGames from "@/components/icons/VideoGames.astro"
 import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 import AboutMe from "@/components/containers/AboutMe.astro"
-import { getRandomSong } from "@/services/musicService"
 
 const lang = getLangFromUrl(Astro.url)
 
 const t = useTranslations(lang)
-
-const { title = "", author = "", thumbnail = "https://example.com/image.jpg" } = await getRandomSong()
 ---
 
 <section
@@ -66,18 +63,7 @@ const { title = "", author = "", thumbnail = "https://example.com/image.jpg" } =
 			<Education />
 		</BentoGridItem>
 		<BentoGridItem class="col-span-2">
-			<div class="flex h-full items-center">
-				<Vinyl
-					src={thumbnail}
-					alt={title}
-				/>
-				<div class="mx-4 flex flex-col">
-					<span class="line-clamp-1">{title}</span>
-					<span class="line-clamp-1 text-gray-500 dark:text-gray-400"
-						>{author}</span
-					>
-				</div>
-			</div>
+			<Music client:only="react" />
 		</BentoGridItem>
 		<BentoGridItem
 			class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto"

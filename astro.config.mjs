@@ -9,4 +9,5 @@ export default defineConfig({
 	integrations: [tailwind(), react()],
 	output: "server",
 	adapter: vercel(),
+	// site: "https://santicm.com",
 })
