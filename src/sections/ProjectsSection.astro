@@ -1,7 +1,14 @@
 ---
+import ProjectCard from "@/components/containers/ProjectCard.astro"
 import SectionTitle from "@/components/text/SectionTitle.astro"
 ---
 
 <section id="projects" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>Projects</SectionTitle>
+	<div class="grid grid-cols-4 mt-10 gap-4">
+		<ProjectCard project={{ title: "Project 1", description: "Description 1", image: "/images/my-photo.jpg" }} />
+		<ProjectCard project={{ title: "Project 2", description: "Description 2", image: "/images/my-photo.jpg" }} />
+		<ProjectCard project={{ title: "Project 3", description: "Description 3", image: "/images/my-photo.jpg" }} />
+		<ProjectCard project={{ title: "Project 4", description: "Description 4", image: "/images/my-photo.jpg" }} />
+	</div>
 </section>

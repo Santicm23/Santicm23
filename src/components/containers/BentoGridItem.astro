@@ -8,7 +8,7 @@ const { class: className } = Astro.props
 
 <div
 	class:list={[
-		"bento-item bento-scroll-anim group/bento row-span-1 flex flex-col justify-between rounded-xl border border-white bg-white/20 p-4 shadow-xl outline-1 outline-gray-300 transition duration-200 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20",
+		"bento-scroll-anim group/bento row-span-1 flex flex-col justify-between rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 transition duration-200 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20",
 		className,
 	]}
 >
@@ -18,9 +18,6 @@ const { class: className } = Astro.props
 	</div>
 </div>
 <style>
-	.bento-item {
-		outline-style: solid;
-	}
 	.bento-scroll-anim {
 		animation: fade-in 1s ease-out forwards;
 		animation-range: entry 0 cover 30%;

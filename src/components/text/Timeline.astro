@@ -1,14 +1,6 @@
 ---
 import TimelineItem from "@/components/text/TimelineItem.astro"
-
-interface DateRange {
-	date: string
-	title: string
-	institution: string
-	institutionUrl: string
-	current?: boolean
-	internship?: boolean
-}
+import type { DateRange } from "@/models/dateRange"
 
 interface Props {
 	dateRanges: DateRange[]
@@ -17,8 +9,10 @@ interface Props {
 const { dateRanges } = Astro.props
 ---
 
-<div class="list-gradient flex h-full w-full overflow-y-scroll px-4">
-	<ol class="relative mb-4 h-max border-s border-gray-300 pt-1 dark:border-gray-700 [&>li]:mb-2">
+<div class="list-gradient flex h-full w-full overflow-y-scroll px-5">
+	<ol
+		class="relative mb-4 h-max border-s border-gray-300 pt-1 dark:border-gray-700 [&>li]:mb-2"
+	>
 		{dateRanges.map((dateRange) => <TimelineItem {...dateRange} />)}
 	</ol>
 </div>

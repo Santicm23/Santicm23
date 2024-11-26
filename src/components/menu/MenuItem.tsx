@@ -1,3 +1,5 @@
+import { cn } from "@/utils/tailwind"
+
 interface Props {
 	name: string
 	href: string
@@ -10,10 +12,10 @@ function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
 		<>
 			<a
 				href={href}
-				className={
-					"text-nowrap text-sm text-slate-600 transition duration-300 dark:text-slate-200" +
-					(selected ? " -translate-y-1" : " group-hover:-translate-y-1")
-				}
+				className={cn(
+					"text-nowrap text-sm text-slate-600 transition duration-300 dark:text-slate-200",
+					selected ? " -translate-y-1" : " group-hover:-translate-y-1"
+				)}
 				onClick={() => {
 					onSelect(name)
 				}}

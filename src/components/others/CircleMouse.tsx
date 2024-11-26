@@ -59,7 +59,7 @@ export default function CircleMouse() {
 	return (
 		<div
 			ref={circleRef}
-			className="pointer-events-none fixed -left-[10px] -top-[10px] z-50 hidden h-5 w-5 rounded-full border border-white md:block"
+			className="pointer-events-none fixed -left-[10px] -top-[10px] z-50 hidden h-5 w-5 rounded-full border border-black dark:border-white md:block bg-slate-200/20 dark:bg-gray-950/20 backdrop-blur-[1px]"
 		></div>
 	)
 }

@@ -1,0 +1,14 @@
+---
+import type { Project } from "@/models/project"
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+
+<div class="p-4 flex flex-col outline outline-1 border shadow-xl rounded-xl border-white bg-white/20 outline-gray-300 transition duration-200 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20">
+  <h2>{project.title}</h2>
+  <p>{project.description}</p>
+</div>

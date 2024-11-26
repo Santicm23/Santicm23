@@ -49,7 +49,9 @@ export default function Music() {
 			<a
 				href={`https://music.youtube.com/watch?v=${song.video_id}&list=PLBe_IcbkA8Dh5AckMuidKfT0SFiTmSc0Q`}
 				target="_blank"
-				className="ml-auto mr-2 rounded-lg border border-white/40 bg-indigo-400/10 p-2 text-indigo-400 outline outline-1 outline-indigo-400/40 transition-colors duration-150 hover:bg-indigo-400/20 dark:border-white/10 dark:bg-violet-400/10 dark:text-violet-400 dark:outline-violet-400/50 hover:dark:bg-violet-400/20"
+				rel="noreferrer"
+				aria-label="Play song"
+				className="ml-auto mr-2 rounded-lg border border-indigo-300/40 bg-indigo-400/10 p-2 text-indigo-400 outline outline-1 outline-indigo-400/40 transition-colors duration-150 hover:bg-indigo-400/20 dark:border-violet-100/10 dark:bg-violet-400/10 dark:text-violet-400 dark:outline-violet-400/50 hover:dark:bg-violet-400/20"
 			>
 				<PlayIcon className="h-5 w-5" />
 			</a>
