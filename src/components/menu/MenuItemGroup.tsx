@@ -7,7 +7,7 @@ const menu = [
 	{ name: "Home", href: "#home", selected: true },
 	{ name: "About", href: "#about", selected: false },
 	{ name: "Projects", href: "#projects", selected: false },
-	{ name: "Contact", href: "#contact", selected: false },
+	{ name: "More", href: "#more", selected: false },
 ]
 
 interface MenuProps {
@@ -20,7 +20,7 @@ function Menu({lang}: MenuProps): JSX.Element {
 	menu[0]!.name = t("nav.home")
 	menu[1]!.name = t("nav.about")
 	menu[2]!.name = t("nav.projects")
-	menu[3]!.name = t("nav.contact")
+	menu[3]!.name = t("nav.more")
 
 	const [, setMenu] = useState(menu)
 	let previousIndex = 0

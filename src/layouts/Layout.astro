@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
+import CircleMouse from "@/components/others/CircleMouse"
 interface Props {
 	title: string
 }
@@ -53,6 +54,7 @@ const lang = getLangFromUrl(Astro.url)
 			class="circular-gradient-light-purple circular-gradient-dark-purple fixed bottom-0 right-[-10%] top-[10%] z-0 aspect-square h-1/2 rounded-full"
 		>
 		</div>
+		<CircleMouse client:only />
 		<main>
 			<slot />
 		</main>
