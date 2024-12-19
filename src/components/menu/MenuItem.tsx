@@ -14,7 +14,10 @@ function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
 				href={href}
 				className={cn(
 					"text-nowrap text-sm text-slate-600 transition duration-300 dark:text-slate-200",
-					selected ? " -translate-y-1" : " group-hover:-translate-y-1"
+					{
+						"-translate-y-1": selected,
+						"group-hover:-translate-y-1": !selected,
+					}
 				)}
 				onClick={() => {
 					onSelect(name)

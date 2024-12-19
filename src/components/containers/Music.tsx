@@ -14,7 +14,7 @@ const defaultSong: Song = {
 
 export default function Music() {
 	const [song, setSong] = useState<Song>(defaultSong)
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		getRandomSong()
@@ -22,8 +22,9 @@ export default function Music() {
 				setSong(data)
 				setLoading(false)
 			})
-			.catch(() => {
+			.catch((e) => {
 				setSong(defaultSong)
+				console.error(e)
 				console.error("Error while fetching song")
 			})
 	}, [])
@@ -34,8 +35,8 @@ export default function Music() {
 			<div className={cn("mx-4 flex flex-col justify-center", loading && "gap-2")}>
 				{loading ? (
 					<>
-						<div className="animate-skeleton h-5 w-28 max-w-sm rounded-lg bg-black dark:bg-white" />
-						<div className="animate-skeleton h-5 w-24 max-w-sm rounded-lg bg-gray-500 dark:bg-gray-400" />
+						<div className="animate-skeleton h-5 w-28 max-w-sm rounded-lg bg-gray-500 dark:bg-gray-200" />
+						<div className="animate-skeleton h-4 w-24 max-w-sm rounded-lg bg-gray-400 dark:bg-gray-400" />
 					</>
 				) : (
 					<>

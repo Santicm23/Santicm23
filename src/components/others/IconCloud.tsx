@@ -43,6 +43,7 @@ const slugs = [
 	"apachekafka",
 	"keycloak",
 	"amazonwebservices",
+	"cpanel",
 ]
 
 const cloudProps: Omit<ICloud, "children"> = {

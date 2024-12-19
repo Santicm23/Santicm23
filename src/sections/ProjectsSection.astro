@@ -1,14 +1,66 @@
 ---
 import ProjectCard from "@/components/containers/ProjectCard.astro"
+import GitHubIcon from "@/components/icons/GitHubIcon.astro"
 import SectionTitle from "@/components/text/SectionTitle.astro"
+
+const projects = [
+	{
+		title: "Bucks Finance",
+		description: "Description 1",
+		image: "/images/bucks.png",
+		links: [],
+		tech: [],
+	},
+	{
+		title: "Pamii Opportunities module",
+		description: "Description 2",
+		image: "/images/pamii.png",
+		links: [],
+		tech: [],
+	},
+	{
+		title: "Sigar",
+		description: "Description 3",
+		image: "/images/sigar.png",
+		links: [],
+		tech: [],
+	},
+	{
+		title: "Snacks app",
+		description: "Description 4",
+		image: "/images/snacks-app.png",
+		links: [],
+		tech: [],
+	},
+	{
+		title: "Chess lab",
+		description: "Description 5",
+		image: "/images/chess-lab.png",
+		links: [],
+		tech: [],
+	},
+	{
+		title: "Heat Wave",
+		description: "Description 6",
+		image: "/images/heat-wave.png",
+		links: [],
+		tech: [],
+	},
+]
 ---
 
 <section id="projects" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>Projects</SectionTitle>
-	<div class="grid grid-cols-4 mt-10 gap-4">
-		<ProjectCard project={{ title: "Project 1", description: "Description 1", image: "/images/my-photo.jpg" }} />
-		<ProjectCard project={{ title: "Project 2", description: "Description 2", image: "/images/my-photo.jpg" }} />
-		<ProjectCard project={{ title: "Project 3", description: "Description 3", image: "/images/my-photo.jpg" }} />
-		<ProjectCard project={{ title: "Project 4", description: "Description 4", image: "/images/my-photo.jpg" }} />
+	<div class="mb-6 mt-10 grid grid-cols-3 gap-4">
+		{projects.map((project) => <ProjectCard project={project} />)}
+	</div>
+	<div class="flex w-full justify-center">
+		<a
+			href="https://github.com/Santicm23"
+			target="_blank"
+			rel="noreferrer"
+			class="flex items-center gap-1 transition-all hover:scale-105 hover:text-indigo-400 hover:dark:text-violet-400"
+			><GitHubIcon class="h-[18px] w-[18px]" /> Others</a
+		>
 	</div>
 </section>

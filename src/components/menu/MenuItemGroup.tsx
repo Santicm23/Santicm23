@@ -27,21 +27,22 @@ function Menu({lang}: MenuProps): JSX.Element {
 
 	useEffect(() => {
 		const onScroll = () => {
-			const sectionIndex = Math.floor(window.scrollY / window.innerHeight)
-
-			if (previousIndex === sectionIndex) return
-
-			menu.forEach((item, index) => {
-				if (index === sectionIndex) {
-					item.selected = true
-					previousIndex = sectionIndex
-				} else {
-					item.selected = false
-				}
+			const sections = menu.map(item => document.querySelector(item.href))
+			const currentSection = sections.find((section) => {
+				const rect = section?.getBoundingClientRect()
+				return rect && rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2
 			})
+			const sectionIndex = sections.indexOf(currentSection as Element)
+	
+			if (previousIndex === sectionIndex || sectionIndex === -1) return
+	
+			menu.forEach((item, index) => {
+				item.selected = index === sectionIndex
+			})
+			previousIndex = sectionIndex
 			setMenu({ ...menu })
 		}
-
+	
 		window.removeEventListener("scroll", onScroll)
 		window.addEventListener("scroll", onScroll, { passive: true })
 		return () => window.removeEventListener("scroll", onScroll)

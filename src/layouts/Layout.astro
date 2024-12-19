@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ClientRouter } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
 import CircleMouse from "@/components/others/CircleMouse"
 interface Props {
@@ -24,7 +24,7 @@ const lang = getLangFromUrl(Astro.url)
 	const url = window.location.pathname
 </script>
 
-<html lang={lang} transition:name="root" transition:animate="none">
+<html lang={lang} data-transition-name="root" data-transition-animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain.">
@@ -42,7 +42,7 @@ const lang = getLangFromUrl(Astro.url)
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain." />
 		<meta name="twitter:image" content="/images/my-photo.jpg" />
-		<ViewTransitions />
+		<ClientRouter />
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-200 dark:bg-gray-950">
@@ -54,7 +54,7 @@ const lang = getLangFromUrl(Astro.url)
 			class="circular-gradient-light-purple circular-gradient-dark-purple fixed bottom-0 right-[-10%] top-[10%] z-0 aspect-square h-1/2 rounded-full"
 		>
 		</div>
-		<CircleMouse client:only />
+		<CircleMouse client:only="react" />
 		<main>
 			<slot />
 		</main>

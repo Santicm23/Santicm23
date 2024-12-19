@@ -89,7 +89,7 @@ export default {
 				"third": "moveInCircle 40s linear infinite",
 				"fourth": "moveHorizontal 40s ease infinite",
 				"fifth": "moveInCircle 20s ease infinite",
-				"skeleton": "skeleton 4s ease infinite",
+				"skeleton": "skeleton 3s ease infinite",
 			},
 		},
 	},
