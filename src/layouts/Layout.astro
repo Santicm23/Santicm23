@@ -22,6 +22,15 @@ const lang = getLangFromUrl(Astro.url)
 	}
 
 	const url = window.location.pathname
+
+	window.addEventListener("scroll", () => {
+		const elements = document.querySelectorAll(".fade-in-scroll")
+		elements.forEach((element) => {
+			if (element.getBoundingClientRect().y < window.innerHeight / 2) {
+				element.classList.remove("fade-in-scroll")
+			}
+		})
+	})
 </script>
 
 <html lang={lang} data-transition-name="root" data-transition-animate="none">
@@ -101,6 +110,12 @@ const lang = getLangFromUrl(Astro.url)
 
 		html.dark .circular-gradient-dark-purple {
 			background-image: radial-gradient(circle farthest-side, rgb(46, 16, 101), transparent);
+		}
+
+		.fade-in-scroll {
+			animation: fade-in 1s ease-out forwards;
+			animation-range: entry 0 cover 30%;
+			animation-timeline: view();
 		}
 	</style>
 </html>

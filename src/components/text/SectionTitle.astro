@@ -1,4 +1,4 @@
-<div class="title-scroll-anim">
+<div class="fade-in-scroll">
 	<h2
 		class="relative w-min gap-10 text-nowrap text-4xl text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl"
 	>
@@ -14,12 +14,6 @@
 		animation-timeline: view();
 	}
 
-	.title-scroll-anim {
-		animation: fade-in 1s ease-out forwards;
-		animation-timeline: view();
-		animation-range: entry 10% cover 50%;
-	}
-
 	@keyframes scroll-animation {
 		0% {
 			transform: translateX(100px);
@@ -29,13 +23,3 @@
 		}
 	}
 </style>
-<script>
-	window.addEventListener("scroll", () => {
-		const elements = document.querySelectorAll(".title-scroll-anim")
-		elements.forEach((element) => {
-			if (element.getBoundingClientRect().bottom < window.innerHeight / 2) {
-				element.classList.remove("title-scroll-anim")
-			}
-		})
-	})
-</script>
