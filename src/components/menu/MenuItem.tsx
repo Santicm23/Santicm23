@@ -26,10 +26,10 @@ function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
 				{name}
 			</a>
 			<div
-				className={
-					"absolute bottom-0 h-[2px] w-0 rounded-full bg-indigo-400 transition-all duration-300 dark:bg-violet-400" +
-					(selected ? " w-full" : " group-hover:w-full")
-				}
+				className={cn(
+					"absolute bottom-0 h-[2px] w-0 rounded-full bg-indigo-400 transition-all duration-300 dark:bg-violet-400",
+					selected ? "w-full" : "group-hover:w-full"
+				)}
 			></div>
 		</>
 	)
