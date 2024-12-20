@@ -1,0 +1,71 @@
+---
+import { getLangFromUrl } from "@/utils/i18n"
+
+const lang = getLangFromUrl(Astro.url)
+---
+
+<div
+	id="lang-options"
+	class="relative mt-6 hidden flex-col overflow-hidden rounded-lg border border-white opacity-0 shadow-xl outline-1 outline-gray-300 before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-slate-200/30 before:backdrop-blur-md group-hover:flex group-hover:opacity-100 dark:border-white/10 dark:shadow-none dark:outline-gray-700/20 before:dark:bg-gray-950/30"
+>
+	<a
+		href="/"
+		class:list={[
+			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			{ "bg-white/50 dark:bg-gray-500/20": lang === "en" },
+		]}
+	>
+		<span>🇬🇧</span>
+		<span class="w-full text-center text-slate-600 dark:text-slate-200"
+			>English</span
+		>
+	</a>
+	<a
+		href="/es"
+		class:list={[
+			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			{ "bg-white/50 dark:bg-gray-500/20": lang === "es" },
+		]}
+	>
+		<span>🇪🇸</span>
+		<span class="w-full text-center text-slate-600 dark:text-slate-200"
+			>Español</span
+		>
+	</a>
+	<a
+		href="/fr"
+		class:list={[
+			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			lang === "fr" ? "bg-white/50 dark:bg-gray-500/20" : "",
+			{ "bg-white/50 dark:bg-gray-500/20": lang === "fr" },
+		]}
+	>
+		<span>🇫🇷</span>
+		<span class="w-full text-center text-slate-600 dark:text-slate-200"
+			>Français</span
+		>
+	</a>
+	<a
+		href="/pt"
+		class:list={[
+			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			{ "bg-white/50 dark:bg-gray-500/20": lang === "pt" },
+		]}
+	>
+		<span>🇵🇹</span>
+		<span class="w-full text-center text-slate-600 dark:text-slate-200"
+			>Português</span
+		>
+	</a>
+</div>
+<style>
+	#lang-options {
+		transition-property: height width opacity;
+		transition-duration: 0.2s;
+		transition-behavior: allow-discrete;
+
+		@starting-style {
+			opacity: 0;
+		}
+	}
+</style>

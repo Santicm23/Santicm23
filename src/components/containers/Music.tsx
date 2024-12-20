@@ -48,7 +48,7 @@ export default function Music() {
 				)}
 			</div>
 			<a
-				href={`https://music.youtube.com/watch?v=${song.video_id}&list=PLBe_IcbkA8Dh5AckMuidKfT0SFiTmSc0Q`}
+				href={`https://music.youtube.com/watch?${song.video_id ? `v=${song.video_id}&` : ""}list=PLBe_IcbkA8Dh5AckMuidKfT0SFiTmSc0Q`}
 				target="_blank"
 				rel="noreferrer"
 				aria-label="Play song"

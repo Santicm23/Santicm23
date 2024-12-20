@@ -10,6 +10,7 @@ import {
 import useTheme from "@/hooks/useTheme"
 import { isDarkColor, isLightColor } from "@/utils/colors"
 
+// Names from simple icons
 const slugs = [
 	"typescript",
 	"java",
@@ -41,9 +42,9 @@ const slugs = [
 	"solidity",
 	"solana",
 	"apachekafka",
-	"keycloak",
 	"amazonwebservices",
-	"cpanel",
+	"looker",
+	"shadcnui"
 ]
 
 const cloudProps: Omit<ICloud, "children"> = {

@@ -1,12 +1,12 @@
 ---
 import LanguageIcon from "@/components/icons/LanguageIcon.astro"
-import Languages from "@/components/containers/Languages.tsx"
+import Languages from "@/components/containers/Languages.astro"
 ---
 
 <div class="relative mx-2">
 	<LanguageIcon class="text-slate-600 dark:text-slate-200" />
 	<div class="group absolute left-1/2 top-0 z-20 -translate-x-1/2">
 		<div class="mx-auto h-6 w-6 cursor-pointer"></div>
-		<Languages client:only="react" />
+		<Languages />
 	</div>
 </div>

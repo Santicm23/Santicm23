@@ -54,12 +54,16 @@ export default function CircleMouse() {
 		})
 
 		tick()
+
+		return () => {
+			window.removeEventListener("mousemove", () => {})
+		}
 	}, [])
 
 	return (
 		<div
 			ref={circleRef}
-			className="pointer-events-none fixed -left-[10px] -top-[10px] z-50 hidden h-5 w-5 rounded-full border border-black dark:border-white md:block bg-slate-200/20 dark:bg-gray-950/20 backdrop-blur-[1px]"
+			className="pointer-events-none fixed -left-[10px] -top-[10px] z-50 hidden h-5 w-5 rounded-full border border-black bg-slate-200/20 backdrop-blur-[1px] dark:border-white dark:bg-gray-950/20 md:block"
 		></div>
 	)
 }
