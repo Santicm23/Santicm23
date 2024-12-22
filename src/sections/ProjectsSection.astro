@@ -51,7 +51,7 @@ const projects = [
 
 <section id="projects" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>Projects</SectionTitle>
-	<div class="mb-6 mt-10 grid grid-cols-3 gap-4">
+	<div class="mb-6 mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		{projects.map((project) => <ProjectCard project={project} />)}
 	</div>
 	<div class="flex w-full justify-center">

@@ -40,7 +40,7 @@ const t = useTranslations(lang)
 		/>
 	</SectionTitle>
 	<BentoGrid>
-		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
+		<BentoGridItem class="col-span-2 lg:col-span-3 lg:row-span-3">
 			<Chip slot="header"
 				><HandMetalIcon class="w-6 pr-2" />{t("about.label.me")}</Chip
 			>
@@ -48,7 +48,7 @@ const t = useTranslations(lang)
 				<AboutMe />
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="col-span-2 md:col-span-3 md:row-span-3">
+		<BentoGridItem class="col-span-2 lg:col-span-3 lg:row-span-3">
 			<Chip slot="header"
 				><HandshakeIcon class="w-6 pr-2" />{
 					t("about.label.work-experience")
@@ -56,7 +56,7 @@ const t = useTranslations(lang)
 			>
 			<WorkingExperience />
 		</BentoGridItem>
-		<BentoGridItem class="col-span-2 md:row-span-3">
+		<BentoGridItem class="col-span-2 lg:row-span-3">
 			<Chip slot="header"
 				><StudyIcon class="w-6 pr-2" />{t("about.label.education")}</Chip
 			>
@@ -66,7 +66,7 @@ const t = useTranslations(lang)
 			<Music client:only="react" />
 		</BentoGridItem>
 		<BentoGridItem
-			class="col-span-2 aspect-square min-h-40 md:row-span-3 md:aspect-auto"
+			class="col-span-2 aspect-square min-h-40 md:aspect-auto lg:row-span-3"
 		>
 			<Chip slot="header"
 				><StackIcon class="w-6 pr-2" />{t("about.label.tech-stack")}</Chip
@@ -75,7 +75,7 @@ const t = useTranslations(lang)
 				<IconCloud client:only="react" />
 			</div>
 		</BentoGridItem>
-		<BentoGridItem class="col-span-2 md:row-span-2">
+		<BentoGridItem class="col-span-2 lg:row-span-2">
 			<Chip slot="header"
 				><HobbiesIcon class="w-6 pr-2" />{t("about.label.hobbies")}</Chip
 			>
