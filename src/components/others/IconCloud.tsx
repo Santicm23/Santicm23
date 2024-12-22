@@ -10,42 +10,41 @@ import {
 import useTheme from "@/hooks/useTheme"
 import { isDarkColor, isLightColor } from "@/utils/colors"
 
-// Names from simple icons
-const slugs = [
-	"typescript",
-	"java",
-	"python",
-	"cplusplus",
-	"rust",
-	"dart",
-	"kotlin",
-	"react",
-	"angular",
-	"astro",
-	"flutter",
-	"nextdotjs",
-	"tailwindcss",
-	"express",
-	"nestjs",
-	"fastapi",
-	"springboot",
-	"rabbitmq",
-	"nginx",
-	"prisma",
-	"jest",
-	"pytest",
-	"selenium",
-	"docker",
-	"github",
-	"tensorflow",
-	"scikitlearn",
-	"solidity",
-	"solana",
-	"apachekafka",
-	"amazonwebservices",
-	"looker",
-	"shadcnui"
-]
+// Names from simple icons and their colors
+const slugsColors = {
+	typescript: "#3178C6",
+	java: "#F44336",
+	python: "#0277BD",
+	cplusplus: "#0086D4",
+	rust: "#000000",
+	dart: "#1565C0",
+	kotlin: "#806EE3",
+	react: "#80DEEA",
+	angular: "#9717e7",
+	astro: "#C822FF",
+	flutter: "#40C4FF",
+	nextdotjs: "#212121",
+	tailwindcss: "#00ACC1",
+	express: "#000000",
+	nestjs: "#F50057",
+	fastapi: "#009688",
+	springboot: "#6DB33F",
+	rabbitmq: "#FF6600",
+	nginx: "#43A047",
+	prisma: "#000000",
+	selenium: "#21A366",
+	docker: "#2395EC",
+	github: "#000000",
+	tensorflow: "#FF6F00",
+	scikitlearn: "#F7931E",
+	solidity: "#666666",
+	solana: "#C822FF",
+	apachekafka: "#231F20",
+	amazonwebservices: "#232F3E",
+	looker: "#2196F3",
+	shadcnui: "#000000",
+	graphql: "#E10098",
+}
 
 const cloudProps: Omit<ICloud, "children"> = {
 	containerProps: {
@@ -70,7 +69,7 @@ const cloudProps: Omit<ICloud, "children"> = {
 		initial: [0.1, -0.1],
 		clickToFront: 500,
 		tooltipDelay: 0,
-		// outlineColour: "#0000",
+		outlineColour: "#0000",
 		maxSpeed: 0.03,
 		minSpeed: 0.01,
 		radiusX: 0.75,
@@ -80,6 +79,7 @@ const cloudProps: Omit<ICloud, "children"> = {
 }
 
 export function renderCustomIcon(icon: SimpleIcon, theme: string) {
+	icon.hex = slugsColors[icon.slug as keyof typeof slugsColors]
 	const simpleIcon: any = {
 		icon,
 		minContrastRatio: 0,
@@ -91,8 +91,6 @@ export function renderCustomIcon(icon: SimpleIcon, theme: string) {
 			onClick: (e: any) => e.preventDefault(),
 		},
 	}
-
-	console.log(icon.hex)
 
 	if (theme === "light") {
 		if (isLightColor(icon.hex)) {
@@ -124,13 +122,15 @@ export default function IconCloud() {
 	const theme = isDarkMode ? "dark" : "light"
 
 	useEffect(() => {
-		fetchSimpleIcons({ slugs }).then(setData)
+		fetchSimpleIcons({ slugs: Object.keys(slugsColors) }).then(setData)
 	}, [])
 
 	const renderedIcons = useMemo(() => {
 		if (!data) return null
 
-		return Object.values(data.simpleIcons).map((icon) => renderCustomIcon(icon, theme || "light"))
+		return Object.values(data.simpleIcons).map((icon) =>
+			renderCustomIcon(icon, theme || "light")
+		)
 	}, [data, theme])
 
 	return (
