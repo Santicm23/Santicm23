@@ -26,16 +26,16 @@ export function getLuminance(r: number, g: number, b: number): number {
 	return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs
 }
 
-export function isLightColor(hex: string): boolean {
-	const { r, g, b } = hexToRgb(hex)
-	const luminance = getLuminance(r, g, b)
+export function isLightColor(_hex: string): boolean {
+	// const { r, g, b } = hexToRgb(hex)
+	// const luminance = getLuminance(r, g, b)
 	// return luminance > 0.80;
 	return false
 }
 
-export function isDarkColor(hex: string): boolean {
-  const { r, g, b } = hexToRgb(hex)
-	const luminance = getLuminance(r, g, b)
+export function isDarkColor(_hex: string): boolean {
+  // const { r, g, b } = hexToRgb(hex)
+	// const luminance = getLuminance(r, g, b)
 	// return luminance < 0.05
   return false
 }
