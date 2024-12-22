@@ -70,7 +70,7 @@ const cloudProps: Omit<ICloud, "children"> = {
 		initial: [0.1, -0.1],
 		clickToFront: 500,
 		tooltipDelay: 0,
-		outlineColour: "#0000",
+		// outlineColour: "#0000",
 		maxSpeed: 0.03,
 		minSpeed: 0.01,
 		radiusX: 0.75,
@@ -91,6 +91,8 @@ export function renderCustomIcon(icon: SimpleIcon, theme: string) {
 			onClick: (e: any) => e.preventDefault(),
 		},
 	}
+
+	console.log(icon.hex)
 
 	if (theme === "light") {
 		if (isLightColor(icon.hex)) {
