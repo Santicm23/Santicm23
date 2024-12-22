@@ -29,7 +29,7 @@ export function getLuminance(r: number, g: number, b: number): number {
 export function isLightColor(hex: string): boolean {
   const { r, g, b } = hexToRgb(hex);
   const luminance = getLuminance(r, g, b);
-  return luminance > 0.75;
+  return luminance > 0.80;
 }
 
 export function isDarkColor(hex: string): boolean {
