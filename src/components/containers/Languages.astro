@@ -1,5 +1,9 @@
 ---
 import { getLangFromUrl } from "@/utils/i18n"
+import PortugalIcon from "../icons/PortugalIcon.astro"
+import FranceIcon from "../icons/FranceIcon.astro"
+import SpainIcon from "../icons/SpainIcon.astro"
+import UnitedKingdomIcon from "../icons/UnitedKingdomIcon.astro"
 
 const lang = getLangFromUrl(Astro.url)
 ---
@@ -11,11 +15,11 @@ const lang = getLangFromUrl(Astro.url)
 	<a
 		href="/"
 		class:list={[
-			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			"flex items-center gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
 			{ "bg-white/50 dark:bg-gray-500/20": lang === "en" },
 		]}
 	>
-		<span>🇬🇧</span>
+		<span><UnitedKingdomIcon class="h-4 w-4" /></span>
 		<span class="w-full text-center text-slate-600 dark:text-slate-200"
 			>English</span
 		>
@@ -23,11 +27,11 @@ const lang = getLangFromUrl(Astro.url)
 	<a
 		href="/es"
 		class:list={[
-			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			"flex items-center gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
 			{ "bg-white/50 dark:bg-gray-500/20": lang === "es" },
 		]}
 	>
-		<span>🇪🇸</span>
+		<span><SpainIcon class="h-4 w-4" /></span>
 		<span class="w-full text-center text-slate-600 dark:text-slate-200"
 			>Español</span
 		>
@@ -35,11 +39,11 @@ const lang = getLangFromUrl(Astro.url)
 	<a
 		href="/fr"
 		class:list={[
-			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			"flex items-center gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
 			{ "bg-white/50 dark:bg-gray-500/20": lang === "fr" },
 		]}
 	>
-		<span>🇫🇷</span>
+		<span><FranceIcon class="h-4 w-4" /></span>
 		<span class="w-full text-center text-slate-600 dark:text-slate-200"
 			>Français</span
 		>
@@ -47,11 +51,11 @@ const lang = getLangFromUrl(Astro.url)
 	<a
 		href="/pt"
 		class:list={[
-			"flex gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
+			"flex items-center gap-2 px-4 py-1 hover:bg-white/50 dark:hover:bg-gray-500/20",
 			{ "bg-white/50 dark:bg-gray-500/20": lang === "pt" },
 		]}
 	>
-		<span>🇵🇹</span>
+		<span><PortugalIcon class="h-4 w-4" /></span>
 		<span class="w-full text-center text-slate-600 dark:text-slate-200"
 			>Português</span
 		>
