@@ -3,10 +3,12 @@ import LanguageIcon from "@/components/icons/LanguageIcon.astro"
 import Languages from "@/components/containers/Languages.astro"
 ---
 
-<div class="relative mx-2">
-	<LanguageIcon class="text-slate-600 dark:text-slate-200" />
+<div class="relative">
+	<div class="h-8 w-8 lg:h-6 lg:w-6"></div>
 	<div class="group absolute left-1/2 top-0 z-20 -translate-x-1/2">
-		<div class="mx-auto h-6 w-6 cursor-pointer"></div>
+		<LanguageIcon
+			class="mx-auto h-8 w-8 lg:h-6 lg:w-6 cursor-pointer text-slate-600 duration-200 hover:text-indigo-400 dark:text-slate-200 dark:hover:text-violet-400"
+		/>
 		<Languages />
 	</div>
 </div>
