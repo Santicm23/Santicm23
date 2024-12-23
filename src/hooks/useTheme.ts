@@ -2,24 +2,22 @@ import { useState, useEffect } from "react"
 
 function useTheme() {
 	const [isDarkMode, setIsDarkMode] = useState(() => {
+		const theme = document.cookie
+			.split("; ")
+			.find((row) => row.startsWith("theme="))
+			?.split("=")[1]
 		return (
-			localStorage.getItem("theme") === "dark" ||
-			(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			theme === "dark" ||
+			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
 		)
 	})
 
 	useEffect(() => {
-		const classList = document.documentElement.classList
-		if (isDarkMode) {
-			classList.add("dark")
-			localStorage.setItem("theme", "dark")
-		} else {
-			classList.remove("dark")
-			localStorage.setItem("theme", "light")
-		}
-
 		const handleThemeChange = () => {
-			const theme = localStorage.getItem("theme")
+			const theme = document.cookie
+				.split("; ")
+				.find((row) => row.startsWith("theme="))
+				?.split("=")[1]
 			if (theme === "dark") {
 				setIsDarkMode(true)
 			} else {
@@ -28,11 +26,11 @@ function useTheme() {
 		}
 
 		window.addEventListener("theme-change", handleThemeChange)
-		window.addEventListener("storage", handleThemeChange)
+		window.addEventListener("cookie", handleThemeChange)
 
 		return () => {
 			window.removeEventListener("theme-change", handleThemeChange)
-			window.removeEventListener("storage", handleThemeChange)
+			window.removeEventListener("cookie", handleThemeChange)
 		}
 	}, [isDarkMode])
 

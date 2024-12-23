@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
 import CircleMouse from "@/components/others/CircleMouse"
+
 interface Props {
 	title: string
 }
@@ -9,22 +10,13 @@ interface Props {
 const { title } = Astro.props
 
 const lang = getLangFromUrl(Astro.url)
+
+const theme = Astro.cookies.get("theme")?.value ?? "light"
+
+const isDark = theme === "dark"
 ---
 
 <script>
-	;(function () {
-		const theme = localStorage.getItem("theme")
-
-		if (theme) {
-			theme === "dark" && document.documentElement.classList.add("dark")
-		} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			document.documentElement.classList.add("dark")
-			localStorage.setItem("theme", "dark")
-		} else {
-			localStorage.setItem("theme", "light")
-		}
-	})()
-
 	window.addEventListener("scroll", () => {
 		const elements = document.querySelectorAll(".fade-in-scroll")
 		elements.forEach((element) => {
@@ -35,7 +27,12 @@ const lang = getLangFromUrl(Astro.url)
 	})
 </script>
 
-<html lang={lang} data-transition-name="root" data-transition-animate="none">
+<html
+	lang={lang}
+	data-transition-name="root"
+	data-transition-animate="none"
+	class:list={{ dark: isDark }}
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta
