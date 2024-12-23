@@ -1,6 +1,8 @@
 ### Hi there I'm **_Santiago_** 👋 👨‍💻
 
-![](./public/images/my-photo.jpeg)
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="./public/images/my-photo.jpeg" alt="My Photo" width="300" style="" />
+</div>
 
 ```rust
 use portfolio::Me;
