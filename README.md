@@ -1,34 +1,38 @@
 ### Hi there I'm **_Santiago_** 👋 👨‍💻
 
-![](./public/images/my-photo.jpg)
+![](./public/images/my-photo.jpeg)
 
-```python
-from dataclasses import dataclass
+```rust
+use portfolio::Me;
 
-@dataclass
-class Me:
-    username: str = 'Santicm23'
-    name: str = 'Santiago Castro Muñoz'
-    age: int = 20
-    pronouns: tuple[str, str] = ('He', 'Him')
-    code: list[str] = [
-	'Python', 'JavaScript', 'TypeScript', 'Rust', 'Dart', 'C++', 'C', 'Java', 'Kotlin', 'php', 'SQL']
-    tools: dict[str, list[str]] = {
-        'back-end': ['Node.js', 'Express', 'Socket.IO', 'FastAPI', 'Spring Boot', 'Firebase'],
-        'web': ['React', 'Angular', 'Astro', 'Bootstrap', 'Tailwind CSS'],
-        'mobile': ['Flutter', 'Android'],
-        'devops': ['Docker', 'GitHub Actions', 'Railway', 'cPanel'],
-        'AI': ['PyTorch', 'TensorFlow', 'Scikit-Learn'],
-        'testing': ['Selenium', 'Jest', 'Pytest', 'Junit', 'Apache JMeter'],
-        'other': ['Poetry', 'ZeroMQ', 'Tkinter']
+fn main() {
+  let santiago = Me {
+    username: "Santicm",
+    name: "Santiago Castro Muñoz",
+    age: 21,
+    pronouns: ("He", "Him"),
+    code: vec![
+      "Rust", "Python", "TypeScript", "Java", "C++", "Dart", "Kotlin", "Solidity"
+    ],
+    tools: {
+      "back-end": vec!["Node.js", "Express", "Nestjs", "FastAPI", "Spring Boot", "Axum"],
+      "web": vec!["React", "Astro", "Nextjs", "Angular", "Bootstrap", "Tailwind CSS", "Shadcn UI"],
+      "mobile": vec!["Flutter", "Android"],
+      "devops": vec!["AWS", "Docker", "GitHub Actions", "Vercel", "cPanel"],
+      "AI": vec!["TensorFlow", "Scikit-Learn"],
+      "blockchain": vec!["Hardhat", "Ethereum", "Solana"],
+      "testing": vec!["Selenium", "Jest", "Pytest", "Junit"],
+      "other": vec!["ZeroMQ", "Kafka", "RabbitMQ", "WebSockets", "GraphQL", "RESTful APIs"]
     }
+  };
+}
 ```
 
 ### More about me...
 
 - 🇨🇴 I'm from Bogota, Colombia.
 - 👨‍💻 I'm a systems engineering student at Pontificia Universidad Javeriana.
-- 🌱 I’m currently learning React and PyTorch.
+- 🌱 I keep learning new stuff every day.
 - 🌎 Languages:
   - Español
   - Français
