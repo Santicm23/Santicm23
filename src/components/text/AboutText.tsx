@@ -15,7 +15,7 @@ export default function AboutText({ lang }: AboutTextProps) {
 
 function AboutTextEn() {
 	return (
-		<p className="text-balance pt-2 text-sm text-gray-400 lg:text-base [&>span]:text-black [&>span]:dark:text-white">
+		<p className="text-balance pt-2 text-sm md:text-xs text-gray-400 lg:text-base [&>span]:text-black [&>span]:dark:text-white">
 			I am a <span>software engineer</span> with a passion for{" "}
 			<span>web development</span>, <span>cloud</span>, <span>blockchain</span>,
 			and <span>machine learning</span>. I excel at solving complex{" "}

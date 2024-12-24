@@ -32,11 +32,11 @@ export default function Music() {
 	return (
 		<div className="flex h-full items-center">
 			<Vinyl src={song.thumbnail} alt={song.title} />
-			<div className={cn("mx-4 flex flex-col justify-center", loading && "gap-2")}>
+			<div className={cn("mx-4 flex flex-col justify-center w-full", loading && "gap-2")}>
 				{loading ? (
 					<>
-						<div className="animate-skeleton h-5 w-28 max-w-sm rounded-lg bg-gray-500 dark:bg-gray-200" />
-						<div className="animate-skeleton h-4 w-24 max-w-sm rounded-lg bg-gray-400 dark:bg-gray-400" />
+						<div className="animate-skeleton h-5 w-full lg:w-5/6 max-w-sm rounded-lg bg-gray-500 dark:bg-gray-200" />
+						<div className="animate-skeleton h-4 w-2/3 max-w-sm rounded-lg bg-gray-400 dark:bg-gray-400" />
 					</>
 				) : (
 					<>
