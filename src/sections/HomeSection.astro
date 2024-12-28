@@ -11,15 +11,20 @@ import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 
 <section
 	id="home"
-	class="animate-fade-in relative z-10 mx-auto flex h-screen w-2/3 flex-col-reverse items-center justify-center gap-4 xl:flex-row xl:justify-around"
+	class="relative z-10 mx-auto flex h-screen w-2/3 animate-fade-in flex-col-reverse items-center justify-center gap-4 xl:flex-row xl:justify-around"
 >
-	<div class="flex w-10 flex-row items-center justify-center gap-y-20 xl:flex-col">
+	<div
+		class="flex w-10 flex-row items-center justify-center gap-y-20 xl:flex-col"
+	>
 		<SocialButton href="https://github.com/Santicm23" name="GitHub">
 			<GitHubIcon
 				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-violet-400"
 			/>
 		</SocialButton>
-		<SocialButton href="https://www.linkedin.com/in/santiago-castro-muñoz/" name="LinkedIn">
+		<SocialButton
+			href="https://www.linkedin.com/in/santiago-castro-muñoz/"
+			name="LinkedIn"
+		>
 			<LinkedInIcon
 				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-violet-400"
 			/>
@@ -30,7 +35,10 @@ import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 			/>
 		</SocialButton>
 	</div>
-	<div class="h-[2px] w-1/3 md:w-1/4 bg-slate-800 dark:bg-slate-300 xl:h-1/4 xl:w-[2px]"></div>
+	<div
+		class="h-[2px] w-1/3 bg-slate-800 dark:bg-slate-300 md:w-1/4 xl:h-1/4 xl:w-[2px]"
+	>
+	</div>
 	<Title />
 	<Image
 		class="mask-image filter-image dark-filter-image aspect-square w-32 rounded-full object-cover md:w-56"
@@ -45,7 +53,11 @@ import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 
 <style>
 	.mask-image {
-		mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 40%, transparent 50%);
+		mask-image: radial-gradient(
+			ellipse 100% 100% at 50% 50%,
+			black 40%,
+			transparent 50%
+		);
 	}
 
 	.filter-image {

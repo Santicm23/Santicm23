@@ -2,7 +2,10 @@ export interface Project {
 	title: string
 	description: string
 	image: string
-	website?: string
-	github?: { name: string; url: string }[]
-	technologies?: string[]
+	links: {
+		github?: string
+		website?: string
+		docs?: string
+	}
+	tech: ((_props: any) => any)[]
 }

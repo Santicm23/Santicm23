@@ -30,7 +30,7 @@ export default function Music() {
 	}, [])
 
 	return (
-		<div className="flex h-full items-center">
+		<div className="group/vinyl flex h-full items-center">
 			<Vinyl src={song.thumbnail} alt={song.title} />
 			<div className={cn("mx-4 flex flex-col justify-center w-full", loading && "gap-2")}>
 				{loading ? (

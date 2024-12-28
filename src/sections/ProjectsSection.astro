@@ -2,49 +2,95 @@
 import ProjectCard from "@/components/containers/ProjectCard.astro"
 import GitHubIcon from "@/components/icons/GitHubIcon.astro"
 import SectionTitle from "@/components/text/SectionTitle.astro"
+import ReactIcon from "@/components/icons/ReactIcon.astro"
+import AngularIcon from "@/components/icons/AngularIcon.astro"
+import PestIcon from "@/components/icons/PestIcon.astro"
+import RustIcon from "@/components/icons/RustIcon.astro"
+import SpringBootIcon from "@/components/icons/SpringBootIcon.astro"
+import type { Project } from "@/models/project"
+import AwsIcon from "@/components/icons/AwsIcon.astro"
+import FastApiIcon from "@/components/icons/FastApiIcon.astro"
+import ExpressIcon from "@/components/icons/ExpressIcon.astro"
+import NodeJsIcon from "@/components/icons/NodeJsIcon.astro"
+import TailwindIcon from "@/components/icons/TailwindIcon.astro"
+import ShadcnIcon from "@/components/icons/ShadcnIcon.astro"
+import MongoIcon from "@/components/icons/MongoIcon.astro"
+import KafkaIcon from "@/components/icons/KafkaIcon.astro"
+import LookerIcon from "@/components/icons/LookerIcon.astro"
+import GoogleMapsIcon from "@/components/icons/GoogleMapsIcon.astro"
+import DockerIcon from "@/components/icons/DockerIcon.astro"
+import TursoIcon from "@/components/icons/TursoIcon.astro"
+import VercelIcon from "@/components/icons/VercelIcon.astro"
+import PostgresIcon from "@/components/icons/PostgresIcon.astro"
 
-const projects = [
+const projects: Project[] = [
 	{
 		title: "Bucks Finance",
 		description: "Description 1",
 		image: "/images/bucks.png",
-		links: [],
-		tech: [],
+		links: {
+			website: "https://www.bucks-finance.com/",
+		},
+		tech: [
+			ReactIcon,
+			TailwindIcon,
+			ShadcnIcon,
+			NodeJsIcon,
+			MongoIcon,
+			KafkaIcon,
+			DockerIcon,
+			AwsIcon,
+			LookerIcon,
+		],
 	},
 	{
-		title: "Pamii Opportunities module",
+		title: "Marketplace opportunities module",
 		description: "Description 2",
 		image: "/images/pamii.png",
-		links: [],
-		tech: [],
+		links: {},
+		tech: [
+			ReactIcon,
+			TailwindIcon,
+			ShadcnIcon,
+			DockerIcon,
+			AwsIcon,
+			GoogleMapsIcon,
+		],
 	},
 	{
 		title: "Sigar",
 		description: "Description 3",
 		image: "/images/sigar.png",
-		links: [],
-		tech: [],
+		links: {},
+		tech: [AngularIcon, SpringBootIcon, DockerIcon, PostgresIcon, AwsIcon],
 	},
 	{
 		title: "Snacks app",
 		description: "Description 4",
 		image: "/images/snacks-app.png",
-		links: [],
-		tech: [],
+		links: {},
+		tech: [AngularIcon, FastApiIcon, TursoIcon, VercelIcon],
 	},
 	{
 		title: "Chess lab",
 		description: "Description 5",
 		image: "/images/chess-lab.png",
-		links: [],
-		tech: [],
+		links: {
+			github: "https://github.com/Santicm23/chess-lab",
+			website: "https://crates.io/crates/chess-lab",
+			docs: "https://docs.rs/chess-lab/0.1.1/chess_lab/",
+		},
+		tech: [RustIcon, PestIcon],
 	},
 	{
 		title: "Heat Wave",
 		description: "Description 6",
 		image: "/images/heat-wave.png",
-		links: [],
-		tech: [],
+		links: {
+			github: "https://github.com/Santicm23/Heat-wave",
+			website: "https://heat-wave.onrender.com/",
+		},
+		tech: [ExpressIcon, NodeJsIcon],
 	},
 ]
 ---
@@ -59,8 +105,8 @@ const projects = [
 			href="https://github.com/Santicm23"
 			target="_blank"
 			rel="noreferrer"
-			class="z-10 flex items-center gap-1 transition-all hover:scale-105 hover:text-indigo-400 hover:dark:text-violet-400"
-			><GitHubIcon class="h-[18px] w-[18px]" /> Others</a
+			class="z-10 flex items-center gap-1 transition hover:scale-105 hover:text-indigo-400 hover:dark:text-violet-400"
+			><GitHubIcon class="h-[18px] w-[18px]" />Others</a
 		>
 	</div>
 </section>

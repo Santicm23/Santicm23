@@ -1,6 +1,11 @@
 ---
-import type { Project } from "@/models/project"
 import { Image } from "astro:assets"
+
+import type { Project } from "@/models/project"
+import GitHubIcon from "../icons/GitHubIcon.astro"
+import GlobeIcon from "../icons/GlobeIcon.astro"
+import BookIcon from "../icons/BookIcon.astro"
+import Chip from "../text/Chip.astro"
 
 interface Props {
 	project: Project
@@ -10,7 +15,7 @@ const { project } = Astro.props
 ---
 
 <div
-	class="fade-in-scroll z-10 flex flex-col rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 transition duration-200 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
+	class="fade-in-scroll z-10 flex flex-col rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
 >
 	<Image
 		src={project.image}
@@ -20,5 +25,52 @@ const { project } = Astro.props
 		width={400}
 	/>
 	<h2 class="mt-2 font-bold">{project.title}</h2>
+	<div class="my-2 flex gap-1">
+		{project.tech.map((TechIcon) => <TechIcon class="h-4 w-4" />)}
+	</div>
 	<p class="text-sm text-gray-400">{project.description}</p>
+	<div class="mt-2 flex gap-2">
+		{
+			project.links.github && (
+				<a
+					href={project.links.website}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<Chip class="px-2">
+						<GitHubIcon class="w-4 pr-1" />
+						<span class="text-xs">Github</span>
+					</Chip>
+				</a>
+			)
+		}
+		{
+			project.links.website && (
+				<a
+					href={project.links.website}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<Chip class="px-2">
+						<GlobeIcon class="w-4 pr-1" />
+						<span class="text-xs">Website</span>
+					</Chip>
+				</a>
+			)
+		}
+		{
+			project.links.docs && (
+				<a
+					href={project.links.docs}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<Chip class="px-2">
+						<BookIcon class="w-4 pr-1" />
+						<span class="text-xs">Docs</span>
+					</Chip>
+				</a>
+			)
+		}
+	</div>
 </div>

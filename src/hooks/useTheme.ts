@@ -7,8 +7,7 @@ function useTheme() {
 			.find((row) => row.startsWith("theme="))
 			?.split("=")[1]
 		return (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			theme === "dark"
 		)
 	})
 

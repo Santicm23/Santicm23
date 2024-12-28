@@ -5,7 +5,7 @@ interface Props {
 
 export default function Vinyl({ alt, src }: Props) {
 	return (
-		<div className="relative w-min transition-transform hover:translate-x-2 group-hover/bento:translate-x-2">
+		<div className="group/vinyl relative w-min transition-transform group-hover/vinyl:translate-x-2">
 			<div className="absolute bottom-0 left-0 right-0 top-0 z-20 m-auto h-8 w-8 overflow-hidden rounded-full border border-white/20 bg-transparent outline outline-1 outline-offset-4 outline-white/20 dark:border-white/10 dark:outline-white/10">
 				{src && (
 					<img

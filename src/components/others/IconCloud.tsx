@@ -28,7 +28,7 @@ const slugsColors = {
 	express: "#000000",
 	nestjs: "#F50057",
 	fastapi: "#009688",
-	springboot: "#6DB33F",
+	spring: "#6DB33F",
 	rabbitmq: "#FF6600",
 	nginx: "#43A047",
 	prisma: "#000000",
@@ -44,6 +44,11 @@ const slugsColors = {
 	looker: "#2196F3",
 	shadcnui: "#000000",
 	graphql: "#E10098",
+	nodedotjs: "#539E43",
+	postgresql: "#4169E1",
+	mongodb: "#47A248",
+	mysql: "#4479A1",
+	redis: "#DC382D",
 }
 
 const cloudProps: Omit<ICloud, "children"> = {

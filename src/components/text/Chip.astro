@@ -1,8 +1,19 @@
+---
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
 <div
-	class="relative flex w-fit items-center overflow-hidden rounded-full border border-white bg-white/50 px-3 text-sm text-gray-900 outline outline-1 outline-gray-300 transition group-hover/bento:shadow-md dark:border-white/10 dark:bg-gray-700/50 dark:text-gray-100 dark:outline-gray-950"
+	class:list={[
+		"group/chip relative flex w-fit items-center overflow-hidden rounded-full border border-white bg-white/50 px-3 text-sm text-gray-900 outline outline-1 outline-gray-300 transition-transform group-hover/chip:shadow-md dark:border-white/10 dark:bg-gray-700/50 dark:text-gray-100 dark:outline-gray-950",
+		className,
+	]}
 >
 	<span
-		class="absolute -top-[150%] left-0 inline-flex h-[5px] w-full rounded-md bg-white opacity-50 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-white duration-500 group-hover/bento:top-[150%]"
+		class="absolute -top-[150%] left-0 inline-flex h-[5px] w-full rounded-md bg-white opacity-50 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-white duration-500 group-hover/chip:top-[150%]"
 	></span>
 	<slot />
 </div>
