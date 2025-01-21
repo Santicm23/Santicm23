@@ -1,7 +1,9 @@
-import Spline from '@splinetool/react-spline';
+import Spline from "@splinetool/react-spline"
 
 export default function Piano3D() {
-  return (
-    <Spline scene="https://prod.spline.design/nNoIkSdzguX8mdUC/scene.splinecode" />
-  );
+	return (
+		<div className="h-[470px] w-full">
+			<Spline scene="https://prod.spline.design/nNoIkSdzguX8mdUC/scene.splinecode" />
+		</div>
+	)
 }
