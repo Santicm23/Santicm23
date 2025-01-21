@@ -5,7 +5,13 @@ import Piano3D from "@/components/others/Piano3D"
 
 <section id="more" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>More</SectionTitle>
-	<div class="w-1/2 h-[355px] flex justify-center items-center overflow-hidden">
-		<Piano3D client:only="react" />
-	</div>
+	<main
+		class="grid md:h-[500px] w-full grid-rows-2 items-center justify-center gap-4 md:grid-cols-2 md:grid-rows-1"
+	>
+		<div
+			class="flex h-[355px] w-full items-center justify-center overflow-hidden"
+		>
+			<Piano3D client:only="react" />
+		</div>
+	</main>
 </section>
