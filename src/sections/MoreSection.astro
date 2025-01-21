@@ -1,7 +1,9 @@
 ---
 import SectionTitle from "@/components/text/SectionTitle.astro"
+import Piano3D from "@/components/others/Piano3D"
 ---
 
 <section id="more" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
 	<SectionTitle>More</SectionTitle>
+	<Piano3D client:only="react" />
 </section>
