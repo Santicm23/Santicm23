@@ -22,6 +22,11 @@ import DockerIcon from "@/components/icons/DockerIcon.astro"
 import TursoIcon from "@/components/icons/TursoIcon.astro"
 import VercelIcon from "@/components/icons/VercelIcon.astro"
 import PostgresIcon from "@/components/icons/PostgresIcon.astro"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
 
 const projects: Project[] = [
 	{
@@ -96,7 +101,7 @@ const projects: Project[] = [
 ---
 
 <section id="projects" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
-	<SectionTitle>Projects</SectionTitle>
+	<SectionTitle>{t("projects")}</SectionTitle>
 	<div class="mb-6 mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		{projects.map((project) => <ProjectCard project={project} />)}
 	</div>
@@ -105,8 +110,8 @@ const projects: Project[] = [
 			href="https://github.com/Santicm23"
 			target="_blank"
 			rel="noreferrer"
-			class="z-10 flex items-center gap-1 transition hover:scale-105 hover:text-indigo-400 hover:dark:text-violet-400"
-			><GitHubIcon class="h-[18px] w-[18px]" />Others</a
+			class="z-10 flex items-center gap-1 transition hover:scale-105 hover:text-indigo-400 focus:outline-indigo-400 hover:dark:text-violet-400 dark:focus:outline-violet-400"
+			><GitHubIcon class="h-[18px] w-[18px]" />{t("others")}</a
 		>
 	</div>
 </section>

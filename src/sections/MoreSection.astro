@@ -2,10 +2,15 @@
 import SectionTitle from "@/components/text/SectionTitle.astro"
 import Piano3D from "@/components/others/Piano3D"
 import ContactCard from "@/components/containers/ContactCard.astro"
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
 ---
 
 <section id="more" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
-	<SectionTitle>More</SectionTitle>
+	<SectionTitle>{t("more")}</SectionTitle>
 	<main
 		class="grid w-full grid-rows-2 items-center justify-center gap-4 md:h-[500px] md:grid-cols-2 md:grid-rows-1"
 	>

@@ -13,7 +13,7 @@ function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
 			<a
 				href={href}
 				className={cn(
-					"text-nowrap text-sm text-slate-600 transition duration-300 dark:text-slate-200",
+					"text-nowrap text-sm text-slate-600 transition duration-300 focus:outline-indigo-400 dark:text-slate-200 dark:focus:outline-violet-400",
 					{
 						"-translate-y-1": selected,
 						"group-hover:-translate-y-1": !selected,

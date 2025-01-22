@@ -6,7 +6,7 @@ interface Props {
 const { class: className } = Astro.props
 ---
 
-<button onclick="toggleTheme()" class:list={["group", className]}>
+<button onclick="toggleTheme()" class:list={["group focus:outline-indigo-400 dark:focus:outline-violet-400", className]}>
 	<svg
 		class="sun-and-moon h-8 w-10 lg:h-6 lg:w-6"
 		stroke-linecap="round"

@@ -1,30 +1,43 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 import SendIcon from "../icons/SendIcon.astro"
 import Chip from "../text/Chip.astro"
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
 ---
 
 <article
 	class="fade-in-scroll z-10 flex flex-col gap-4 rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
 >
-	<h2 class="font-bold">Contact Me!</h2>
+	<h2 class="font-bold">{t("contact")}</h2>
 	<input
 		type="email"
-		placeholder="Email"
+		placeholder={t("contact.email")}
 		class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 	/>
 	<input
 		type="text"
-		placeholder="Subject"
+		placeholder={t("contact.subject")}
 		class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 	/>
 	<textarea
-		placeholder="Message"
-		class="min-h-[66px] max-h-[258px] resize-none rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 [field-sizing:content] dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+		placeholder={t("contact.message")}
+		class="max-h-[258px] min-h-[66px] resize-none rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 [field-sizing:content] dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 	></textarea>
-	<button class="mx-auto w-fit">
+	<button
+		class="mx-auto p-px rounded-full focus:outline-indigo-400 dark:focus:outline-violet-400"
+	>
 		<Chip class="flex gap-2 px-2 py-1">
-			<SendIcon class="size-4" />
-			Send
+			<SendIcon
+				class="size-4 transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400"
+			/>
+			<span
+				class="transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400"
+			>
+				{t("contact.send")}
+			</span>
 		</Chip>
 	</button>
 </article>

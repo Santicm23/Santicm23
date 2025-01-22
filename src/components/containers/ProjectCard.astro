@@ -36,10 +36,13 @@ const { project } = Astro.props
 					href={project.links.website}
 					target="_blank"
 					rel="noreferrer"
+					class="rounded-full focus:outline-indigo-400 dark:focus:outline-violet-400"
 				>
 					<Chip class="px-2">
-						<GitHubIcon class="w-4 pr-1" />
-						<span class="text-xs">Github</span>
+						<GitHubIcon class="w-4 pr-1 transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400" />
+						<span class="text-xs transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400">
+							Github
+						</span>
 					</Chip>
 				</a>
 			)
@@ -50,10 +53,13 @@ const { project } = Astro.props
 					href={project.links.website}
 					target="_blank"
 					rel="noreferrer"
+					class="rounded-full focus:outline-indigo-400 dark:focus:outline-violet-400"
 				>
 					<Chip class="px-2">
-						<GlobeIcon class="w-4 pr-1" />
-						<span class="text-xs">Website</span>
+						<GlobeIcon class="w-4 pr-1 transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400" />
+						<span class="text-xs transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400">
+							Website
+						</span>
 					</Chip>
 				</a>
 			)
@@ -64,10 +70,13 @@ const { project } = Astro.props
 					href={project.links.docs}
 					target="_blank"
 					rel="noreferrer"
+					class="rounded-full focus:outline-indigo-400 dark:focus:outline-violet-400"
 				>
 					<Chip class="px-2">
-						<BookIcon class="w-4 pr-1" />
-						<span class="text-xs">Docs</span>
+						<BookIcon class="w-4 pr-1 transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400" />
+						<span class="text-xs transition-colors duration-200 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400">
+							Docs
+						</span>
 					</Chip>
 				</a>
 			)
