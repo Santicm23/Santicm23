@@ -1,4 +1,4 @@
-import { API_URL } from "@/config/environment/urls"
+import { API_URL } from "@/config/environment/secrets"
 import type { Song } from "@/models/song"
 import axios from "axios"
 
