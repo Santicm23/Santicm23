@@ -1,0 +1,30 @@
+---
+import SendIcon from "../icons/SendIcon.astro"
+import Chip from "../text/Chip.astro"
+---
+
+<article
+	class="fade-in-scroll z-10 flex flex-col gap-4 rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
+>
+	<h2 class="font-bold">Contact Me!</h2>
+	<input
+		type="email"
+		placeholder="Email"
+		class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+	/>
+	<input
+		type="text"
+		placeholder="Subject"
+		class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+	/>
+	<textarea
+		placeholder="Message"
+		class="min-h-[66px] max-h-[258px] resize-none rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 [field-sizing:content] dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+	></textarea>
+	<button class="mx-auto w-fit">
+		<Chip class="flex gap-2 px-2 py-1">
+			<SendIcon class="size-4" />
+			Send
+		</Chip>
+	</button>
+</article>

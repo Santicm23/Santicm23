@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "@/components/text/SectionTitle.astro"
 import Piano3D from "@/components/others/Piano3D"
+import ContactCard from "@/components/containers/ContactCard.astro"
 ---
 
 <section id="more" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
@@ -9,14 +10,10 @@ import Piano3D from "@/components/others/Piano3D"
 		class="grid w-full grid-rows-2 items-center justify-center gap-4 md:h-[500px] md:grid-cols-2 md:grid-rows-1"
 	>
 		<div
-			class="flex h-[355px] w-full items-center justify-center overflow-hidden"
+			class="flex h-[300px] w-full items-center justify-center overflow-hidden"
 		>
 			<Piano3D client:only="react" />
 		</div>
-		<article
-			class="fade-in-scroll z-10 flex flex-col rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
-		>
-			<h2 class="font-bold">Contact Me!</h2>
-		</article>
+		<ContactCard />
 	</main>
 </section>
