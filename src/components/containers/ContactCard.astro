@@ -65,16 +65,20 @@ const t = useTranslations(lang)
 				return
 			}
 			try {
+				button!.disabled = true
 				await axios.post(`${API_URL}/email/send`, {
 					email,
 					subject,
 					message,
 				})
+				formData.forEach((_, key) => {
+					const input = document.querySelector(`[name="${key}"]`) as HTMLInputElement
+					input.value = ""
+				})
 				alert("Email sent")
 			} catch (error) {
 				alert("Error sending email")
 			}
-			button!.disabled = true
 		}
 
 		const form = document.querySelector("form")
