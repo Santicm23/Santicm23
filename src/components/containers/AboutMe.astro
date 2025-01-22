@@ -11,12 +11,16 @@ const t = useTranslations(lang)
 <div>
 	<div class="flex items-center justify-between pb-1">
 		<h2 class="text-gray-500 dark:text-gray-400">
-			{t("about.me.my-name")} <span class="bg-indigo-400 bg-clip-text text-lg text-transparent dark:bg-violet-400"
+			{t("about.me.my-name")}
+			<span
+				class="bg-indigo-400 bg-clip-text text-lg font-bold text-transparent dark:bg-violet-400"
 				>Santiago Castro</span
 			>
 		</h2>
 		<OpenToWork />
 	</div>
-	<hr class="h-[2px] border-gray-300 bg-white dark:border-gray-950/80 dark:bg-white/10" />
+	<hr
+		class="h-[2px] border-gray-300 bg-white dark:border-gray-950/80 dark:bg-white/10"
+	/>
 	<AboutText lang={lang} />
 </div>
