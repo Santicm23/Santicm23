@@ -14,7 +14,7 @@ interface MenuProps {
 	lang: "en" | "es" | "fr" | "pt"
 }
 
-function Menu({lang}: MenuProps): JSX.Element {
+function Menu({lang}: MenuProps) {
 	const t = useTranslations(lang)
 
 	menu[0]!.name = t("nav.home")

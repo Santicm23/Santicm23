@@ -7,7 +7,7 @@ interface Props {
 	onSelect: (name: string) => void
 }
 
-function MenuItem({ name, href, selected, onSelect }: Props): JSX.Element {
+function MenuItem({ name, href, selected, onSelect }: Props) {
 	return (
 		<>
 			<a
