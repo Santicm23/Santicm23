@@ -12,7 +12,8 @@
       "@/icons": ["src/components/icons/*"],
       "@/layouts": ["src/layouts/*"],
       "@/pages": ["src/pages/*"],
-      "@/sections": ["src/sections/*"]
+      "@/sections": ["src/sections/*"],
+      "@/styles": ["src/styles/*"],
     },
     "types": ["astro/client", "react"],
     "strict": true

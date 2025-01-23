@@ -20,14 +20,14 @@ const { class: className } = Astro.props
 			<circle cx="24" cy="10" r="6" fill="black"></circle>
 		</mask>
 		<circle
-			class="sun origin-center fill-slate-600 group-hover:fill-indigo-400 dark:scale-[1.75] dark:fill-slate-200 dark:group-hover:fill-violet-400"
+			class="sun origin-center fill-slate-600 group-hover:fill-indigo-400 dark:fill-slate-200 dark:group-hover:fill-violet-400"
 			cx="12"
 			cy="12"
 			r="6"
 			mask="url(#moon-mask)"
 			fill="currentColor"></circle>
 		<g
-			class="sun-beams origin-center stroke-gray-600 stroke-2 duration-150 group-hover:stroke-indigo-400 dark:-rotate-[25deg] dark:opacity-0"
+			class="sun-beams origin-center stroke-gray-600 stroke-2 duration-150 group-hover:stroke-indigo-400 dark:opacity-0"
 			stroke="currentColor"
 		>
 			<line x1="12" y1="1" x2="12" y2="3"></line>
@@ -67,7 +67,13 @@ const { class: className } = Astro.props
 	}
 
 	html.dark .sun-and-moon > .sun {
-		transition: scale(1.75) 0.25s cubic-bezier(0.25, 0, 0.3, 1);
+		transition: transform 0.25s cubic-bezier(0.25, 0, 0.3, 1);
+		transform: scale(1.75);
+	}
+
+	html.dark .sun-and-moon > .sun-beams {
+		transition: transition 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25);
+		transform: rotate(-25deg);
 	}
 </style>
 
