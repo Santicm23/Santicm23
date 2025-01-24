@@ -35,6 +35,9 @@ importers:
       react-icon-cloud:
         specifier: ^4.1.4
         version: 4.1.7(react@18.3.1)
+      sonner:
+        specifier: ^1.7.2
+        version: 1.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.6.0
@@ -2113,6 +2116,12 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  sonner@1.7.2:
+    resolution: {integrity: sha512-zMbseqjrOzQD1a93lxahm+qMGxWovdMxBlkTbbnZdNqVLt4j+amF9PQxUCL32WfztOFt9t9ADYkejAL3jF9iNA==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -4933,6 +4942,11 @@ snapshots:
     optional: true
 
   sisteransi@1.0.5: {}
+
+  sonner@1.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   source-map-js@1.2.1: {}
 

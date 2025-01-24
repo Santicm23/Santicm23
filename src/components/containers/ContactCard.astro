@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 import SendIcon from "../icons/SendIcon"
 import Chip from "../text/Chip.astro"
+import { Toaster } from "sonner"
 
 const lang = getLangFromUrl(Astro.url)
 
@@ -15,7 +16,7 @@ const t = useTranslations(lang)
 		<h2 class="font-bold">{t("contact")}</h2>
 		<input
 			name="email"
-			type="email"
+			type="text"
 			placeholder={t("contact.email")}
 			class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 		/>
@@ -32,56 +33,75 @@ const t = useTranslations(lang)
 		></textarea>
 		<button
 			id="submitContact"
-			class="group/button mx-auto rounded-full p-px focus:outline-indigo-400 dark:focus:outline-violet-400 disabled:cursor-default"
+			class="group/button mx-auto rounded-full p-px focus:outline-indigo-400 disabled:cursor-default dark:focus:outline-violet-400"
 		>
 			<Chip class="flex gap-2 px-2 py-1">
 				<SendIcon
-					className="size-4 transition-colors duration-200 group-disabled/button:text-gray-500 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400"
+					className="size-4 transition-colors duration-200 group-hover/chip:text-indigo-400 group-disabled/button:text-gray-500 dark:group-hover/chip:text-violet-400"
 				/>
 				<span
-					class="transition-colors duration-200 group-disabled/button:text-gray-500 group-hover/chip:text-indigo-400 dark:group-hover/chip:text-violet-400"
+					class="transition-colors duration-200 group-hover/chip:text-indigo-400 group-disabled/button:text-gray-500 dark:group-hover/chip:text-violet-400"
 				>
 					{t("contact.send")}
 				</span>
 			</Chip>
 		</button>
 	</form>
-
-	<script>
-		import { API_URL } from "@/config/environment/secrets"
-		import axios from "axios"
-
-		const button = document.querySelector("button#submitContact") as HTMLButtonElement
-		const handleSubmit = async (event: SubmitEvent) => {
-			event.preventDefault()
-
-			const formData = new FormData(event.target as HTMLFormElement)
-			const email = formData.get("email")
-			const subject = formData.get("subject")
-			const message = formData.get("message")
-
-			if (!email || !subject || !message) {
-				alert("Please fill all the fields")
-				return
-			}
-			try {
-				button!.disabled = true
-				await axios.post(`${API_URL}/email/send`, {
-					email,
-					subject,
-					message,
-				})
-				formData.forEach((_, key) => {
-					const input = document.querySelector(`[name="${key}"]`) as HTMLInputElement
-					input.value = ""
-				})
-				alert("Email sent")
-			} catch (error) {
-				alert("Error sending email")
-			}
-		}
-
-		const form = document.querySelector("form")
-		form?.addEventListener("submit", handleSubmit)
-	</script>
+	<Toaster
+		client:only="react"
+		toastOptions={{
+			className:
+				"rounded-xl border border-white bg-white/20 p-4 text-black shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:text-white dark:shadow-none dark:outline-gray-700/20 [&_svg]:text-indigo-400 dark:[&_svg]:text-violet-400",
+		}}
+	/>
 </article>
+<script>
+	import { API_URL } from "@/config/environment/secrets"
+	import axios from "axios"
+	import { toast } from "sonner"
+
+	const emailRegex =
+		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+
+	const button = document.querySelector(
+		"button#submitContact"
+	) as HTMLButtonElement
+
+	const handleSubmit = async (event: SubmitEvent) => {
+		event.preventDefault()
+
+		const formData = new FormData(event.target as HTMLFormElement)
+		const email = formData.get("email")
+		const subject = formData.get("subject")
+		const message = formData.get("message")
+
+		if (!email || !subject || !message) {
+			toast.error("Please fill all fields")
+			return
+		} else if (!emailRegex.test(email as string)) {
+			toast.error("Invalid email")
+			return
+		}
+		try {
+			button!.disabled = true
+			await axios.post(`${API_URL}/email/send`, {
+				email,
+				subject,
+				message,
+			})
+			formData.forEach((_, key) => {
+				const input = document.querySelector(
+					`[name="${key}"]`
+				) as HTMLInputElement
+				input.value = ""
+			})
+			toast.success("Email sent successfully")
+		} catch (error) {
+			toast.error("Failed to send email")
+			button!.disabled = false
+		}
+	}
+
+	const form = document.querySelector("form")
+	form?.addEventListener("submit", handleSubmit)
+</script>
