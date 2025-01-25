@@ -58,6 +58,10 @@ export const translations = {
     "contact.subject": "Subject",
     "contact.message": "Message",
     "contact.send": "Send",
+    "toast.success": "Email sent successfully!",
+    "toast.empty": "Please fill all fields",
+    "toast.invalid-email": "Invalid email",
+    "toast.error": "Failed to send email",
 	},
 	es: {
     "nav.home": "Inicio",
@@ -107,6 +111,10 @@ export const translations = {
     "contact.subject": "Asunto",
     "contact.message": "Mensaje",
     "contact.send": "Enviar",
+    "toast.success": "Correo enviado con éxito!",
+    "toast.empty": "Por favor llene todos los campos",
+    "toast.invalid-email": "Dirección de correo inválido",
+    "toast.error": "Error al enviar correo",
 	},
 	fr: {
     "nav.home": "Accueil",
@@ -156,6 +164,10 @@ export const translations = {
     "contact.subject": "Sujet",
     "contact.message": "Message",
     "contact.send": "Envoyer",
+    "toast.success": "Email envoyé avec succès!",
+    "toast.empty": "Veuillez remplir tous les champs",
+    "toast.invalid-email": "Email invalide",
+    "toast.error": "Échec de l'envoi de l'email",
 	},
 	pt: {
     "nav.home": "Início",
@@ -205,5 +217,9 @@ export const translations = {
     "contact.subject": "Assunto",
     "contact.message": "Mensagem",
     "contact.send": "Enviar",
+    "toast.success": "Email enviado com sucesso!",
+    "toast.empty": "Por favor, preencha todos os campos",
+    "toast.invalid-email": "Email inválido",
+    "toast.error": "Falha ao enviar email",
 	},
 }

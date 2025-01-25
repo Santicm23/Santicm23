@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions"
 import { getLangFromUrl } from "../utils/i18n"
 import CircleMouse from "@/components/others/CircleMouse"
 
@@ -62,7 +61,6 @@ const isDark = theme === "dark"
 			content="Santiago Castro Muñoz's portfolio showcasing projects and skills in web development, cloud, machine learning and blockchain."
 		/>
 		<meta name="twitter:image" content="/images/my-photo.jpg" />
-		<ClientRouter />
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-200 dark:bg-gray-950">

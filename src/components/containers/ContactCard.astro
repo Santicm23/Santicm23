@@ -58,8 +58,13 @@ const t = useTranslations(lang)
 
 <script>
 	import { API_URL } from "@/config/environment/secrets"
+	import { getLangFromUrl, useTranslations } from "@/utils/i18n"
 	import axios from "axios"
 	import { toast } from "sonner"
+
+	const lang = getLangFromUrl(new URL(window.location.href))
+
+	const t = useTranslations(lang)
 
 	const emailRegex =
 		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
@@ -77,10 +82,10 @@ const t = useTranslations(lang)
 		const message = formData.get("message")
 
 		if (!email || !subject || !message) {
-			toast.error("Please fill all fields")
+			toast.error(t("toast.empty"))
 			return
 		} else if (!emailRegex.test(email as string)) {
-			toast.error("Invalid email")
+			toast.error(t("toast.invalid-email"))
 			return
 		}
 		try {
@@ -96,9 +101,9 @@ const t = useTranslations(lang)
 				) as HTMLInputElement
 				input.value = ""
 			})
-			toast.success("Email sent successfully")
+			toast.success(t("toast.success"))
 		} catch (error) {
-			toast.error("Failed to send email")
+			toast.error(t("toast.error"))
 			button!.disabled = false
 		}
 	}

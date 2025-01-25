@@ -6,7 +6,7 @@ interface Props {
 const { class: className } = Astro.props
 ---
 
-<button id="toggleTheme" class:list={["group focus:outline-indigo-400 dark:focus:outline-violet-400", className]}>
+<button id="toggleTheme" onclick="toggleTheme()" class:list={["group focus:outline-indigo-400 dark:focus:outline-violet-400", className]}>
 	<svg
 		class="sun-and-moon h-8 w-10 lg:h-6 lg:w-6"
 		stroke-linecap="round"
@@ -77,7 +77,7 @@ const { class: className } = Astro.props
 	}
 </style>
 
-<script>
+<script is:inline>
 	function toggleTheme() {
 		if (document.documentElement.classList.contains("dark")) {
 			document.documentElement.classList.remove("dark")
@@ -89,7 +89,4 @@ const { class: className } = Astro.props
 			window.dispatchEvent(new Event("theme-change"))
 		}
 	}
-
-	const button = document.querySelector("button#toggleTheme") as HTMLButtonElement
-	button.addEventListener("click", toggleTheme)
 </script>
