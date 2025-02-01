@@ -23,6 +23,9 @@ import TursoIcon from "@/components/icons/TursoIcon.astro"
 import VercelIcon from "@/components/icons/VercelIcon.astro"
 import PostgresIcon from "@/components/icons/PostgresIcon.astro"
 import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+import GraphqlIcon from "@/components/icons/GraphqlIcon.astro"
+import PrometheusIcon from "@/components/icons/PrometheusIcon.astro"
+import GrafanaIcon from "@/components/icons/GrafanaIcon.astro"
 
 const lang = getLangFromUrl(Astro.url)
 
@@ -41,6 +44,7 @@ const projects: Project[] = [
 			TailwindIcon,
 			ShadcnIcon,
 			NodeJsIcon,
+			ExpressIcon,
 			MongoIcon,
 			KafkaIcon,
 			DockerIcon,
@@ -88,14 +92,24 @@ const projects: Project[] = [
 		tech: [RustIcon, PestIcon],
 	},
 	{
-		title: t("projects.heat-wave.title"),
-		description: t("projects.heat-wave.description"),
-		image: "/images/heat-wave.png",
+		title: t("projects.tourism.title"),
+		description: t("projects.tourism.description"),
+		image: "/images/tourism-app.png",
 		links: {
-			github: "https://github.com/Santicm23/Heat-wave",
-			website: "https://heat-wave.onrender.com/",
+			github: "https://github.com/MS-turism-PUJ/turism-app",
 		},
-		tech: [ExpressIcon, NodeJsIcon],
+		tech: [
+			AngularIcon,
+			TailwindIcon,
+			SpringBootIcon,
+			GraphqlIcon,
+			PostgresIcon,
+			KafkaIcon,
+			DockerIcon,
+			GoogleMapsIcon,
+			PrometheusIcon,
+			GrafanaIcon,
+		],
 	},
 ]
 ---

@@ -1,17 +1,25 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+
 interface Props {
 	date: string
 	title: string
 	institution: string
 	institutionUrl: string
 	current?: boolean
+	internship?: boolean
 }
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
 
 const {
 	date,
 	title,
 	institution,
 	institutionUrl,
+	internship = false,
 	current = false,
 } = Astro.props
 ---
@@ -28,6 +36,13 @@ const {
 		class="mb-1 text-xs font-normal leading-none text-gray-400 dark:text-gray-500"
 		>{date}</time
 	>
+	{
+		internship && (
+			<span class="inline-flex w-fit items-center overflow-hidden rounded-full bg-indigo-400 px-2 text-xs font-normal text-gray-100 dark:bg-violet-500">
+				{t("work.internship")}
+			</span>
+		)
+	}
 	<h3 class="text-base text-gray-900 dark:text-white">
 		{title}
 	</h3>

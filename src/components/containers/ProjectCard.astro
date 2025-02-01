@@ -29,7 +29,7 @@ const { project } = Astro.props
 		{project.tech.map((TechIcon) => <TechIcon class="h-4 w-4" />)}
 	</div>
 	<p class="text-sm text-gray-400">{project.description}</p>
-	<div class="mt-2 flex gap-2">
+	<div class="mt-auto pt-2 flex gap-2">
 		{
 			project.links.github && (
 				<a
