@@ -6,6 +6,7 @@ import AboutText from "../text/AboutText"
 const lang = getLangFromUrl(Astro.url)
 
 const t = useTranslations(lang)
+const openToWork = false
 ---
 
 <div>
@@ -17,7 +18,7 @@ const t = useTranslations(lang)
 				>Santiago Castro</span
 			>
 		</h2>
-		<OpenToWork />
+		{openToWork && <OpenToWork />}
 	</div>
 	<hr
 		class="h-[2px] border-gray-300 bg-white dark:border-gray-950/80 dark:bg-white/10"
