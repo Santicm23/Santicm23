@@ -1,6 +1,6 @@
 export interface Song {
-  title: string;
-  thumbnail: string;
-  video_id: string;
-  author: string;
+	title: string
+	thumbnail: string
+	id: string
+	artists: string[]
 }

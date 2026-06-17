@@ -9,5 +9,5 @@ export default defineConfig({
 	output: "server",
 	adapter: vercel(),
 	// output: "static",
-	// site: "https://santicm.com",
+	site: "https://santicm.com",
 })

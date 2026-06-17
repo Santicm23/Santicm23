@@ -7,9 +7,9 @@ import { cn } from "@/utils/tailwind"
 
 const defaultSong: Song = {
 	title: "",
-	author: "",
+	artists: [],
 	thumbnail: "",
-	video_id: "",
+	id: "",
 }
 
 export default function Music() {
@@ -47,13 +47,13 @@ export default function Music() {
 					<>
 						<span className="line-clamp-1">{song.title}</span>
 						<span className="line-clamp-1 text-gray-500 dark:text-gray-400">
-							{song.author}
+							{song.artists.join(", ")}
 						</span>
 					</>
 				)}
 			</div>
 			<a
-				href={`https://music.youtube.com/watch?${song.video_id ? `v=${song.video_id}&` : ""}list=PLBe_IcbkA8Dh5AckMuidKfT0SFiTmSc0Q`}
+				href={`https://open.spotify.com/track/${song.id}`}
 				target="_blank"
 				rel="noreferrer"
 				aria-label="Play song"
