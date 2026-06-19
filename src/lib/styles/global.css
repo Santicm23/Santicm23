@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Keyframes */
+
+@keyframes tracking-in-expand {
+	0% {
+		letter-spacing: -0.5em;
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-top {
+	0%,
+	50% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: none;
+	}
+}
+
+@keyframes fade-in {
+	0%,
+	25% {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes move-horizontal {
+	0% {
+		transform: translateX(-50%) translateY(-10%);
+	}
+	50% {
+		transform: translateX(50%) translateY(10%);
+	}
+	100% {
+		transform: translateX(-50%) translateY(-10%);
+	}
+}
+
+@keyframes move-in-circle {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes move-vertical {
+	0% {
+		transform: translateY(-50%);
+	}
+	50% {
+		transform: translateY(50%);
+	}
+	100% {
+		transform: translateY(-50%);
+	}
+}
+
+@keyframes skeleton {
+	0% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+
+@utility animate-tracking-in-expand {
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@utility animate-slide-in-top {
+	animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@utility animate-fade-in {
+	animation: fade-in 1s ease-out forwards;
+}
+
+@utility animate-first {
+	animation: move-vertical 30s ease infinite;
+}
+
+@utility animate-second {
+	animation: move-in-circle 20s reverse infinite;
+}
+
+@utility animate-third {
+	animation: move-in-circle 40s linear infinite;
+}
+
+@utility animate-fourth {
+	animation: move-horizontal 40s ease infinite;
+}
+
+@utility animate-fifth {
+	animation: move-in-circle 20s ease infinite;
+}
+
+@utility animate-skeleton {
+	animation: skeleton 3s ease infinite;
+}
