@@ -4,8 +4,6 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-/* Keyframes */
-
 @keyframes tracking-in-expand {
 	0% {
 		letter-spacing: -0.5em;
