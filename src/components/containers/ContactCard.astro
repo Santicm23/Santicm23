@@ -10,7 +10,7 @@ const t = useTranslations(lang)
 ---
 
 <article
-	class="fade-in-scroll z-10 rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
+	class="fade-in-scroll z-10 rounded-xl border border-white bg-white/20 p-4 shadow-xl outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
 >
 	<form action="" class="flex flex-col gap-4">
 		<h2 class="font-bold">{t("contact")}</h2>
@@ -18,18 +18,18 @@ const t = useTranslations(lang)
 			name="email"
 			type="text"
 			placeholder={t("contact.email")}
-			class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+			class="rounded-xl border border-white bg-white/50 px-4 py-2 outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 		/>
 		<input
 			name="subject"
 			type="text"
 			placeholder={t("contact.subject")}
-			class="rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+			class="rounded-xl border border-white bg-white/50 px-4 py-2 outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 		/>
 		<textarea
 			name="message"
 			placeholder={t("contact.message")}
-			class="max-h-[258px] min-h-[66px] resize-none rounded-xl border border-white bg-white/50 px-4 py-2 outline outline-1 outline-gray-300 [field-sizing:content] dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
+			class="field-sizing-content max-h-64.5 min-h-16.5 resize-none rounded-xl border border-white bg-white/50 px-4 py-2 outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/50 dark:outline-gray-700/20"
 		></textarea>
 		<button
 			id="submitContact"
@@ -57,7 +57,6 @@ const t = useTranslations(lang)
 </article>
 
 <script>
-	import { API_URL } from "@/config/environment/secrets"
 	import { getLangFromUrl, useTranslations } from "@/lib/utils/i18n"
 	import axios from "axios"
 	import { toast } from "sonner"
@@ -90,7 +89,7 @@ const t = useTranslations(lang)
 		}
 		try {
 			button!.disabled = true
-			await axios.post(`${API_URL}/email/send`, {
+			await axios.post("/email/send", {
 				email,
 				subject,
 				message,

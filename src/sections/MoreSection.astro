@@ -9,13 +9,13 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section id="more" class="mx-auto min-h-screen max-w-[70rem] p-4 md:p-20">
+<section id="more" class="mx-auto min-h-screen max-w-280 p-4 md:p-20">
 	<SectionTitle>{t("more")}</SectionTitle>
 	<main
-		class="grid w-full grid-rows-2 items-center justify-center gap-4 md:h-[500px] md:grid-cols-2 md:grid-rows-1"
+		class="grid w-full grid-rows-2 items-center justify-center gap-4 md:h-125 md:grid-cols-2 md:grid-rows-1"
 	>
 		<div
-			class="fade-in-scroll flex h-[300px] w-full items-center justify-center overflow-hidden"
+			class="fade-in-scroll flex h-75 w-full items-center justify-center overflow-hidden"
 		>
 			<Piano3D client:only="react" />
 		</div>

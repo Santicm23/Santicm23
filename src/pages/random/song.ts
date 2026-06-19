@@ -1,4 +1,4 @@
-import { getRandomSongFromPlaylist } from "@/lib/spotify"
+import { getRandomSongFromPlaylist } from "@/server/api/spotify.server"
 import type { APIRoute } from "astro"
 
 export const GET = (async () => {

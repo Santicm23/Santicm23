@@ -2,9 +2,6 @@
 import { Image } from "astro:assets"
 
 import SocialButton from "@/components/buttons/SocialButton.astro"
-import CVIcon from "@/components/icons/CVIcon.astro"
-import GitHubIcon from "@/components/icons/GitHubIcon.astro"
-import LinkedInIcon from "@/components/icons/LinkedInIcon.astro"
 import Title from "@/components/text/Title.astro"
 import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 ---
@@ -14,25 +11,25 @@ import ScrollDownLoader from "@/components/loaders/ScrollDownLoader.astro"
 	class="animate-fade-in relative z-10 mx-auto flex h-screen w-2/3 flex-col-reverse items-center justify-center gap-4 xl:flex-row xl:justify-around"
 >
 	<div
-		class="flex w-10 flex-row items-center justify-center gap-y-20 xl:flex-col"
+		class="flex w-10 flex-row items-center justify-center gap-x-2 gap-y-18 xl:flex-col"
 	>
 		<SocialButton href="https://github.com/Santicm23" name="GitHub">
-			<GitHubIcon
-				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-violet-400"
-			/>
+			<span
+				class="icon-[lucide--github] size-6 duration-200 hover:scale-125 hover:text-indigo-400 dark:text-neutral-100 dark:hover:text-violet-400"
+			></span>
 		</SocialButton>
 		<SocialButton
 			href="https://www.linkedin.com/in/santiago-castro-munoz/"
 			name="LinkedIn"
 		>
-			<LinkedInIcon
-				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-violet-400"
-			/>
+			<span
+				class="icon-[lucide--linkedin] size-6 duration-200 hover:scale-125 hover:text-indigo-400 dark:text-neutral-100 dark:hover:text-violet-400"
+			></span>
 		</SocialButton>
 		<SocialButton href="/pdfs/cv-santiago-castro-munoz.pdf" name="CV">
-			<CVIcon
-				class="w-8 duration-200 hover:scale-125 hover:stroke-indigo-400 dark:stroke-neutral-100 dark:hover:stroke-violet-400"
-			/>
+			<span
+				class="icon-[lucide--scroll-text] size-6 duration-200 hover:scale-125 hover:text-indigo-400 dark:text-neutral-100 dark:hover:text-violet-400"
+			></span>
 		</SocialButton>
 	</div>
 	<div

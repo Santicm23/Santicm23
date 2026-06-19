@@ -27,13 +27,13 @@ const {
 <li class="ms-4">
 	{
 		current ? (
-			<div class="absolute -start-1.5 mt-2 h-3 w-3 rounded-full border border-indigo-100 bg-indigo-300 after:absolute after:-inset-[25%] after:-z-10 after:aspect-square after:h-[150%] after:rounded-full after:bg-indigo-400 after:blur-sm dark:border-violet-400 dark:bg-violet-500 dark:after:bg-violet-500" />
+			<div class="absolute -inset-1.5 mt-2 h-3 w-3 rounded-full border border-indigo-100 bg-indigo-300 after:absolute after:inset-[-25%] after:-z-10 after:aspect-square after:h-[150%] after:rounded-full after:bg-indigo-400 after:blur-sm dark:border-violet-400 dark:bg-violet-500 dark:after:bg-violet-500" />
 		) : (
-			<div class="absolute -start-1.5 mt-2 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-gray-900 dark:bg-gray-700" />
+			<div class="absolute -inset-1.5 mt-2 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-gray-900 dark:bg-gray-700" />
 		)
 	}
 	<time
-		class="mb-1 text-xs font-normal leading-none text-gray-400 dark:text-gray-500"
+		class="mb-1 text-xs leading-none font-normal text-gray-400 dark:text-gray-500"
 		>{date}</time
 	>
 	{

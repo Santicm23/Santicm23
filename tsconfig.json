@@ -15,7 +15,7 @@
       "@/sections": ["src/sections/*"],
     },
     "types": ["astro/client", "react"],
-    "strict": true
+    "strict": true,
   },
-  "extends": "astro/tsconfigs/strictest"
+  "extends": "astro/tsconfigs/strictest",
 }

@@ -15,12 +15,12 @@ const { project } = Astro.props
 ---
 
 <article
-	class="fade-in-scroll z-10 flex flex-col rounded-xl border border-white bg-white/20 p-4 shadow-xl outline outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
+	class="fade-in-scroll z-10 flex flex-col rounded-xl border border-white bg-white/20 p-4 shadow-xl outline-1 outline-gray-300 dark:border-white/10 dark:bg-gray-700/30 dark:shadow-none dark:outline-gray-700/20"
 >
 	<Image
 		src={project.image}
 		alt={project.title}
-		class="aspect-[7/4] w-full rounded-xl object-top object-cover shadow-lg"
+		class="aspect-7/4 w-full rounded-xl object-cover object-top shadow-lg"
 		height={400}
 		width={400}
 	/>
@@ -29,7 +29,7 @@ const { project } = Astro.props
 		{project.tech.map((TechIcon) => <TechIcon class="h-4 w-4" />)}
 	</div>
 	<p class="text-sm text-gray-400">{project.description}</p>
-	<div class="mt-auto pt-2 flex gap-2">
+	<div class="mt-auto flex gap-2 pt-2">
 		{
 			project.links.github && (
 				<a

@@ -1,7 +1,7 @@
 import {
 	SPOTIFY_CLIENT_ID,
 	SPOTIFY_CLIENT_SECRET,
-} from "@/config/environment/secrets"
+} from "@/server/security/secrets.server"
 import axios from "axios"
 
 let accessToken: string | null = null
