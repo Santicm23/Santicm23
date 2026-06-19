@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+import { getLangFromUrl, useTranslations } from "@/lib/utils/i18n"
 import SendIcon from "../icons/SendIcon"
 import Chip from "../text/Chip.astro"
 import { Toaster } from "sonner"
@@ -58,7 +58,7 @@ const t = useTranslations(lang)
 
 <script>
 	import { API_URL } from "@/config/environment/secrets"
-	import { getLangFromUrl, useTranslations } from "@/utils/i18n"
+	import { getLangFromUrl, useTranslations } from "@/lib/utils/i18n"
 	import axios from "axios"
 	import { toast } from "sonner"
 

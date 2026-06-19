@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import MenuItem from "@/components/menu/MenuItem"
-import { useTranslations } from "@/utils/i18n"
+import { useTranslations } from "@/lib/utils/i18n"
 
 const menu = [
 	{ name: "Home", href: "#home", selected: true },
@@ -33,16 +33,16 @@ function Menu({lang}: MenuProps) {
 				return rect && rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2
 			})
 			const sectionIndex = sections.indexOf(currentSection as Element)
-	
+
 			if (previousIndex === sectionIndex || sectionIndex === -1) return
-	
+
 			menu.forEach((item, index) => {
 				item.selected = index === sectionIndex
 			})
 			previousIndex = sectionIndex
 			setMenu({ ...menu })
 		}
-	
+
 		window.removeEventListener("scroll", onScroll)
 		window.addEventListener("scroll", onScroll, { passive: true })
 		return () => window.removeEventListener("scroll", onScroll)

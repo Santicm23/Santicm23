@@ -8,7 +8,7 @@ import {
 } from "react-icon-cloud"
 
 import useTheme from "@/hooks/useTheme"
-import { isDarkColor, isLightColor } from "@/utils/colors"
+import { isDarkColor, isLightColor } from "@/lib/utils/colors"
 
 // Names from simple icons and their colors
 const slugsColors = {

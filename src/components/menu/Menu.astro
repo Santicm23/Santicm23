@@ -3,7 +3,7 @@ import ThemeToggle from "@/components/buttons/ThemeToggleButton.astro"
 import Logo from "@/components/text/Logo.astro"
 import LanguageButton from "@/components/buttons/LanguageButton.astro"
 import MenuItemGroup from "@/components/menu/MenuItemGroup.tsx"
-import { getLangFromUrl } from "@/utils/i18n"
+import { getLangFromUrl } from "@/lib/utils/i18n"
 
 const lang = getLangFromUrl(Astro.url)
 ---

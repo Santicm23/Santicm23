@@ -3,7 +3,7 @@ import Vinyl from "../others/Vinyl"
 import type { Song } from "@/models/song"
 import { getRandomSong } from "@/services/musicService"
 import PlayIcon from "../icons/PlayIcon"
-import { cn } from "@/utils/tailwind"
+import { cn } from "@/lib/utils/tailwind"
 
 const defaultSong: Song = {
 	title: "",
