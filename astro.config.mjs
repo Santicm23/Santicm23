@@ -11,5 +11,5 @@ export default defineConfig({
 	integrations: [react()],
 	output: "server",
 	adapter: vercel(),
-	site: "https://santicm.com",
+	site: "https://santicm.dev",
 })

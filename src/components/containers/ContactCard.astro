@@ -58,7 +58,7 @@ const t = useTranslations(lang)
 
 <script>
 	import { getLangFromUrl, useTranslations } from "@/lib/utils/i18n"
-	import axios from "axios"
+	import { sendEmail } from "@/services/emailService"
 	import { toast } from "sonner"
 
 	const lang = getLangFromUrl(new URL(window.location.href))
@@ -76,9 +76,9 @@ const t = useTranslations(lang)
 		event.preventDefault()
 
 		const formData = new FormData(event.target as HTMLFormElement)
-		const email = formData.get("email")
-		const subject = formData.get("subject")
-		const message = formData.get("message")
+		const email = formData.get("email") as string
+		const subject = formData.get("subject") as string
+		const message = formData.get("message") as string
 
 		if (!email || !subject || !message) {
 			toast.error(t("toast.empty"))
@@ -87,24 +87,25 @@ const t = useTranslations(lang)
 			toast.error(t("toast.invalid-email"))
 			return
 		}
-		try {
-			button!.disabled = true
-			await axios.post("/email/send", {
-				email,
-				subject,
-				message,
+
+		button.disabled = true
+
+		await sendEmail(email, subject, message)
+			.then(() => {
+				toast.success(t("toast.success"))
 			})
-			formData.forEach((_, key) => {
-				const input = document.querySelector(
-					`[name="${key}"]`
-				) as HTMLInputElement
-				input.value = ""
+			.catch(() => {
+				toast.error(t("toast.error"))
 			})
-			toast.success(t("toast.success"))
-		} catch (error) {
-			toast.error(t("toast.error"))
-			button!.disabled = false
-		}
+			.finally(() => {
+				formData.forEach((_, key) => {
+					const input = document.querySelector(
+						`[name="${key}"]`
+					) as HTMLInputElement
+					input.value = ""
+				})
+				button.disabled = false
+			})
 	}
 
 	const form = document.querySelector("form")
